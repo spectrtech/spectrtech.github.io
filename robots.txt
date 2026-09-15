@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://spectrtech.github.io/sitemap.xml
