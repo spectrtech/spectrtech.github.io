@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Wedding Budget Calculator (No Sign-Up) — SpectrTech</title>
+<meta name="description" content="Free wedding budget calculator: enter your total, adjust the typical percentage split, type in real quotes and see what is left. Runs in your browser, nothing uploaded, CSV export.">
+<link rel="canonical" href="https://spectrtech.github.io/tools/wedding-budget-calculator/">
+<meta property="og:type" content="website"><meta property="og:title" content="Free Wedding Budget Calculator (No Sign-Up)"><meta property="og:description" content="Free wedding budget calculator: enter your total, adjust the typical percentage split, type in real quotes and see what is left. Runs in your browser, nothing uploaded, CSV export."><meta property="og:image" content="https://spectrtech.github.io/pins/01-offline-wedding-planner.jpg"><meta property="og:url" content="https://spectrtech.github.io/tools/wedding-budget-calculator/">
+<link rel="icon" href="/assets/spectrtech-avatar.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Free Wedding Budget Calculator (No Sign-Up)", "description": "Free wedding budget calculator: enter your total, adjust the typical percentage split, type in real quotes and see what is left. Runs in your browser, nothing uploaded, CSV export.", "url": "https://spectrtech.github.io/tools/wedding-budget-calculator/", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any (browser)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "SpectrTech"}}</script>
+<style>
+:root{--bg:#f7f5f2;--ink:#161a2e;--muted:#5d6273;--card:#fff;--line:#e6e2dc;--accent:#6f3cff;--accent2:#ff2fa8;--gold:#a8895a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:17px}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+header{padding:22px 0 6px;display:flex;align-items:center;gap:12px;font-size:15px}header img{width:36px;height:36px;border-radius:50%}header a{color:var(--ink);text-decoration:none;font-weight:700}header nav a{font-weight:400;color:var(--muted);margin-left:14px}
+h1{font-size:clamp(28px,4.6vw,42px);line-height:1.15;margin:26px 0 8px}
+.meta{color:var(--muted);font-size:14px;margin-bottom:22px}
+h2{font-size:24px;margin:34px 0 8px;line-height:1.25}h3{font-size:19px;margin:24px 0 6px}
+p{margin:12px 0}ul,ol{padding-left:22px}li{margin:6px 0}
+img.shot{width:100%;border-radius:12px;border:1px solid var(--line);margin:14px 0 4px}
+.cap{color:var(--muted);font-size:13px;margin:0 0 16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:22px 0}
+.cta{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;padding:18px 22px;margin:30px 0}
+.cta b{font-size:18px}.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:600;margin-top:10px}.btn:hover{background:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;color:var(--ink)}.card:hover{border-color:var(--accent)}.card b{display:block;margin-bottom:6px;font-size:17px}.card span{color:var(--muted);font-size:14px}
+footer{padding:26px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:36px}footer a{color:var(--muted)}
+.more{margin-top:34px}
+
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:18px 0}
+input[type=text],input[type=number],select,textarea{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:120px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:end}.row>div{flex:1;min-width:140px}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+button,.b{font:inherit;padding:9px 14px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;font-weight:600}button.p{background:var(--ink);color:#fff;border-color:var(--ink)}button.p:hover{background:var(--accent);border-color:var(--accent)}
+.tot{font-size:22px;font-weight:700}.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent)}
+.small{font-size:13px;color:var(--muted)}
+.tables{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.table{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}.table h4{margin:0 0 8px;font-size:15px}
+.seat{border:1px dashed var(--line);border-radius:7px;padding:5px 8px;margin:4px 0;min-height:30px;font-size:14px;background:#fafaf8}.seat.f{border-style:solid;background:#efe9ff;cursor:grab}.seat.over{border-color:var(--accent);background:#f3efff}
+.pool{display:flex;flex-wrap:wrap;gap:6px;min-height:40px;padding:8px;border:1px dashed var(--line);border-radius:10px}.chip{background:#efe9ff;border-radius:7px;padding:5px 9px;font-size:14px;cursor:grab}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}.chk input{margin-top:5px;width:18px;height:18px}.chk.d span{text-decoration:line-through;color:var(--muted)}
+@media print{header,footer,.nop,.cta,.more{display:none!important}body{background:#fff}.tool{border:0;padding:0}}
+</style>
+</head>
+<body><div class="wrap">
+<header><img src="/assets/spectrtech-avatar.jpg" alt="SpectrTech"><a href="/">SpectrTech</a><nav><a href="/tools/">Free tools</a><a href="/blog/">Guides</a><a href="/wedding-planner/">Wedding Planner</a></nav></header>
+
+<h1>Wedding Budget Calculator</h1><p class="meta">Free · runs in your browser · nothing is uploaded — your data stays on this device (saved in your browser between visits)</p>
+<p>Enter your total budget, see a typical split by category, then replace the guesses with real quotes as they arrive. Free, private, no account.</p>
+
+<div class="tool">
+<div class="row"><div><label>Total wedding budget</label><input type="number" id="total" placeholder="e.g. 25000" min="0"></div><div style="max-width:140px"><label>Currency</label><select id="cur"><option>$</option><option>€</option><option>£</option><option>₹</option><option>AED</option><option>C$</option><option>A$</option></select></div><div style="max-width:170px"><label>Guests (optional)</label><input type="number" id="guests" placeholder="e.g. 120" min="0"></div></div>
+<p class="small" style="margin-top:12px">Percentages below are common starting splits, not rules. Change any percentage or amount — the rest recalculates. Amounts you type override the percentage.</p>
+<table id="tbl"><thead><tr><th>Category</th><th style="width:90px">%</th><th style="width:150px">Amount</th><th>Note</th></tr></thead><tbody></tbody></table>
+<div class="row nop" style="margin-top:8px"><div><div class="small">Allocated</div><div class="tot" id="alloc">—</div></div><div><div class="small">Remaining / over</div><div class="tot" id="rem">—</div></div><div><div class="small">Per guest</div><div class="tot" id="pg">—</div></div></div>
+<div class="bar" style="margin:12px 0"><i id="bar" style="width:0"></i></div>
+<div class="row nop"><button class="p" onclick="reset()">Reset to typical split</button><button onclick="addRow()">+ Add category</button><button onclick="csv()">Download CSV</button><button onclick="window.print()">Print</button></div>
+</div>
+<h2>How to use the wedding budget calculator</h2>
+<ol><li>Enter your total budget and, if you know it, the guest count.</li><li>Adjust the percentages to your priorities. Photography matters more to some couples than flowers — move 5% across and see what it does in money.</li><li>When a real quote arrives, type the amount instead of the percentage. The remaining pot updates instantly.</li><li>Download the CSV or print it for your meetings with vendors.</li></ol>
+<h2>Typical wedding budget breakdown</h2>
+<p>Most planners quote a split close to this: venue and catering 40–50%, photography and video 10–12%, music and entertainment 5–10%, flowers and decor 8–10%, attire and beauty 7–9%, stationery 2–3%, rings 2–3%, cake 2%, transport 2–3%, favours and gifts 2%, and a 5–10% contingency you do not touch until the last month. Where you land depends on the guest count more than anything else: catering is the only line that grows with every chair.</p>
+<p>Three mistakes account for most overspending: no contingency line, tracking one number per category instead of estimate → quote → final, and forgetting the small lines (tips, alterations, delivery fees, postage) that never appear on a quote but add up to a full category. Our guide on <a href="/blog/wedding-budget-estimated-quoted-final/">tracking three numbers, not one</a> covers the method.</p>
+
+<div class="cta"><b>Want this connected to your guest list, budget, vendors and timeline?</b><br><span style="color:var(--muted)">The full Wedding Planner by SpectrTech is one offline HTML file with 17 connected sections in 9 languages. No account, no subscription, $24.99 one-time.</span><br><a class="btn" href="/wedding-planner/">See the full Wedding Planner</a></div>
+<h2>FAQ</h2>
+<h3>Is this calculator really free?</h3><p>Yes. No sign-up, no email, no watermark. It runs entirely in your browser; nothing you type leaves your device.</p>
+<h3>Will my numbers be there when I come back?</h3><p>They are saved in this browser on this device. Clearing browser data removes them — download the CSV if you want a copy.</p>
+<h3>What is the difference from the full Wedding Planner?</h3><p>The full planner tracks three numbers per line (estimated, quoted, final), links each budget line to a vendor and to payment instalments with due dates, and shows the whole picture on a dashboard next to your guest list and timeline. This page is the first step of that.</p>
+<script>
+const DEF=[["Venue & catering",45,"Room hire, food, drinks, service"],["Photography & video",11,""],["Music & entertainment",7,"DJ or band, ceremony music"],["Flowers & decor",9,""],["Attire & beauty",8,"Dress, suit, alterations, hair, make-up"],["Stationery",2,"Invitations, menus, signage, postage"],["Rings",2,""],["Cake",2,""],["Transport",2,""],["Favours & gifts",2,""],["Contingency",10,"Do not touch until the final month"]];
+let rows;const K='st_budget_v1';const $=s=>document.querySelector(s);
+function load(){try{const s=JSON.parse(localStorage.getItem(K));if(s&&s.rows){rows=s.rows;$('#total').value=s.total||'';$('#guests').value=s.guests||'';$('#cur').value=s.cur||'$';return}}catch(e){}rows=DEF.map(r=>({n:r[0],p:r[1],a:null,note:r[2]}))}
+function save(){try{localStorage.setItem(K,JSON.stringify({rows,total:$('#total').value,guests:$('#guests').value,cur:$('#cur').value}))}catch(e){}}
+function fmt(v){return $('#cur').value+' '+Math.round(v).toLocaleString('en-US')}
+function render(){const tb=$('#tbl tbody');tb.innerHTML='';const T=+$('#total').value||0;let sum=0;rows.forEach((r,i)=>{const amt=r.a!=null?r.a:T*r.p/100;sum+=amt;const tr=document.createElement('tr');tr.innerHTML=`<td><input type="text" value="${r.n.replace(/"/g,'&quot;')}" oninput="rows[${i}].n=this.value;save()"></td><td><input type="number" min="0" step="0.5" value="${r.a!=null&&T?(amt/T*100).toFixed(1):r.p}" onchange="rows[${i}].p=+this.value||0;rows[${i}].a=null;upd()"></td><td><input type="number" min="0" value="${Math.round(amt)||''}" placeholder="auto" onchange="rows[${i}].a=this.value===''?null:+this.value;upd()"></td><td style="display:flex;gap:6px"><input type="text" value="${(r.note||'').replace(/"/g,'&quot;')}" oninput="rows[${i}].note=this.value;save()"><button title="Remove" onclick="rows.splice(${i},1);upd()">×</button></td>`;tb.appendChild(tr)});
+$('#alloc').textContent=T?fmt(sum):'—';const rem=T-sum;$('#rem').textContent=T?(rem<0?'−'+fmt(-rem)+' over':fmt(rem)):'—';$('#rem').style.color=rem<0?'#c0392b':'';const g=+$('#guests').value;$('#pg').textContent=T&&g?fmt(T/g):'—';$('#bar').style.width=T?Math.min(100,sum/T*100)+'%':'0';$('#bar').style.background=rem<0?'#c0392b':'';}
+function upd(){render();save()}function reset(){rows=DEF.map(r=>({n:r[0],p:r[1],a:null,note:r[2]}));upd()}function addRow(){rows.push({n:'New category',p:0,a:null,note:''});upd()}
+function csv(){const T=+$('#total').value||0;let s='Category,Percent,Amount,Note\n';rows.forEach(r=>{const a=r.a!=null?r.a:T*r.p/100;s+=`"${r.n}",${T?(a/T*100).toFixed(1):r.p},${Math.round(a)},"${(r.note||'').replace(/"/g,'""')}"\n`});const b=new Blob([s],{type:'text/csv'});const u=URL.createObjectURL(b);const l=document.createElement('a');l.href=u;l.download='wedding-budget.csv';l.click()}
+['total','guests','cur'].forEach(id=>$('#'+id).addEventListener('input',upd));load();render();
+</script>
+<footer>© SpectrTech · <a href="/">Home</a> · <a href="/tools/">Free tools</a> · <a href="/blog/">Guides</a> · <a href="https://spectrtech.gumroad.com/l/weddingplanner">Wedding Planner on Gumroad</a> · <a href="https://www.pinterest.com/spectrtech/">Pinterest</a> · <a href="mailto:spectrtech@protonmail.com">spectrtech@protonmail.com</a></footer>
+</div></body></html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Wedding Seating Chart Maker (Drag & Drop, No Sign-Up) — SpectrTech</title>
+<meta name="description" content="Free drag-and-drop wedding seating chart maker: paste your guest list, set tables and seats, drag guests onto chairs, print or download. Runs in your browser, nothing uploaded.">
+<link rel="canonical" href="https://spectrtech.github.io/tools/wedding-seating-chart-maker/">
+<meta property="og:type" content="website"><meta property="og:title" content="Free Wedding Seating Chart Maker (Drag & Drop, No Sign-Up)"><meta property="og:description" content="Free drag-and-drop wedding seating chart maker: paste your guest list, set tables and seats, drag guests onto chairs, print or download. Runs in your browser, nothing uploaded."><meta property="og:image" content="https://spectrtech.github.io/pins/01-offline-wedding-planner.jpg"><meta property="og:url" content="https://spectrtech.github.io/tools/wedding-seating-chart-maker/">
+<link rel="icon" href="/assets/spectrtech-avatar.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Free Wedding Seating Chart Maker (Drag & Drop, No Sign-Up)", "description": "Free drag-and-drop wedding seating chart maker: paste your guest list, set tables and seats, drag guests onto chairs, print or download. Runs in your browser, nothing uploaded.", "url": "https://spectrtech.github.io/tools/wedding-seating-chart-maker/", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any (browser)", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Organization", "name": "SpectrTech"}}</script>
+<style>
+:root{--bg:#f7f5f2;--ink:#161a2e;--muted:#5d6273;--card:#fff;--line:#e6e2dc;--accent:#6f3cff;--accent2:#ff2fa8;--gold:#a8895a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:17px}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+header{padding:22px 0 6px;display:flex;align-items:center;gap:12px;font-size:15px}header img{width:36px;height:36px;border-radius:50%}header a{color:var(--ink);text-decoration:none;font-weight:700}header nav a{font-weight:400;color:var(--muted);margin-left:14px}
+h1{font-size:clamp(28px,4.6vw,42px);line-height:1.15;margin:26px 0 8px}
+.meta{color:var(--muted);font-size:14px;margin-bottom:22px}
+h2{font-size:24px;margin:34px 0 8px;line-height:1.25}h3{font-size:19px;margin:24px 0 6px}
+p{margin:12px 0}ul,ol{padding-left:22px}li{margin:6px 0}
+img.shot{width:100%;border-radius:12px;border:1px solid var(--line);margin:14px 0 4px}
+.cap{color:var(--muted);font-size:13px;margin:0 0 16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:22px 0}
+.cta{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;padding:18px 22px;margin:30px 0}
+.cta b{font-size:18px}.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:600;margin-top:10px}.btn:hover{background:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;color:var(--ink)}.card:hover{border-color:var(--accent)}.card b{display:block;margin-bottom:6px;font-size:17px}.card span{color:var(--muted);font-size:14px}
+footer{padding:26px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:36px}footer a{color:var(--muted)}
+.more{margin-top:34px}
+
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:18px 0}
+input[type=text],input[type=number],select,textarea{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:120px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:end}.row>div{flex:1;min-width:140px}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+button,.b{font:inherit;padding:9px 14px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;font-weight:600}button.p{background:var(--ink);color:#fff;border-color:var(--ink)}button.p:hover{background:var(--accent);border-color:var(--accent)}
+.tot{font-size:22px;font-weight:700}.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent)}
+.small{font-size:13px;color:var(--muted)}
+.tables{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.table{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}.table h4{margin:0 0 8px;font-size:15px}
+.seat{border:1px dashed var(--line);border-radius:7px;padding:5px 8px;margin:4px 0;min-height:30px;font-size:14px;background:#fafaf8}.seat.f{border-style:solid;background:#efe9ff;cursor:grab}.seat.over{border-color:var(--accent);background:#f3efff}
+.pool{display:flex;flex-wrap:wrap;gap:6px;min-height:40px;padding:8px;border:1px dashed var(--line);border-radius:10px}.chip{background:#efe9ff;border-radius:7px;padding:5px 9px;font-size:14px;cursor:grab}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}.chk input{margin-top:5px;width:18px;height:18px}.chk.d span{text-decoration:line-through;color:var(--muted)}
+@media print{header,footer,.nop,.cta,.more{display:none!important}body{background:#fff}.tool{border:0;padding:0}}
+</style>
+</head>
+<body><div class="wrap">
+<header><img src="/assets/spectrtech-avatar.jpg" alt="SpectrTech"><a href="/">SpectrTech</a><nav><a href="/tools/">Free tools</a><a href="/blog/">Guides</a><a href="/wedding-planner/">Wedding Planner</a></nav></header>
+
+<h1>Wedding Seating Chart Maker</h1><p class="meta">Free · runs in your browser · nothing is uploaded — your data stays on this device (saved in your browser between visits)</p>
+<p>Paste your guest list, set up the tables, drag names onto seats. Free, private, no account — and it prints.</p>
+
+<div class="tool">
+<div class="row"><div><label>Guest names — one per line (or paste a column from Excel)</label><textarea id="names" placeholder="Anna Carter
+James Carter
+Priya Shah
+..."></textarea></div></div>
+<div class="row" style="margin-top:10px"><div style="max-width:150px"><label>Number of tables</label><input type="number" id="nt" value="8" min="1" max="60"></div><div style="max-width:150px"><label>Seats per table</label><input type="number" id="ns" value="8" min="1" max="20"></div><div><button class="p" onclick="build()">Build tables</button> <button onclick="autofill()">Auto-fill in order</button> <button onclick="clearSeats()">Clear seats</button> <button onclick="exportTxt()">Download chart</button> <button onclick="window.print()">Print</button></div></div>
+<p class="small" style="margin-top:12px">Drag a name from the pool onto a seat, or drag a seated guest to another seat or back to the pool. Double-click a table name to rename it.</p>
+<div class="small" id="stat"></div>
+<h3 class="nop">Unseated guests</h3><div class="pool" id="pool"></div>
+<h3>Tables</h3><div class="tables" id="tables"></div>
+</div>
+<h2>How to make a wedding seating chart with this tool</h2>
+<ol><li>Paste your confirmed guests, one per line. Count each plus-one and each child as their own line — every person is a chair.</li><li>Set the number of tables and seats per table to match the venue's floor plan.</li><li>Drag names onto seats. Place whole families and couples first, then friend groups, then the people who could sit anywhere.</li><li>Print the chart by table for the venue, or download it as a text file for the escort cards.</li></ol>
+<p>The order matters more than the tool: collect the constraints first (who must sit together, who must not, who needs the best view), then place people. Our <a href="/blog/wedding-seating-chart-guide/">seating chart guide</a> walks through divorced parents, exes, kids' tables and the “table of leftovers”.</p>
+
+<div class="cta"><b>Want this connected to your guest list, budget, vendors and timeline?</b><br><span style="color:var(--muted)">The full Wedding Planner by SpectrTech is one offline HTML file with 17 connected sections in 9 languages. No account, no subscription, $24.99 one-time.</span><br><a class="btn" href="/wedding-planner/">See the full Wedding Planner</a></div>
+<h2>FAQ</h2>
+<h3>Can I use this on my phone?</h3><p>It works, but dragging names onto seats is much easier on a laptop or tablet with a mouse.</p>
+<h3>Does it keep families together automatically?</h3><p>Not this free version — you drag by hand. The full Wedding Planner attaches group, side and “keep apart” tags to each guest and has an Auto Arrange that respects them, plus a to-scale floor plan of the room.</p>
+<h3>Where is my chart stored?</h3><p>In this browser only. Nothing is uploaded. Download the chart if you want a copy.</p>
+<script>
+const K='st_seat_v1';const $=s=>document.querySelector(s);let S={names:[],tables:[]};let drag=null;
+function load(){try{const s=JSON.parse(localStorage.getItem(K));if(s){S=s;$('#names').value=S.names.join('\n');if(S.tables.length){$('#nt').value=S.tables.length;$('#ns').value=S.tables[0].seats.length}}}catch(e){}}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+function build(){S.names=$('#names').value.split('\n').map(s=>s.trim()).filter(Boolean);const nt=+$('#nt').value||1,ns=+$('#ns').value||1;const old=S.tables;S.tables=[];for(let i=0;i<nt;i++){const o=old[i]||{name:'Table '+(i+1),seats:[]};const seats=[];for(let j=0;j<ns;j++)seats.push(o.seats[j]&&S.names.includes(o.seats[j])?o.seats[j]:null);S.tables.push({name:o.name||'Table '+(i+1),seats})}render();save()}
+function seated(){return new Set(S.tables.flatMap(t=>t.seats).filter(Boolean))}
+function render(){const st=seated();const pool=$('#pool');pool.innerHTML='';S.names.filter(n=>!st.has(n)).forEach(n=>{const c=document.createElement('div');c.className='chip';c.textContent=n;c.draggable=true;c.ondragstart=e=>{drag={n,from:null};};pool.appendChild(c)});pool.ondragover=e=>{e.preventDefault()};pool.ondrop=e=>{e.preventDefault();if(drag&&drag.from){S.tables[drag.from[0]].seats[drag.from[1]]=null;render();save()}};
+const tb=$('#tables');tb.innerHTML='';S.tables.forEach((t,ti)=>{const d=document.createElement('div');d.className='table';const h=document.createElement('h4');h.textContent=t.name+' ('+t.seats.filter(Boolean).length+'/'+t.seats.length+')';h.title='Double-click to rename';h.ondblclick=()=>{const v=prompt('Table name',t.name);if(v){t.name=v;render();save()}};d.appendChild(h);t.seats.forEach((g,si)=>{const s=document.createElement('div');s.className='seat'+(g?' f':'');s.textContent=g||'';if(g){s.draggable=true;s.ondragstart=()=>{drag={n:g,from:[ti,si]}}}s.ondragover=e=>{e.preventDefault();s.classList.add('over')};s.ondragleave=()=>s.classList.remove('over');s.ondrop=e=>{e.preventDefault();s.classList.remove('over');if(!drag)return;const prev=t.seats[si];if(drag.from){S.tables[drag.from[0]].seats[drag.from[1]]=prev||null}t.seats[si]=drag.n;drag=null;render();save()};d.appendChild(s)});tb.appendChild(d)});
+const total=S.names.length,done=st.size,cap=S.tables.reduce((a,t)=>a+t.seats.length,0);$('#stat').textContent=total?`${done} of ${total} guests seated · ${cap} seats available`+(cap<total?' · not enough seats for everyone':''):'';}
+function autofill(){const st=seated();const free=S.names.filter(n=>!st.has(n));S.tables.forEach(t=>t.seats.forEach((g,i)=>{if(!g&&free.length)t.seats[i]=free.shift()}));render();save()}
+function clearSeats(){S.tables.forEach(t=>t.seats.fill(null));render();save()}
+function exportTxt(){let s='';S.tables.forEach(t=>{s+=t.name+'\n';t.seats.forEach((g,i)=>{s+='  '+(i+1)+'. '+(g||'—')+'\n'});s+='\n'});const un=S.names.filter(n=>!seated().has(n));if(un.length)s+='Unseated:\n'+un.map(n=>'  '+n).join('\n')+'\n';const b=new Blob([s],{type:'text/plain'});const l=document.createElement('a');l.href=URL.createObjectURL(b);l.download='seating-chart.txt';l.click()}
+load();if(!S.tables.length)build();else render();
+</script>
+<footer>© SpectrTech · <a href="/">Home</a> · <a href="/tools/">Free tools</a> · <a href="/blog/">Guides</a> · <a href="https://spectrtech.gumroad.com/l/weddingplanner">Wedding Planner on Gumroad</a> · <a href="https://www.pinterest.com/spectrtech/">Pinterest</a> · <a href="mailto:spectrtech@protonmail.com">spectrtech@protonmail.com</a></footer>
+</div></body></html>

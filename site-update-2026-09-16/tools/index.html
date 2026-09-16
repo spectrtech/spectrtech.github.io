@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Wedding Planning Tools — SpectrTech</title>
+<meta name="description" content="Free wedding planning tools that run in your browser: budget calculator, seating chart maker, planning checklist. No sign-up, nothing uploaded.">
+<link rel="canonical" href="https://spectrtech.github.io/tools/">
+<meta property="og:type" content="website"><meta property="og:title" content="Free Wedding Planning Tools"><meta property="og:description" content="Free wedding planning tools that run in your browser: budget calculator, seating chart maker, planning checklist. No sign-up, nothing uploaded."><meta property="og:image" content="https://spectrtech.github.io/pins/01-offline-wedding-planner.jpg"><meta property="og:url" content="https://spectrtech.github.io/tools/">
+<link rel="icon" href="/assets/spectrtech-avatar.jpg">
+
+<style>
+:root{--bg:#f7f5f2;--ink:#161a2e;--muted:#5d6273;--card:#fff;--line:#e6e2dc;--accent:#6f3cff;--accent2:#ff2fa8;--gold:#a8895a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:17px}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+header{padding:22px 0 6px;display:flex;align-items:center;gap:12px;font-size:15px}header img{width:36px;height:36px;border-radius:50%}header a{color:var(--ink);text-decoration:none;font-weight:700}header nav a{font-weight:400;color:var(--muted);margin-left:14px}
+h1{font-size:clamp(28px,4.6vw,42px);line-height:1.15;margin:26px 0 8px}
+.meta{color:var(--muted);font-size:14px;margin-bottom:22px}
+h2{font-size:24px;margin:34px 0 8px;line-height:1.25}h3{font-size:19px;margin:24px 0 6px}
+p{margin:12px 0}ul,ol{padding-left:22px}li{margin:6px 0}
+img.shot{width:100%;border-radius:12px;border:1px solid var(--line);margin:14px 0 4px}
+.cap{color:var(--muted);font-size:13px;margin:0 0 16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:22px 0}
+.cta{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;padding:18px 22px;margin:30px 0}
+.cta b{font-size:18px}.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:600;margin-top:10px}.btn:hover{background:var(--accent)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15px}th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;color:var(--ink)}.card:hover{border-color:var(--accent)}.card b{display:block;margin-bottom:6px;font-size:17px}.card span{color:var(--muted);font-size:14px}
+footer{padding:26px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:36px}footer a{color:var(--muted)}
+.more{margin-top:34px}
+
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:18px 0}
+input[type=text],input[type=number],select,textarea{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:120px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:end}.row>div{flex:1;min-width:140px}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+button,.b{font:inherit;padding:9px 14px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;font-weight:600}button.p{background:var(--ink);color:#fff;border-color:var(--ink)}button.p:hover{background:var(--accent);border-color:var(--accent)}
+.tot{font-size:22px;font-weight:700}.bar{height:10px;background:var(--line);border-radius:6px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent)}
+.small{font-size:13px;color:var(--muted)}
+.tables{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.table{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}.table h4{margin:0 0 8px;font-size:15px}
+.seat{border:1px dashed var(--line);border-radius:7px;padding:5px 8px;margin:4px 0;min-height:30px;font-size:14px;background:#fafaf8}.seat.f{border-style:solid;background:#efe9ff;cursor:grab}.seat.over{border-color:var(--accent);background:#f3efff}
+.pool{display:flex;flex-wrap:wrap;gap:6px;min-height:40px;padding:8px;border:1px dashed var(--line);border-radius:10px}.chip{background:#efe9ff;border-radius:7px;padding:5px 9px;font-size:14px;cursor:grab}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}.chk input{margin-top:5px;width:18px;height:18px}.chk.d span{text-decoration:line-through;color:var(--muted)}
+@media print{header,footer,.nop,.cta,.more{display:none!important}body{background:#fff}.tool{border:0;padding:0}}
+</style>
+</head>
+<body><div class="wrap">
+<header><img src="/assets/spectrtech-avatar.jpg" alt="SpectrTech"><a href="/">SpectrTech</a><nav><a href="/tools/">Free tools</a><a href="/blog/">Guides</a><a href="/wedding-planner/">Wedding Planner</a></nav></header>
+
+<h1>Free wedding planning tools</h1><p class="meta">Each one runs in your browser. No account, no email, nothing uploaded — your data stays on your device.</p>
+<div class="grid">
+<a class="card" href="/tools/wedding-budget-calculator/"><b>Wedding Budget Calculator</b><span>Enter a total, get a typical split by category, replace guesses with real quotes. CSV export.</span></a>
+<a class="card" href="/tools/wedding-seating-chart-maker/"><b>Seating Chart Maker</b><span>Paste your guest list, set up tables, drag names onto seats. Print or download.</span></a>
+<a class="card" href="/tools/wedding-planning-checklist/"><b>Planning Checklist</b><span>12 months to the day, in order. Tick, save, print.</span></a>
+</div>
+<div class="cta"><b>Want all three connected to your guest list, budget, vendors and timeline?</b><br><span style="color:var(--muted)">The full Wedding Planner by SpectrTech is one offline HTML file with 17 connected sections in 9 languages. No account, no subscription, $24.99 one-time.</span><br><a class="btn" href="/wedding-planner/">See the full Wedding Planner</a></div><footer>© SpectrTech · <a href="/">Home</a> · <a href="/tools/">Free tools</a> · <a href="/blog/">Guides</a> · <a href="https://spectrtech.gumroad.com/l/weddingplanner">Wedding Planner on Gumroad</a> · <a href="https://www.pinterest.com/spectrtech/">Pinterest</a> · <a href="mailto:spectrtech@protonmail.com">spectrtech@protonmail.com</a></footer>
+</div></body></html>
