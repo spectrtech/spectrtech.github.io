@@ -1,0 +1,58 @@
+/* SpectrTech site theme — shared overrides, loaded after each page's own <style> */
+:root{--bg:#FFFFFF;--ink:#111111;--muted:#5A5F63;--card:#FFFFFF;--line:#E2E5E7;--accent:#09757A;--accent2:#00A4A6;--gold:#00A4A6;--soft:#F3F5F6;--teal:#00A4A6;--teal-deep:#09757A}
+html{color-scheme:light}
+body{background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--teal-deep)}
+h1,h2,h3,h4{font-weight:800;letter-spacing:-.025em;text-wrap:balance}
+h1{line-height:1.08}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
+
+/* header */
+header{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:18px 0;border-bottom:1px solid var(--line);margin-bottom:8px}
+header img{width:36px;height:36px;border-radius:50%}
+header>a,header .name{color:var(--ink);text-decoration:none;font-weight:800;font-size:18px;letter-spacing:-.02em}
+header nav{margin-left:auto!important;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-size:14px!important}
+header nav a{margin-left:0!important;color:var(--ink)!important;font-weight:600!important;text-decoration:none}
+header nav a:hover{color:var(--teal-deep)!important}
+header nav a.nav-partners{background:var(--ink);color:#fff!important;padding:8px 14px;border-radius:8px}
+header nav a.nav-partners:hover{background:var(--teal-deep);color:#fff!important}
+
+/* buttons */
+.btn{background:var(--ink);color:#fff;border-radius:8px;font-weight:700;padding:14px 24px}
+.btn:hover{background:var(--teal-deep);color:#fff}
+button,.b{border-radius:8px;font-family:inherit}
+button.p{background:var(--ink);border-color:var(--ink)}
+button.p:hover{background:var(--teal-deep);border-color:var(--teal-deep)}
+
+/* cards */
+.card,.f,.box,.tool,.spec div,.table{border-radius:12px;border-color:var(--line)}
+.card,.f{transition:border-color .15s,box-shadow .15s}
+.card:hover,a.f:hover{border-color:var(--teal);box-shadow:0 8px 24px -14px rgba(0,80,80,.35)}
+.card b,.f b{font-weight:800}
+.pill{background:var(--teal);color:#071414;font-weight:700}
+
+/* call-to-action blocks become dark panels */
+.cta{background:#111;color:#fff;border:0;border-radius:16px;padding:24px 26px}
+.cta a:not(.btn){color:var(--teal)}
+.cta .btn{background:var(--teal);color:#071414}
+.cta .btn:hover{background:#fff;color:#111}
+
+/* tool accents (were purple) */
+.bar i{background:var(--teal)}
+.chip,.seat.f{background:#DDF4F4}
+.seat.over{border-color:var(--teal);background:#EAF8F8}
+input[type=text],input[type=number],select,textarea{border-radius:8px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);outline-offset:0;border-color:var(--teal)}
+input[type=checkbox],input[type=range]{accent-color:var(--teal-deep)}
+
+.meta{color:var(--muted)}
+th{letter-spacing:.06em}
+footer{border-top:1px solid var(--line);color:var(--muted)}
+footer a{color:var(--muted)}
+
+@media (max-width:600px){
+  header{gap:10px}
+  header nav{margin-left:0!important;width:100%;gap:8px 16px}
+  .btn{display:flex;justify-content:center;width:100%;margin-block:6px}
+}
+@media print{header nav a.nav-partners{display:none}}
