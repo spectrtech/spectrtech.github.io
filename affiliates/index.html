@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SpectrTech Partners</title>
+<meta name="description" content="Join the SpectrTech affiliate program: earn 50% of every sale of our offline Wedding Planner app. Tracking and payouts handled by Gumroad.">
+<link rel="canonical" href="https://spectrtech.github.io/affiliates/">
+<meta property="og:title" content="SpectrTech Partners — 50% affiliate program">
+<meta property="og:description" content="Recommend the planner. Keep half of every sale. $12.49 per referred sale, paid by Gumroad.">
+<meta property="og:url" content="https://spectrtech.github.io/affiliates/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+html{color-scheme:light}
+img{max-width:100%}
+:root{
+  --ground:#FFFFFF; --paper:#FFFFFF; --ink:#111111; --muted:#5A5F63; --line:#E2E5E7;
+  --accent:#111111; --accent-ink:#FFFFFF; --gold:#00A4A6; --soft:#F3F5F6;
+  --teal:#00A4A6; --teal-deep:#09757A; --hero:#111111; --hero-ink:#FFFFFF; --hero-muted:#C9CED1;
+  --display:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --mono:"Plus Jakarta Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0B0C0D; --paper:#16181A; --ink:#F4F5F6; --muted:#A3AAAE; --line:#2A2E31;
+    --accent:#1BDBDB; --accent-ink:#071414; --gold:#1BDBDB; --soft:#16181A;
+    --teal:#1BDBDB; --teal-deep:#1BDBDB; --hero:#16181A; --hero-ink:#FFFFFF; --hero-muted:#A3AAAE; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B0C0D; --paper:#16181A; --ink:#F4F5F6; --muted:#A3AAAE; --line:#2A2E31;
+  --accent:#1BDBDB; --accent-ink:#071414; --gold:#1BDBDB; --soft:#16181A;
+  --teal:#1BDBDB; --teal-deep:#1BDBDB; --hero:#16181A; --hero-ink:#FFFFFF; --hero-muted:#A3AAAE; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:16px/1.6 var(--body);padding-inline:20px;padding-block:0 48px}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:800;text-wrap:balance;margin:0;line-height:1.08;letter-spacing:-.025em}
+.eyebrow{font:700 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+body{margin:0;-webkit-font-smoothing:antialiased}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:14px 26px;border-radius:8px;font-size:16px;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--hero-ink);border:2px solid var(--hero-ink)}
+.hero .btn:not(.ghost){background:var(--teal);color:#071414}
+nav{display:flex;justify-content:space-between;align-items:center;padding-block:22px;border-bottom:1px solid var(--line)}
+.brand{font:800 18px var(--display);letter-spacing:-.02em}
+.brand b{color:var(--teal-deep);font-weight:800}
+.brand i{font-style:normal;font-weight:500;color:var(--muted);font-size:14px;margin-left:6px}
+nav a.small{font-size:14px;font-weight:700;text-decoration:none;background:var(--accent);color:var(--accent-ink);padding:9px 16px;border-radius:8px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:64px 56px;margin-block:24px 8px;background:var(--hero);color:var(--hero-ink);border-radius:20px}
+.hero .eyebrow{color:var(--teal)}
+.hero h1{font-size:clamp(34px,6.4vw,76px);letter-spacing:-.01em}
+.hero h1 em{color:var(--teal);font-style:normal}
+.hero p.lead{font-size:19px;color:var(--hero-muted);max-width:34em;margin:22px 0 30px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* payout stub */
+.stub{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:26px;position:relative;box-shadow:0 18px 40px -24px rgba(80,20,50,.3)}
+.stub .row{display:flex;justify-content:space-between;font:14px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;padding-block:4px}
+.stub .big{font:800 clamp(48px,12vw,64px)/1 var(--display);letter-spacing:-.03em;color:var(--ink);margin:6px 0 2px;font-variant-numeric:lining-nums tabular-nums}
+.stub hr{border:0;border-top:1px dashed var(--line);margin:22px 0 18px}
+.stub label{display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px}
+.stub label output{font:800 14px var(--mono);color:var(--teal-deep)}
+input[type=range]{width:100%;accent-color:var(--teal-deep)}
+.stub .total{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px}
+.stub .total span{font-size:14px;color:var(--muted)}
+.stub .total strong{font:800 34px var(--display);color:var(--teal-deep);font-variant-numeric:tabular-nums}
+.stub small{display:block;margin-top:10px;font-size:12px;color:var(--muted)}
+
+/* sections */
+section{padding-block:64px}
+section:nth-of-type(even):not(.final){background:var(--soft);margin-inline:-20px;padding-inline:20px;border-radius:20px}
+.sec-head{display:grid;grid-template-columns:260px 1fr;gap:32px;margin-bottom:34px}
+.sec-head h2{font-size:clamp(30px,4vw,44px)}
+.sec-head p{color:var(--muted);margin:0;max-width:36em}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+.step{counter-increment:s;border-top:4px solid var(--teal);padding-top:16px}
+.step::before{content:"Step " counter(s);font:700 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--teal-deep)}
+.step h3{font-size:22px;margin:10px 0 8px}
+.step p{margin:0;color:var(--muted)}
+
+.products{display:grid;gap:18px}
+.prod{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px}
+.prod h3{font-size:28px}
+.prod p{color:var(--muted);margin:8px 0 14px;max-width:40em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.tags li{font:600 12px var(--mono);background:var(--soft);border:1px solid var(--line);padding:5px 10px;border-radius:999px}
+.money{text-align:right;min-width:170px}
+.money .you{font:800 44px/1 var(--display);letter-spacing:-.03em;color:var(--teal-deep);font-variant-numeric:tabular-nums}
+.money .of{font:13px var(--mono);color:var(--muted);margin:6px 0 14px}
+.money a{font-size:14px;font-weight:700}
+.soon{border:1px dashed var(--line);border-radius:14px;padding:18px 26px;color:var(--muted);font-size:15px}
+
+.kit{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper)}
+.kit div{padding:24px;border-right:1px solid var(--line)}
+.kit div:last-child{border-right:0}
+.kit h3{font-family:var(--body);font-weight:800;font-size:17px;margin-bottom:6px}
+.kit p{margin:0;color:var(--muted);font-size:15px}
+
+.who{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px;list-style:none;padding:0;margin:0}
+.who li{padding:14px 0;border-bottom:1px solid var(--line);display:flex;gap:14px}
+.who li b{font-weight:700;min-width:9.5em}
+.who li span{color:var(--muted)}
+
+details{border-bottom:1px solid var(--line);padding-block:18px}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:700 22px/1 var(--mono);color:var(--teal-deep)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin:12px 0 0;max-width:46em}
+
+.final{background:var(--hero);color:var(--hero-ink);border-radius:18px;padding:48px 40px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;border:0;margin-top:56px}
+.final h2{font-size:clamp(32px,4.5vw,52px)}
+.final p{margin:10px 0 0;opacity:.85}
+.final .btn{background:var(--teal);color:#071414}
+.final h2 em{color:var(--teal);font-style:normal}
+footer{margin-top:28px;font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+@media (max-width:860px){
+  .hero,.sec-head,.prod,.final{grid-template-columns:1fr}
+  .hero{padding:40px 28px;gap:36px}
+  .steps{grid-template-columns:1fr}
+  .kit{grid-template-columns:1fr 1fr}
+  .kit div:nth-child(2){border-right:0}
+  .kit div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .who{grid-template-columns:1fr}
+  .money{text-align:left}
+  .final{padding:34px 24px}
+}
+@media (max-width:600px){
+  body{padding-inline:16px;font-size:15px}
+  section:nth-of-type(even):not(.final){margin-inline:-16px;padding-inline:16px;border-radius:0}
+  nav{padding-block:16px}
+  nav a.small{font-size:13px}
+  .brand{font-size:12px}
+  .hero{padding:30px 20px;margin-inline:-4px;border-radius:16px}
+  .hero p.lead{font-size:16px;margin:16px 0 22px}
+  .cta-row{flex-direction:column}
+  .cta-row .btn,.final .btn{justify-content:center;width:100%}
+  .btn{padding:15px 20px}
+  .stub{padding:20px}
+  section{padding-block:40px}
+  .sec-head{gap:10px;margin-bottom:24px}
+  .step h3{font-size:21px}
+  .prod{padding:20px;gap:16px}
+  .prod h3{font-size:24px}
+  .money .you{font-size:38px}
+  summary{font-size:16px}
+  .final{margin-top:40px;border-radius:14px}
+  footer{flex-direction:column}
+}
+@media (max-width:480px){
+  .kit{grid-template-columns:1fr}
+  .kit div{border-right:0;border-bottom:1px solid var(--line)}
+  .kit div:last-child{border-bottom:0}
+  .who li{flex-direction:column;gap:2px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <div class="brand">Spectr<b>Tech</b><i>Partners</i></div>
+    <a class="small" href="https://spectrtech.gumroad.com/affiliates" target="_blank" rel="noopener">Apply on Gumroad</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Affiliate program · 50% commission</div>
+      <h1>Recommend the planner. <em>Keep half</em> of every sale.</h1>
+      <p class="lead">SpectrTech makes offline planning apps: one file, no subscription, works on any device. Share your link with couples who are planning a wedding, and Gumroad pays you half of each order.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://spectrtech.gumroad.com/affiliates" target="_blank" rel="noopener">Become a partner →</a>
+        <a class="btn ghost" href="#products">See the products</a>
+      </div>
+    </div>
+
+    <aside class="stub" aria-label="Earnings estimate">
+      <div class="eyebrow">Your cut per sale</div>
+      <div class="big" id="perSale">$12.49</div>
+      <div class="row"><span>Wedding Planner</span><span>$24.99 × 50%</span></div>
+      <hr>
+      <label for="sales">Sales you refer per month <output id="salesOut">10</output></label>
+      <input type="range" id="sales" min="1" max="100" value="10">
+      <div class="total"><span>Estimated per month</span><strong id="monthly">$124.90</strong></div>
+      <small>Example calculation, not a promise of income.</small>
+    </aside>
+  </header>
+
+  <section id="how">
+    <div class="sec-head">
+      <h2>How it works</h2>
+      <p>Gumroad runs the tracking and the payouts. You only share a link.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Apply</h3><p>Fill in the short Gumroad form and tell us where you'll share the link. It takes about two minutes.</p></div>
+      <div class="step"><h3>Get approved</h3><p>Once approved, you're assigned our products and get your personal affiliate link, plus a free copy to try.</p></div>
+      <div class="step"><h3>Share and earn</h3><p>Every purchase made through your link is tracked by Gumroad and your commission goes out with Gumroad's payouts.</p></div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="sec-head">
+      <h2>Products you can promote</h2>
+      <p>Your commission applies to each product below. New SpectrTech tools are added to the program as they launch.</p>
+    </div>
+    <div class="products" id="productList"></div>
+  </section>
+
+  <section id="kit">
+    <div class="sec-head">
+      <h2>What partners get</h2>
+      <p>Everything you need to post about it without making assets from scratch.</p>
+    </div>
+    <div class="kit">
+      <div><h3>Free full copy</h3><p>Use the app yourself before you recommend it.</p></div>
+      <div><h3>Ready images</h3><p>Screenshots and covers sized for posts, pins and blogs.</p></div>
+      <div><h3>Short clips</h3><p>Vertical demo videos for Reels and TikTok.</p></div>
+      <div><h3>Custom pack</h3><p>Tell us your format and we'll prepare assets for it.</p></div>
+    </div>
+  </section>
+
+  <section id="who">
+    <div class="sec-head">
+      <h2>Who it's for</h2>
+      <p>If your audience is planning a wedding, this app answers a question they already ask you.</p>
+    </div>
+    <ul class="who">
+      <li><b>Wedding bloggers</b><span>Budget guides, checklists, printables</span></li>
+      <li><b>Wedding planners</b><span>A tool clients keep after you hand over</span></li>
+      <li><b>Reels & TikTok creators</b><span>Planning tips, budget breakdowns, seating chaos</span></li>
+      <li><b>Template sellers</b><span>For buyers who don't want Notion or subscriptions</span></li>
+    </ul>
+  </section>
+
+  <section id="faq">
+    <div class="sec-head">
+      <h2>Questions</h2>
+      <p>Anything else, message us on Instagram at <b>@spectr.tech</b>.</p>
+    </div>
+    <details><summary>Do I need a Gumroad account?</summary><p>Yes. Gumroad tracks sales and pays affiliates through their own Gumroad account. Signing up is free.</p></details>
+    <details><summary>How much do I earn?</summary><p>50% of the sale price of each product you refer. For the Wedding Planner at $24.99 that is $12.49 per sale.</p></details>
+    <details><summary>How and when am I paid?</summary><p>Gumroad pays your commission together with your regular Gumroad payouts, using the payout method set in your Gumroad account.</p></details>
+    <details><summary>Can I try the product first?</summary><p>Yes. Approved partners get a free full copy. Ask for it after you apply.</p></details>
+    <details><summary>What makes the planner easy to recommend?</summary><p>It is a single offline file. No account, no subscription, the data stays on the buyer's device, and it works in 9 languages.</p></details>
+  </section>
+
+  <section class="final">
+    <div>
+      <h2>Start earning from your <em>wedding content.</em></h2>
+      <p>Apply on Gumroad. Every application is reviewed personally.</p>
+    </div>
+    <a class="btn" href="https://spectrtech.gumroad.com/affiliates" target="_blank" rel="noopener">Become a partner →</a>
+  </section>
+
+  <footer>
+    <span>SpectrTech Digital Tools</span>
+    <span>Tracking and payouts handled by Gumroad</span>
+  </footer>
+</div>
+
+<script>
+// Add new products here — one object per product.
+const PRODUCTS = [
+  {
+    name: "Wedding Planner",
+    price: 24.99,
+    commission: 0.5,
+    url: "https://spectrtech.gumroad.com/l/weddingplanner",
+    blurb: "Guest list, seating chart with auto-arrange, budget, vendor tracker and timeline in one offline file. Couples buy once and keep it.",
+    tags: ["Offline", "One-time price", "9 languages", "Any device"]
+  }
+];
+
+const fmt = n => "$" + (Math.floor(n * 100) / 100).toFixed(2);
+const list = document.getElementById("productList");
+PRODUCTS.forEach(p => {
+  const el = document.createElement("article");
+  el.className = "prod";
+  el.innerHTML = `
+    <div>
+      <h3>${p.name}</h3>
+      <p>${p.blurb}</p>
+      <ul class="tags">${p.tags.map(t => `<li>${t}</li>`).join("")}</ul>
+    </div>
+    <div class="money">
+      <div class="you">${fmt(p.price * p.commission)}</div>
+      <div class="of">per sale · ${Math.round(p.commission*100)}% of ${fmt(p.price)}</div>
+      <a href="${p.url}" target="_blank" rel="noopener">View product →</a>
+    </div>`;
+  list.appendChild(el);
+});
+if (PRODUCTS.length < 2) {
+  const s = document.createElement("div");
+  s.className = "soon";
+  s.textContent = "More SpectrTech tools are joining the program soon. Approved partners are assigned new products as they launch.";
+  list.appendChild(s);
+}
+
+const per = PRODUCTS[0].price * PRODUCTS[0].commission;
+const r = document.getElementById("sales");
+const upd = () => {
+  document.getElementById("salesOut").textContent = r.value;
+  document.getElementById("monthly").textContent = "$" + (Math.floor(per*100)/100 * r.value).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+};
+r.addEventListener("input", upd); upd();
+</script>
+
+</body>
+</html>
