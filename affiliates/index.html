@@ -50,7 +50,11 @@ body{margin:0;-webkit-font-smoothing:antialiased}
 .btn.ghost{background:transparent;color:var(--hero-ink);border:2px solid var(--hero-ink)}
 .hero .btn:not(.ghost){background:var(--teal);color:#071414}
 nav{display:flex;justify-content:space-between;align-items:center;padding-block:22px;border-bottom:1px solid var(--line)}
-.brand{font:800 18px var(--display);letter-spacing:-.02em}
+.brand{display:flex;align-items:center;gap:10px;font:800 18px var(--display);letter-spacing:-.02em}
+.site-logo{display:inline-flex;align-items:center;line-height:0}
+.site-logo img{height:44px;width:auto;display:block}
+@media (max-width:600px){.site-logo img{height:36px}}
+
 .brand b{color:var(--teal-deep);font-weight:800}
 .brand i{font-style:normal;font-weight:500;color:var(--muted);font-size:14px;margin-left:6px}
 nav a.small{font-size:14px;font-weight:700;text-decoration:none;background:var(--accent);color:var(--accent-ink);padding:9px 16px;border-radius:8px}
@@ -142,7 +146,7 @@ footer{margin-top:28px;font-size:13px;color:var(--muted);display:flex;flex-wrap:
   section:nth-of-type(even):not(.final){margin-inline:-16px;padding-inline:16px;border-radius:0}
   nav{padding-block:16px}
   nav a.small{font-size:13px}
-  .brand{font-size:12px}
+  .brand .site-logo img{height:34px}
   .hero{padding:30px 20px;margin-inline:-4px;border-radius:16px}
   .hero p.lead{font-size:16px;margin:16px 0 22px}
   .cta-row{flex-direction:column}
@@ -172,7 +176,7 @@ footer{margin-top:28px;font-size:13px;color:var(--muted);display:flex;flex-wrap:
 
 <div class="wrap">
   <nav>
-    <div class="brand">Spectr<b>Tech</b><i>Partners</i></div>
+    <div class="brand"><a class="site-logo" href="https://spectrtech.github.io/" aria-label="SpectrTech home"><img src="/assets/spectrtech-logo.png" alt="SpectrTech Digital Tools" width="159" height="44"></a><i>Partners</i></div>
     <a class="small" href="https://spectrtech.gumroad.com/affiliates" target="_blank" rel="noopener">Apply on Gumroad</a>
   </nav>
 
