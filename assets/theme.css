@@ -58,5 +58,5 @@ footer a{color:var(--muted)}
 @media print{header nav a.nav-partners{display:none}}
 
 .site-logo{display:inline-flex;align-items:center;line-height:0}
-.site-logo img{height:64px;width:auto;display:block}
-@media (max-width:600px){.site-logo img{height:50px}}
+.site-logo img{height:44px!important;width:auto!important;display:block;border-radius:0!important}
+@media (max-width:600px){.site-logo img{height:38px!important}}
