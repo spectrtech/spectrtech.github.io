@@ -56,3 +56,7 @@ footer a{color:var(--muted)}
   .btn{display:flex;justify-content:center;width:100%;margin-block:6px}
 }
 @media print{header nav a.nav-partners{display:none}}
+
+.site-logo{display:inline-flex;align-items:center;line-height:0}
+.site-logo img{height:44px;width:auto;display:block}
+@media (max-width:600px){.site-logo img{height:36px}}
