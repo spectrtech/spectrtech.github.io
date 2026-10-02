@@ -123,8 +123,17 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 18px}
 .site-logo{display:inline-flex;align-items:center;line-height:0}
 .site-logo img{height:44px!important;width:auto!important;display:block;border-radius:0!important}
 @media (max-width:600px){.site-logo img{height:38px!important}}
+
+.social{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.social b{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.social a{display:inline-flex;align-items:center;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:transparent}
+.social a:hover{border-color:var(--teal);color:var(--teal-deep)}
+.social a.tg{background:var(--teal);border-color:var(--teal);color:#071414}
+.social a.tg:hover{background:var(--teal-deep);border-color:var(--teal-deep);color:#fff}
+.social + footer{margin-top:16px;border-top:0}
 </style>
 <script data-goatcounter="https://spectrtech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SpectrTech","url":"https://spectrtech.github.io/","logo":"https://spectrtech.github.io/assets/spectrtech-logo.png","sameAs":["https://t.me/spectrtechdev","https://www.instagram.com/spectr.tech/","https://www.threads.com/@spectr.tech","https://www.facebook.com/1265005823369842","https://www.tiktok.com/@spectrtech","https://www.pinterest.com/spectrtech/","https://medium.com/@spectrtech","https://spectrtech.gumroad.com/"]}</script>
 </head>
 <body>
 <div class="wrap">
@@ -208,6 +217,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:8px 18px}
   </div>
 </section>
 
+<nav class="social" aria-label="SpectrTech on social media"><b>Follow us</b><a class="tg" href="https://t.me/spectrtechdev" target="_blank" rel="noopener me">Telegram</a><a href="https://www.instagram.com/spectr.tech/" target="_blank" rel="noopener me">Instagram</a><a href="https://www.threads.com/@spectr.tech" target="_blank" rel="noopener me">Threads</a><a href="https://www.facebook.com/1265005823369842" target="_blank" rel="noopener me">Facebook</a><a href="https://www.tiktok.com/@spectrtech" target="_blank" rel="noopener me">TikTok</a><a href="https://www.pinterest.com/spectrtech/" target="_blank" rel="noopener me">Pinterest</a><a href="https://medium.com/@spectrtech" target="_blank" rel="noopener me">Medium</a></nav>
 <footer>
   <span>© SpectrTech Digital Tools</span>
   <nav><a href="mailto:spectrtech@protonmail.com">spectrtech@protonmail.com</a><a href="https://spectrtech.gumroad.com">Gumroad store</a><a href="https://www.pinterest.com/spectrtech/">Pinterest</a><a href="/affiliates/">Partners</a></nav>
