@@ -60,3 +60,11 @@ footer a{color:var(--muted)}
 .site-logo{display:inline-flex;align-items:center;line-height:0}
 .site-logo img{height:44px!important;width:auto!important;display:block;border-radius:0!important}
 @media (max-width:600px){.site-logo img{height:38px!important}}
+
+.social{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.social b{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.social a{display:inline-flex;align-items:center;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;background:transparent}
+.social a:hover{border-color:var(--teal);color:var(--teal-deep)}
+.social a.tg{background:var(--teal);border-color:var(--teal);color:#071414}
+.social a.tg:hover{background:var(--teal-deep);border-color:var(--teal-deep);color:#fff}
+.social + footer{margin-top:16px;border-top:0}
