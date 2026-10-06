@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moving Planner with QR Box Labels — Offline, One File</title>
+<link rel="canonical" href="https://spectrtech.github.io/moving-planner/">
+<meta name="description" content="Moving organizer with printable QR box labels: scan any box with your phone camera to see the full list. Checklist, budget, room signs, realtor gift copies. Offline, 9 languages, $29 once.">
+<meta property="og:type" content="product">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Moving Planner with QR Box Labels — SpectrTech">
+<meta property="og:description" content="Scan a box, see the whole list. Moving organizer + QR labels in one offline HTML file. $29 one-time.">
+<meta property="og:image" content="https://spectrtech.github.io/moving-planner/img/cover.jpg">
+<meta property="og:url" content="https://spectrtech.github.io/moving-planner/">
+<meta property="product:price:amount" content="29.00">
+<meta property="product:price:currency" content="USD">
+<link rel="icon" href="/assets/spectrtech-avatar.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Moving Planner with QR Box Labels by SpectrTech","image":["https://spectrtech.github.io/moving-planner/img/cover.jpg","https://spectrtech.github.io/moving-planner/img/g1.jpg"],"description":"Moving organizer in one offline HTML file: box inventory, printable QR box labels that contain the full item list, search, 8-week checklist, address-change list, budget, room signs and branded client copies for real estate agents. 9 languages, no account, no subscription.","sku":"SPT-MP-2","brand":{"@type":"Brand","name":"SpectrTech"},"offers":{"@type":"Offer","url":"https://spectrtech.github.io/moving-planner/","priceCurrency":"USD","price":"29.00","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--bg:#FFFFFF;--ink:#111111;--muted:#5A5F63;--line:#E2E5E7;--soft:#F3F5F6;--teal:#00A4A6;--teal-deep:#09757A;--dark:#111111}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+a{color:var(--teal-deep)}
+h1,h2,h3{font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0;text-wrap:balance}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#fff;text-decoration:none;font-weight:700;padding:14px 24px;border-radius:8px;transition:background .15s}
+.btn:hover{background:var(--teal-deep)}
+.btn.teal{background:var(--teal);color:#071414}.btn.teal:hover{background:#fff}
+.btn.ghost{background:transparent;color:#fff;border:2px solid #fff}.btn.ghost:hover{background:#fff;color:#111}
+.btn.line{background:transparent;color:var(--ink);border:2px solid var(--ink)}.btn.line:hover{background:var(--ink);color:#fff}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+header{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding-block:18px;border-bottom:1px solid var(--line)}
+header nav{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:6px 20px;font-size:14px}
+header nav a{color:var(--ink);text-decoration:none;font-weight:600}
+header nav a:hover{color:var(--teal-deep)}
+header nav a.nav-partners{background:var(--ink);color:#fff;padding:8px 14px;border-radius:8px}
+.site-logo{display:inline-flex;align-items:center;line-height:0}
+.site-logo img{height:44px;width:auto;display:block}
+.hero{background:var(--dark);color:#fff;border-radius:20px;margin-block:24px 8px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.hero h1{font-size:clamp(34px,5.2vw,60px);margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p{color:#C9CED1;font-size:18px;margin:0 0 24px}
+.hero .price{font-size:30px;font-weight:800;margin:0 0 18px}.hero .price small{font-size:14px;font-weight:500;color:#C9CED1}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero figure{margin:0}
+.hero figure img{display:block;width:100%;height:auto;border-radius:12px;transform:rotate(-2deg);box-shadow:0 30px 60px -30px rgba(0,164,166,.55)}
+.small{font-size:13px;color:#9aa1a6;margin-top:14px}
+section{padding-block:56px}
+.alt{background:var(--soft);border-radius:20px;padding-inline:40px}
+.head{margin-bottom:26px}.head h2{font-size:clamp(28px,3.6vw,42px)}.head p{color:var(--muted);margin:10px 0 0;max-width:40em}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.step{border-top:4px solid var(--teal);padding-top:16px}.step b{font-size:13px;color:var(--teal-deep);letter-spacing:.08em;text-transform:uppercase}
+.step h3{font-size:20px;margin:6px 0}.step p{margin:0;color:var(--muted);font-size:15px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:48px}
+.row img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block}
+.row h3{font-size:28px;margin-bottom:10px}.row p{color:var(--muted);margin:0 0 10px}
+.row ul{color:var(--muted);padding-left:20px;margin:0}.row li{margin:5px 0}
+.spec{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.spec div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:15px;color:var(--muted)}.spec b{display:block;color:var(--ink);margin-bottom:4px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}.faq summary{font-weight:700;cursor:pointer}.faq p{color:var(--muted);margin:8px 0 0}
+.buy{background:var(--dark);color:#fff;border-radius:20px;padding:44px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.buy h2{font-size:clamp(28px,3.6vw,42px)}.buy p{color:#C9CED1;margin:10px 0 0}
+.social{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.social b{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.social a{display:inline-flex;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:600;color:var(--ink);text-decoration:none}
+.social a.tg{background:var(--teal);border-color:var(--teal);color:#071414}
+footer{margin-top:16px;padding-block:28px 44px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+footer a{color:var(--muted);text-decoration:none}
+@media (max-width:900px){.hero,.row,.buy{grid-template-columns:1fr}.hero{padding:40px 28px}.steps,.spec{grid-template-columns:1fr 1fr}.row.rev img{order:-1}}
+@media (max-width:600px){.wrap{padding-inline:16px}header nav{margin-left:0;width:100%;gap:8px 16px}.hero{padding:28px 20px;border-radius:16px}.hero p{font-size:16px}.ctas{flex-direction:column}.btn{width:100%}section{padding-block:40px}.alt{padding-inline:16px;margin-inline:-16px;border-radius:0}.steps,.spec{grid-template-columns:1fr}.buy{padding:28px 20px}footer{flex-direction:column}.site-logo img{height:38px}}
+</style>
+<link rel="stylesheet" href="/assets/theme.css">
+<script data-goatcounter="https://spectrtech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="site-logo" href="https://spectrtech.github.io/" aria-label="SpectrTech home"><img src="/assets/spectrtech-logo.svg" alt="SpectrTech Digital Tools" width="147" height="44"></a><nav><a href="/blog/">Guides</a><a href="/wedding-planner/">Wedding Planner</a><a href="/moving-planner/">Moving Planner</a><a class="nav-partners" href="/affiliates/">Partners</a></nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Moving Planner · QR box labels</div>
+    <h1>Scan a box. <em>See the whole list.</em></h1>
+    <p>Add your boxes and items, print labels, stick them on. Point any phone camera at a box and the full contents list appears — no app, no account, no internet. The list lives inside the QR code.</p>
+    <div class="price">$29 <small>one-time · no subscription</small></div>
+    <div class="ctas">
+      <a class="btn teal" href="https://spectrtech.gumroad.com/l/moving-planner">Get it on Gumroad</a>
+      <a class="btn ghost" href="/moving-planner/demo/">Try the live demo</a>
+    </div>
+    <div class="small">Secure checkout by Gumroad · instant download · Windows, macOS, Linux, tablets</div>
+  </div>
+  <figure><img src="/moving-planner/img/label-kitchen.jpg" alt="Printed box label: box 1, Kitchen, Fragile, item list and a QR code with the full list" width="900" height="655"></figure>
+</section>
+
+<nav class="social" aria-label="SpectrTech on social media"><b>Follow us</b><a class="tg" href="https://t.me/spectrtechdev" target="_blank" rel="noopener me">Telegram</a><a href="https://www.instagram.com/spectr.tech/" target="_blank" rel="noopener me">Instagram</a><a href="https://www.threads.com/@spectr.tech" target="_blank" rel="noopener me">Threads</a><a href="https://www.facebook.com/1265005823369842" target="_blank" rel="noopener me">Facebook</a><a href="https://www.tiktok.com/@spectrtech" target="_blank" rel="noopener me">TikTok</a><a href="https://www.pinterest.com/spectrtech/" target="_blank" rel="noopener me">Pinterest</a><a href="https://medium.com/@spectrtech" target="_blank" rel="noopener me">Medium</a></nav>
+
+<section>
+  <div class="head"><h2>How it works</h2></div>
+  <div class="steps">
+    <div class="step"><b>Step 1</b><h3>Add boxes</h3><p>Room, items, quantities, photos. Flags for Fragile, This side up, Open first, Heavy. Mark valuables "Hide on label".</p></div>
+    <div class="step"><b>Step 2</b><h3>Print labels</h3><p>A4 or Letter paper, or Avery sticker sheets. Big box number, room colour, flags and a QR code with the full list.</p></div>
+    <div class="step"><b>Step 3</b><h3>Scan &amp; find</h3><p>Any phone camera reads the label. Or search every box from the planner: "chargers" → box 4, Office.</p></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="row">
+    <img src="/moving-planner/img/s1-home.jpg" alt="Moving Planner dashboard: countdown, packed and delivered boxes, room progress and next tasks" loading="lazy">
+    <div><h3>Your whole move on one screen</h3><p>Countdown to moving day, packed and delivered boxes, progress by room, the next tasks and the budget.</p></div>
+  </div>
+  <div class="row rev">
+    <div><h3>Labels that stay up to date</h3><p>Change a box after printing and it moves to <b>Not printed yet</b> — you always know which labels to reprint.</p><ul><li>A4 / Letter: 2 or 4 labels per page</li><li>Avery L7165 (8 per sheet) and 5164 (6 per sheet)</li><li>Room signs for every door of the new home</li><li>Inventory list for the movers, CSV export</li></ul></div>
+    <img src="/moving-planner/img/s5-labels.jpg" alt="Label printing screen with paper choice and a preview of four QR box labels" loading="lazy">
+  </div>
+  <div class="row">
+    <img src="/moving-planner/img/s4-find.jpg" alt="Search across all boxes: typing iron finds box 3 in the bedroom" loading="lazy">
+    <div><h3>Find anything in seconds</h3><p>Search every box, item and note. Box status runs Packing → Packed → Loaded → Delivered → Unpacked, so on the other side you know what's still missing.</p></div>
+  </div>
+  <div class="row rev">
+    <div><h3>8-week checklist, addresses and budget</h3><p>A ready moving checklist from 8 weeks out to moving day, a list of everyone who needs your new address, and a budget with planned vs actual costs in any currency.</p></div>
+    <img src="/moving-planner/img/s6-checklist.jpg" alt="Moving checklist grouped by weeks before moving day" loading="lazy">
+  </div>
+</section>
+
+<section id="realtors">
+  <div class="row">
+    <img src="/moving-planner/img/s8-realtor.jpg" alt="Client gift copies screen: realtor name, agency, phone and a label preview with the realtor's contacts" loading="lazy">
+    <div><div class="eyebrow">For real estate agents</div><h3 style="margin-top:8px">A closing gift clients actually use</h3><p>Choose "I'm a real estate agent" and create a branded copy for each client. Your name, agency, phone and logo appear in the planner and on every box label the family prints. Unlimited client copies; each copy contains none of your own data.</p></div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="head"><h2>Details</h2></div>
+  <div class="spec">
+    <div><b>One HTML file</b>Double-click to open in Chrome, Edge, Safari or Firefox. No install, no account.</div>
+    <div><b>Works offline</b>Data stays in your browser on your device. One-click backup and restore.</div>
+    <div><b>9 languages</b>English, Español, Deutsch, Français, Italiano, Русский, 中文, العربية, हिन्दी</div>
+    <div><b>QR without internet</b>The item list is stored in the code itself; any phone camera shows it as text.</div>
+    <div><b>Download includes</b>Moving-Planner.html, Quick Start (PDF), sample label sheet (PDF), License (PDF)</div>
+    <div><b>Support</b><a href="mailto:spectrtech@protonmail.com">spectrtech@protonmail.com</a></div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="head"><h2>Questions</h2></div>
+  <details><summary>Do I need an app to scan the labels?</summary><p>No. The built-in camera on iPhone and Android reads the QR code and shows the box list as text. It works without mobile data.</p></details>
+  <details><summary>What if I change a box after printing?</summary><p>The box goes back to "Not printed yet". Select that filter and reprint only those labels.</p></details>
+  <details><summary>Can I keep valuables off the label?</summary><p>Yes. Tick "Hide on label" on any item: it stays in your private list and search, but is not printed and not in the QR code.</p></details>
+  <details><summary>Does it work on a phone?</summary><p>The planner works in mobile browsers, but printing labels is easiest from a laptop or desktop.</p></details>
+  <details><summary>Is there a subscription?</summary><p>No. $29 once, and the file is yours.</p></details>
+</section>
+
+<section>
+  <div class="buy">
+    <div><h2>Know what's in every box.</h2><p>Moving Planner with QR box labels — $29 one-time.</p></div>
+    <div class="ctas"><a class="btn teal" href="https://spectrtech.gumroad.com/l/moving-planner">Get it on Gumroad</a><a class="btn ghost" href="/moving-planner/demo/">Live demo</a></div>
+  </div>
+</section>
+
+<footer>
+  <span>© SpectrTech Digital Tools</span>
+  <nav><a href="/">Home</a> · <a href="/blog/">Guides</a> · <a href="/affiliates/">Partners</a> · <a href="https://spectrtech.gumroad.com">Gumroad store</a> · <a href="mailto:spectrtech@protonmail.com">spectrtech@protonmail.com</a></nav>
+</footer>
+</div>
+</body>
+</html>
