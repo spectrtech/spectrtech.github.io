@@ -68,3 +68,6 @@ footer a{color:var(--muted)}
 .social a.tg{background:var(--teal);border-color:var(--teal);color:#071414}
 .social a.tg:hover{background:var(--teal-deep);border-color:var(--teal-deep);color:#fff}
 .social + footer{margin-top:16px;border-top:0}
+
+.social{justify-content:flex-start}
+@media (max-width:600px){.social b{width:100%;margin-bottom:2px}}
