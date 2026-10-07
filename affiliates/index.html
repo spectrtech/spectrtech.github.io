@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>SpectrTech Partners</title>
-<meta name="description" content="Join the SpectrTech affiliate program: earn 50% of every sale of our offline Wedding Planner app. Tracking and payouts handled by Gumroad.">
+<meta name="description" content="Join the SpectrTech affiliate program: earn 50% of every sale of our offline Wedding Planner and Moving Planner apps. Tracking and payouts handled by Gumroad.">
 <link rel="canonical" href="https://spectrtech.github.io/affiliates/">
 <meta property="og:title" content="SpectrTech Partners — 50% affiliate program">
-<meta property="og:description" content="Recommend the planner. Keep half of every sale. $12.49 per referred sale, paid by Gumroad.">
+<meta property="og:description" content="Recommend our planners. Keep half of every sale: $12.49 per Wedding Planner, $14.50 per Moving Planner, paid by Gumroad.">
 <meta property="og:url" content="https://spectrtech.github.io/affiliates/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
@@ -78,6 +78,9 @@ input[type=range]{width:100%;accent-color:var(--teal-deep)}
 .stub .total{display:flex;justify-content:space-between;align-items:baseline;margin-top:16px}
 .stub .total span{font-size:14px;color:var(--muted)}
 .stub .total strong{font:800 34px var(--display);color:var(--teal-deep);font-variant-numeric:tabular-nums}
+.pick{display:flex;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.pick button{font:700 13px var(--body);padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.pick button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .stub small{display:block;margin-top:10px;font-size:12px;color:var(--muted)}
 
 /* sections */
@@ -195,8 +198,8 @@ footer{margin-top:28px;font-size:13px;color:var(--muted);display:flex;flex-wrap:
   <header class="hero">
     <div>
       <div class="eyebrow">Affiliate program · 50% commission</div>
-      <h1>Recommend the planner. <em>Keep half</em> of every sale.</h1>
-      <p class="lead">SpectrTech makes offline planning apps: one file, no subscription, works on any device. Share your link with couples who are planning a wedding, and Gumroad pays you half of each order.</p>
+      <h1>Recommend our planners. <em>Keep half</em> of every sale.</h1>
+      <p class="lead">SpectrTech makes offline planning apps: one file, no subscription, works on any device. Share your link with couples planning a wedding or families getting ready to move, and Gumroad pays you half of each order.</p>
       <div class="cta-row">
         <a class="btn" href="https://spectrtech.gumroad.com/affiliates" target="_blank" rel="noopener">Become a partner →</a>
         <a class="btn ghost" href="#products">See the products</a>
@@ -206,7 +209,8 @@ footer{margin-top:28px;font-size:13px;color:var(--muted);display:flex;flex-wrap:
     <aside class="stub" aria-label="Earnings estimate">
       <div class="eyebrow">Your cut per sale</div>
       <div class="big" id="perSale">$12.49</div>
-      <div class="row"><span>Wedding Planner</span><span>$24.99 × 50%</span></div>
+      <div class="pick" role="group" aria-label="Choose a product"><button type="button" class="on" data-i="0">Wedding Planner</button><button type="button" data-i="1">Moving Planner</button></div>
+      <div class="row"><span id="pName">Wedding Planner</span><span id="pCalc">$24.99 × 50%</span></div>
       <hr>
       <label for="sales">Sales you refer per month <output id="salesOut">10</output></label>
       <input type="range" id="sales" min="1" max="100" value="10">
@@ -254,12 +258,14 @@ footer{margin-top:28px;font-size:13px;color:var(--muted);display:flex;flex-wrap:
   <section id="who">
     <div class="sec-head">
       <h2>Who it's for</h2>
-      <p>If your audience is planning a wedding, this app answers a question they already ask you.</p>
+      <p>If your audience is planning a wedding or a move, these apps answer a question they already ask you.</p>
     </div>
     <ul class="who">
       <li><b>Wedding bloggers</b><span>Budget guides, checklists, printables</span></li>
       <li><b>Wedding planners</b><span>A tool clients keep after you hand over</span></li>
-      <li><b>Reels & TikTok creators</b><span>Planning tips, budget breakdowns, seating chaos</span></li>
+      <li><b>Real estate agents</b><span>A moving planner clients use right after closing</span></li>
+      <li><b>Moving & home creators</b><span>Packing tips, decluttering, new-home organizing</span></li>
+      <li><b>Reels & TikTok creators</b><span>Planning tips, budget breakdowns, packing hacks</span></li>
       <li><b>Template sellers</b><span>For buyers who don't want Notion or subscriptions</span></li>
     </ul>
   </section>
@@ -278,7 +284,7 @@ footer{margin-top:28px;font-size:13px;color:var(--muted);display:flex;flex-wrap:
 
   <section class="final">
     <div>
-      <h2>Start earning from your <em>wedding content.</em></h2>
+      <h2>Start earning from your <em>planning content.</em></h2>
       <p>Apply on Gumroad. Every application is reviewed personally.</p>
     </div>
     <a class="btn" href="https://spectrtech.gumroad.com/affiliates" target="_blank" rel="noopener">Become a partner →</a>
@@ -335,13 +341,23 @@ if (PRODUCTS.length < 2) {
   list.appendChild(s);
 }
 
-const per = PRODUCTS[0].price * PRODUCTS[0].commission;
+let cur = 0;
+const per = () => Math.floor(PRODUCTS[cur].price * PRODUCTS[cur].commission * 100) / 100;
 const r = document.getElementById("sales");
 const upd = () => {
   document.getElementById("salesOut").textContent = r.value;
-  document.getElementById("monthly").textContent = "$" + (Math.floor(per*100)/100 * r.value).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+  document.getElementById("perSale").textContent = fmt(PRODUCTS[cur].price * PRODUCTS[cur].commission);
+  document.getElementById("pName").textContent = PRODUCTS[cur].name;
+  document.getElementById("pCalc").textContent = fmt(PRODUCTS[cur].price) + " × " + Math.round(PRODUCTS[cur].commission*100) + "%";
+  document.getElementById("monthly").textContent = "$" + (per() * r.value).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
 };
-r.addEventListener("input", upd); upd();
+r.addEventListener("input", upd);
+document.querySelectorAll(".pick button").forEach(b => b.addEventListener("click", () => {
+  cur = +b.dataset.i;
+  document.querySelectorAll(".pick button").forEach(x => x.classList.toggle("on", x === b));
+  upd();
+}));
+upd();
 </script>
 
 </body>
