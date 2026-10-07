@@ -185,6 +185,7 @@ footer{margin-top:28px;font-size:13px;color:var(--muted);display:flex;flex-wrap:
 .social{justify-content:flex-start;border-bottom:0;padding-block:0}
 .hero + .social{margin-top:18px;padding-top:0;border-top:0}
 @media (max-width:600px){.social b{width:100%;margin-bottom:2px}}
+.wrap>nav:not(.social){flex-wrap:wrap;gap:12px}.navr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.navr a:not(.small){color:var(--ink);font-weight:600;font-size:14px;text-decoration:none}.navr a:not(.small):hover{color:var(--teal-deep)}@media (max-width:600px){.navr{width:100%;gap:8px 14px}}
 </style>
 <script data-goatcounter="https://spectrtech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -193,7 +194,7 @@ footer{margin-top:28px;font-size:13px;color:var(--muted);display:flex;flex-wrap:
 <div class="wrap">
   <nav>
     <div class="brand"><a class="site-logo" href="https://spectrtech.github.io/" aria-label="SpectrTech home"><img src="/assets/spectrtech-logo.svg" alt="SpectrTech Digital Tools" width="147" height="44"></a><i>Partners</i></div>
-    <a class="small" href="https://spectrtech.gumroad.com/affiliates" target="_blank" rel="noopener">Apply on Gumroad</a>
+    <div class="navr"><a href="/tools/">Free tools</a><a href="/blog/">Guides</a><a href="/wedding-planner/">Wedding Planner</a><a href="/moving-planner/">Moving Planner</a><a class="small" href="https://spectrtech.gumroad.com/affiliates" target="_blank" rel="noopener">Apply on Gumroad</a></div>
   </nav>
 
   <header class="hero">
