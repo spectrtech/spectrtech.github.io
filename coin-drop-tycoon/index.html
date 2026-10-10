@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coin Drop Tycoon — Idle Plinko and Merge Game for Android</title>
+<link rel="canonical" href="https://spectrtech.github.io/coin-drop-tycoon/">
+<meta name="description" content="Drop coins through pegs, merge numbers and multiply your cash. Coin Drop Tycoon is a free idle plinko game for Android by SpectrTech, coming to Google Play.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coin Drop Tycoon — Drop. Merge. Multiply.">
+<meta property="og:description" content="A free idle plinko and merge game for Android by SpectrTech. Join the closed test.">
+<meta property="og:image" content="https://spectrtech.github.io/coin-drop-tycoon/img/og.jpg">
+<meta property="og:url" content="https://spectrtech.github.io/coin-drop-tycoon/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#141841">
+<link rel="icon" href="/coin-drop-tycoon/img/icon-64.png">
+<link rel="apple-touch-icon" href="/coin-drop-tycoon/img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="preload" href="/coin-drop-tycoon/fonts/lilita-one.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoGame","name":"Coin Drop Tycoon","url":"https://spectrtech.github.io/coin-drop-tycoon/","image":"https://spectrtech.github.io/coin-drop-tycoon/img/og.jpg","description":"Idle plinko and merge game for Android: drop coins through pegs, merge numbers and multiply your cash, stage by stage.","genre":["Casual","Idle"],"gamePlatform":"Android","operatingSystem":"Android 7.0 or newer","applicationCategory":"Game","author":{"@type":"Organization","name":"SpectrTech","url":"https://spectrtech.github.io/"}}
+</script>
+<style>
+/* Layout: site header, then a full-bleed night-blue hero with a live mini board, then white sections on the site's 1120px grid */
+@font-face{font-family:"Lilita One";src:url("/coin-drop-tycoon/fonts/lilita-one.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+:root{
+  --ink:#111111; --muted:#5A5F63; --line:#E2E5E7; --soft:#F4F5FA; --teal:#00A4A6; --teal-deep:#09757A;
+  --night:#141841; --board:#283a96; --board-2:#121a5e; --frame:#8f9ae8;
+  --g-gold:#ffc93a; --g-gold-d:#e09000; --orange:#ff8a00; --cash:#35d46a; --gem:#41d3ff; --violet:#8a2be2;
+  --display:"Lilita One","Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;
+  --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+img{max-width:100%;height:auto;display:block}
+header{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding-block:18px;border-bottom:1px solid var(--line)}
+header nav{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:6px 20px;font-size:14px}
+header nav a{color:var(--ink);text-decoration:none;font-weight:600}
+.wrap>header{margin-bottom:0;border-bottom:0}
+
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% 20%,#2b3a9e 0%,transparent 60%),linear-gradient(160deg,#1b2160 0%,var(--night) 70%);color:#fff;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:center;padding-block:56px 64px}
+.kicker{margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g-gold)}
+.kicker.dark{color:var(--teal-deep)}
+.hero h1{font-family:var(--display);font-weight:400;letter-spacing:.005em;font-synthesis:none;font-size:clamp(46px,8vw,92px);line-height:.95;margin:0 0 18px;text-shadow:0 5px 0 #070a26}
+.hero h1 span{display:block;color:var(--g-gold)}
+.lead{font-size:clamp(17px,2vw,20px);line-height:1.55;color:#d9ddff;max-width:34ch;margin:0 0 26px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.g-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 24px;border-radius:14px;font-family:var(--display);font-size:20px;letter-spacing:.01em;text-decoration:none;transition:transform .12s,box-shadow .12s}
+.g-btn-gold{background:linear-gradient(#ffe27a,var(--g-gold-d));color:#4a2a00;box-shadow:0 5px 0 #8a5600}
+.g-btn-gold:hover{transform:translateY(-2px);box-shadow:0 7px 0 #8a5600}
+.g-btn-gold:active{transform:translateY(3px);box-shadow:0 2px 0 #8a5600}
+.g-btn-ghost{color:#fff;border:2px solid #ffffff55}
+.g-btn-ghost:hover{border-color:#fff}
+.g-btn:focus-visible{outline:3px solid var(--gem);outline-offset:3px;border-radius:14px}
+.facts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.facts li{font-size:13px;font-weight:700;color:#c9cff7;background:#ffffff12;border:1px solid #ffffff1f;border-radius:999px;padding:5px 12px}
+.hero-board{position:relative;justify-self:center;width:min(100%,420px);aspect-ratio:300/380;border:7px solid var(--frame);border-radius:30px;background:linear-gradient(var(--board),var(--board-2));box-shadow:0 30px 60px -20px #000c,0 0 0 1px #ffffff14 inset;overflow:hidden}
+.hero-board::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12%;background:linear-gradient(transparent,#7fd8ff2e);pointer-events:none}
+#demo{position:absolute;inset:0;width:100%;height:100%}
+
+/* sections */
+.sec{padding-block:76px 0}
+.sec-head{max-width:640px;margin-bottom:30px}
+.sec h2{font-size:clamp(30px,4.4vw,44px);line-height:1.08;margin:0}
+.sec-head p.sub{color:var(--muted);margin:12px 0 0;font-size:17px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.steps li{position:relative;background:var(--soft);border-radius:20px;padding:26px 24px 24px}
+.num{position:absolute;top:18px;right:20px;font-family:var(--display);font-size:44px;line-height:1;color:#d9dcef}
+.ico{height:64px;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.steps h3,.feat h3,.peg-card h3{font-size:20px;margin:0 0 6px;letter-spacing:-.02em}
+.peg-card h3{margin:6px 0 0}
+.steps p,.feat p,.peg-card p{margin:0;color:var(--muted);font-size:15.5px}
+.coin{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#d9ffe4,#45d977 55%,#138a3e);box-shadow:inset 0 0 0 3px #0d6a2f,0 4px 0 #0c5a28;display:grid;place-items:center;font-family:var(--display);font-size:22px;color:#0b5a28}
+.tile{min-width:44px;height:44px;padding:0 8px;border-radius:12px;background:#eef1ff;box-shadow:0 4px 0 #b9c0ea;display:grid;place-items:center;font-family:var(--display);font-size:20px;color:#1f2459}
+.tile.big{background:#fff1c4;box-shadow:0 4px 0 #e6c45c}
+.arrow{font-family:var(--display);font-size:22px;color:#a3a8c9}
+.peg{width:58px;height:58px;flex:none;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-size:19px;color:#fff;letter-spacing:.01em;text-shadow:0 2px 0 #0006;box-shadow:0 0 0 4px var(--rim),0 8px 14px -6px #0007}
+.p-add{--rim:#ffb02e;background:radial-gradient(circle at 35% 28%,#9fe6ff,#2b86ec 60%,#1d5fd0)}
+.p-mult{--rim:#43c8ff;background:radial-gradient(circle at 35% 28%,#ffe08a,#ff9a14 60%,#f07800)}
+.p-split{--rim:#f3dcff;background:radial-gradient(circle at 35% 28%,#efd2ff,#a14cf0 60%,#7a22d0);font-size:14px}
+.p-gold{--rim:#fff8d0;background:radial-gradient(circle at 35% 28%,#fff6b8,#f2b51c 60%,#d99400);font-size:15px}
+.p-gem{--rim:#e6fbff;background:radial-gradient(circle at 35% 28%,#d6f8ff,#29b2e6 60%,#1488c4)}
+.gemshape{width:20px;height:20px;transform:rotate(45deg);border-radius:4px;background:linear-gradient(135deg,#fff,#bff1ff);box-shadow:0 2px 0 #0b3f73}
+.pegs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.peg-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 18px;display:grid;gap:8px;justify-items:start;align-content:start}
+.sec-head.row{max-width:none;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.shots-nav{display:flex;gap:8px;flex:none}
+.sbtn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);font:400 26px/1 var(--display);cursor:pointer;display:grid;place-items:center;padding:0 0 3px}
+.sbtn:hover:not(:disabled){border-color:var(--teal);color:var(--teal-deep)}
+.sbtn:disabled{opacity:.35;cursor:default}
+.shots{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(200px,24vw,260px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:20px;padding-bottom:14px;margin-inline:-20px;padding-inline:20px;scrollbar-width:thin}
+.shots figure{margin:0;scroll-snap-align:start}
+.shots img{border-radius:18px;box-shadow:0 14px 30px -18px #141841aa;aspect-ratio:9/16;object-fit:cover;width:100%}
+.shots:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:8px}
+.feats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.feat{border-top:3px solid var(--ink);padding-top:16px}
+.feat:nth-child(3n+1){border-color:var(--g-gold)}
+.feat:nth-child(3n+2){border-color:var(--cash)}
+.feat:nth-child(3n){border-color:var(--gem)}
+.test{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:center;background:linear-gradient(150deg,#1d2468,var(--night));color:#fff;border-radius:26px;padding:40px}
+.test h2{color:#fff}
+.test p{color:#d9ddff;margin:12px 0 0;max-width:56ch}
+.test-act{display:grid;gap:10px;justify-items:start}
+.addr{margin:0;font-size:15px;color:#c9cff7;user-select:all;font-weight:600}
+.faq{max-width:760px}
+.faq details{border-bottom:1px solid var(--line);padding:16px 2px}
+.faq summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--display);font-size:24px;line-height:1;color:var(--teal-deep)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:10px 0 0;color:var(--muted);max-width:65ch}
+.wrap .social{margin-top:72px}
+footer{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;padding-block:22px;font-size:14px}
+@media (max-width:900px){
+  .hero-in{grid-template-columns:1fr;gap:34px;padding-block:40px 48px}
+  .hero-board{width:min(100%,360px)}
+  .steps,.feats{grid-template-columns:1fr}
+  .pegs{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .test{grid-template-columns:1fr;padding:28px 22px}
+}
+@media (max-width:600px){
+  .hero-cta .g-btn{flex:1 1 auto}
+  .pegs{grid-template-columns:1fr;gap:10px}
+  .peg-card{grid-template-columns:auto minmax(0,1fr);column-gap:16px;row-gap:2px;align-items:center;align-content:center;padding:16px 18px}
+  .peg-card .peg{grid-row:1 / span 2}
+  .peg-card h3{margin:0;align-self:end}
+  .peg-card p{align-self:start}
+  .shots-nav{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/assets/theme.css">
+<script data-goatcounter="https://spectrtech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="site-logo" href="https://spectrtech.github.io/" aria-label="SpectrTech home"><img src="/assets/spectrtech-logo.svg" alt="SpectrTech Digital Tools" width="147" height="44"></a><nav><a href="/tools/">Free tools</a><a href="/blog/">Guides</a><a href="/wedding-planner/">Wedding Planner</a><a href="/moving-planner/">Moving Planner</a><a class="nav-partners" href="/affiliates/">Affiliates</a></nav>
+</header>
+</div>
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="kicker">Android game · by SpectrTech</p>
+      <h1>Coin Drop <span>Tycoon</span></h1>
+      <p class="lead">Drop coins through a board of pegs. Merge numbers to power the blue peg, stack multipliers and watch a $1 coin grow with every bounce.</p>
+      <div class="hero-cta">
+        <a class="g-btn g-btn-gold" href="#test">Join the closed test</a>
+        <a class="g-btn g-btn-ghost" href="#how">How it works</a>
+      </div>
+      <ul class="facts"><li>Free to play</li><li>Optional rewarded ads</li><li>Android 7.0+</li><li>No account needed</li></ul>
+    </div>
+    <div class="hero-board" role="img" aria-label="Animated board: coins fall through blue, orange, splitter and golden pegs and grow in value"><canvas id="demo"></canvas></div>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="sec" id="how">
+    <div class="sec-head"><p class="kicker dark">How it works</p><h2>Drop. Merge. Multiply.</h2></div>
+    <ol class="steps">
+      <li><span class="num">1</span><div class="ico"><span class="coin">$</span></div><h3>Drop</h3><p>Coins fall from the pipe and bounce through the pegs. Every peg a coin touches changes its value.</p></li>
+      <li><span class="num">2</span><div class="ico"><span class="tile">+3</span><span class="tile">+3</span><span class="arrow">›</span><span class="tile big">+4</span></div><h3>Merge</h3><p>Two equal numbers merge into a bigger one. Put your best number on the blue peg at the top: every coin hits it first.</p></li>
+      <li><span class="num">3</span><div class="ico"><span class="peg p-mult" style="width:50px;height:50px;font-size:17px">x1.5</span></div><h3>Multiply</h3><p>Upgrade orange pegs, unlock new ones and drop coins faster. Reach the stage goal and move on to the next board.</p></li>
+    </ol>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><p class="kicker dark">Meet the pegs</p><h2>Every peg has a job</h2><p class="sub">New stages bring new pegs and bigger boards with up to 11 pegs.</p></div>
+    <div class="pegs">
+      <div class="peg-card"><span class="peg p-add">+7</span><h3>Blue peg</h3><p>Adds your best number to every coin.</p></div>
+      <div class="peg-card"><span class="peg p-mult">x1.5</span><h3>Orange pegs</h3><p>Multiply the coin. Tap one to upgrade it.</p></div>
+      <div class="peg-card"><span class="peg p-split">SPLIT</span><h3>Splitter</h3><p>Turns one coin into two.</p></div>
+      <div class="peg-card"><span class="peg p-gold">GOLD</span><h3>Golden peg</h3><p>25% chance to turn a coin golden. Golden coins pay x10.</p></div>
+      <div class="peg-card"><span class="peg p-gem"><span class="gemshape"></span></span><h3>Gem peg</h3><p>Sometimes drops a gem.</p></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head row"><div><p class="kicker dark">Screenshots</p><h2>A look inside</h2></div><div class="shots-nav"><button class="sbtn" type="button" data-dir="-1" aria-label="Previous screenshots">‹</button><button class="sbtn" type="button" data-dir="1" aria-label="Next screenshots">›</button></div></div>
+    <div class="shots" tabindex="0" aria-label="Screenshots, scroll sideways">
+      <figure><img src="img/shot-1.jpg" width="540" height="960" alt="Coins dropping through pegs on the first board" loading="lazy"></figure>
+      <figure><img src="img/shot-2.jpg" width="540" height="960" alt="Dragging a number onto the blue peg" loading="lazy"></figure>
+      <figure><img src="img/shot-3.jpg" width="540" height="960" alt="A busy board with splitter pegs and golden coins" loading="lazy"></figure>
+      <figure><img src="img/shot-4.jpg" width="540" height="960" alt="Stage complete screen with gold bar rewards" loading="lazy"></figure>
+      <figure><img src="img/shot-5.jpg" width="540" height="960" alt="Gold Shop with permanent upgrades" loading="lazy"></figure>
+      <figure><img src="img/shot-6.jpg" width="540" height="960" alt="Daily quests and achievements" loading="lazy"></figure>
+      <figure><img src="img/shot-7.jpg" width="540" height="960" alt="Coin skins collection" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><p class="kicker dark">Built to come back to</p><h2>Something to aim for every day</h2></div>
+    <div class="feats">
+      <div class="feat"><h3>Stages and fresh boards</h3><p>Each stage has a cash goal. Clear it for gold bars and a new board with new pegs.</p></div>
+      <div class="feat"><h3>Gold Shop</h3><p>Nine permanent upgrades that stay on every stage: income, a bigger tray, auto merge, stronger golden coins.</p></div>
+      <div class="feat"><h3>Daily quests</h3><p>Three new quests every day, plus a 7-day reward calendar.</p></div>
+      <div class="feat"><h3>Achievements and skins</h3><p>Tiered achievements pay out gems. Collect nine coin skins, from Ruby to Rainbow.</p></div>
+      <div class="feat"><h3>Your progress, your phone</h3><p>No sign-up. Progress is saved on your device.</p></div>
+      <div class="feat"><h3>No internet needed</h3><p>The game runs without internet. Ads, when you choose to watch one, need a connection.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="test">
+    <div class="test">
+      <div>
+        <p class="kicker">Closed test</p>
+        <h2>Help launch Coin Drop Tycoon</h2>
+        <p>Before a new game goes public, Google Play asks new developers to run a closed test with at least 12 testers for 14 days. If you have an Android phone and a Gmail address, write to us and we will add you to the test.</p>
+      </div>
+      <div class="test-act">
+        <a class="g-btn g-btn-gold" href="mailto:spectrtech@protonmail.com?subject=Coin%20Drop%20Tycoon%20closed%20test&amp;body=My%20Gmail%20address%20for%20the%20test%3A%20">Email to join</a>
+        <p class="addr">spectrtech@protonmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec faq">
+    <div class="sec-head"><h2>Questions</h2></div>
+    <details><summary>Is it free?</summary><p>Yes. Optional rewarded videos give boosts and bonuses. You never have to watch one to keep playing.</p></details>
+    <details><summary>Which phones does it run on?</summary><p>Android 7.0 and newer. There is no iPhone version yet.</p></details>
+    <details><summary>Does it need internet?</summary><p>Not for the game itself. Ads need a connection.</p></details>
+    <details><summary>What data does it collect?</summary><p>The game keeps your progress on your phone. Google AdMob collects some device data to show ads. Details are in the <a href="privacy/">privacy policy</a>.</p></details>
+    <details><summary>When will it be on Google Play?</summary><p>After the closed test. Join the test to play it first.</p></details>
+  </section>
+
+  <nav class="social" aria-label="SpectrTech on social media"><b>Follow us</b><a class="tg" href="https://t.me/spectrtechdev" target="_blank" rel="noopener me">Telegram</a><a href="https://www.instagram.com/spectr.tech/" target="_blank" rel="noopener me">Instagram</a><a href="https://www.threads.com/@spectr.tech" target="_blank" rel="noopener me">Threads</a><a href="https://www.facebook.com/1265005823369842" target="_blank" rel="noopener me">Facebook</a><a href="https://www.tiktok.com/@spectrtech" target="_blank" rel="noopener me">TikTok</a><a href="https://www.pinterest.com/spectrtech/" target="_blank" rel="noopener me">Pinterest</a><a href="https://medium.com/@spectrtech" target="_blank" rel="noopener me">Medium</a></nav>
+  <footer>
+    <span>© SpectrTech Digital Tools</span>
+    <nav><a href="/">Home</a> · <a href="privacy/">Privacy policy</a> · <a href="mailto:spectrtech@protonmail.com">spectrtech@protonmail.com</a></nav>
+  </footer>
+</main>
+
+<script>
+/* Screenshot carousel arrows */
+(()=>{
+  const s=document.querySelector('.shots'), bs=document.querySelectorAll('.sbtn'); if(!s||bs.length<2) return;
+  const upd=()=>{ bs[0].disabled=s.scrollLeft<=4; bs[1].disabled=s.scrollLeft+s.clientWidth>=s.scrollWidth-4; };
+  bs.forEach(b=>b.addEventListener('click',()=>{ const f=s.querySelector('figure'), w=f?f.getBoundingClientRect().width+16:260;
+    s.scrollBy({left:w*2*(+b.dataset.dir),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); }));
+  s.addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+})();
+/* Live mini board for the hero: coins fall through pegs and grow, like in the game. */
+(()=>{
+  const cv=document.getElementById('demo'); if(!cv) return;
+  const ctx=cv.getContext('2d'), W=300, H=380, PR=17, BR=10;
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const FONT='"Lilita One","Arial Rounded MT Bold",sans-serif';
+  const PEGS=[
+    {x:150,y:92,t:'a',v:7},
+    {x:107,y:152,t:'m',v:1.5},{x:193,y:152,t:'m',v:1.3},
+    {x:64,y:212,t:'m',v:1.4},{x:150,y:212,t:'s'},{x:236,y:212,t:'m',v:1.5},
+    {x:107,y:272,t:'g'},{x:193,y:272,t:'m',v:1.6},
+  ];
+  const COL={a:['#9fe6ff','#1d6fe0','#ffb02e'],m:['#ffd34d','#ff8400','#43c8ff'],s:['#efd2ff','#8a2be2','#f3dcff'],g:['#fff6b8','#e0a000','#fff8d0']};
+  let balls=[], fx=[], flash=new Float32Array(8), acc=0, last=0, scale=1, dpr=1, ox=0, oy=0, running=true;
+  const fmt=n=>n<1000?(n<100?(Math.round(n*10)/10).toString():Math.floor(n).toString()):(n/1000).toFixed(n<10000?2:1).replace(/\.?0+$/,'')+'K';
+  function size(){ const r=cv.getBoundingClientRect(); dpr=Math.min(2,devicePixelRatio||1); cv.width=Math.round(r.width*dpr); cv.height=Math.round(r.height*dpr); scale=Math.min(r.width/W,r.height/H); ox=(r.width-W*scale)/2; oy=(r.height-H*scale)/2; }
+  function spawn(){ balls.push({x:150+(Math.random()-.5)*6,y:22,vx:(Math.random()-.5)*20,vy:40,val:1,hit:0,gold:false,age:0}); }
+  function label(t,x,y,s,fill,stroke){ ctx.font=s+'px '+FONT; ctx.lineJoin='round'; ctx.lineWidth=Math.max(2,s*.22); ctx.strokeStyle=stroke; ctx.strokeText(t,x,y); ctx.fillStyle=fill; ctx.fillText(t,x,y); }
+  function step(dt){
+    acc+=dt; if(acc>0.75){ acc=0; spawn(); }
+    const m=BR+PR;
+    for(const b of balls){
+      for(let s=0;s<3;s++){
+        const h=dt/3; b.age+=h; b.vy=Math.min(620,b.vy+900*h); b.vx*=1-.8*h; b.x+=b.vx*h; b.y+=b.vy*h;
+        if(b.x<BR){b.x=BR;b.vx=Math.abs(b.vx)*.5} if(b.x>W-BR){b.x=W-BR;b.vx=-Math.abs(b.vx)*.5}
+        for(let i=0;i<PEGS.length;i++){
+          const p=PEGS[i], dx=b.x-p.x, dy=b.y-p.y, d2=dx*dx+dy*dy; if(d2>=m*m) continue;
+          const d=Math.sqrt(d2)||1e-3, nx=dx/d, ny=dy/d; b.x=p.x+nx*m; b.y=p.y+ny*m;
+          const vn=b.vx*nx+b.vy*ny; if(vn>=0) continue;
+          b.vx-=1.35*vn*nx; b.vy-=1.35*vn*ny;
+          if(Math.abs(b.vx)<55){ const sd=Math.abs(nx)>.06?Math.sign(nx):(Math.random()<.5?-1:1); b.vx=sd*55*(.85+Math.random()*.35); }
+          const bit=1<<i; if(b.hit&bit) continue; b.hit|=bit; flash[i]=1;
+          if(p.t==='a') b.val+=p.v; else if(p.t==='m') b.val*=p.v;
+          else if(p.t==='s'&&balls.length<24){ const c=Object.assign({},b); c.vx=-(b.vx||60); balls.push(c); fx.push({x:p.x,y:p.y-26,t:'SPLIT!',k:'i',a:0}); }
+          else if(p.t==='g'&&!b.gold&&Math.random()<.3){ b.gold=true; fx.push({x:p.x,y:p.y-26,t:'GOLD!',k:'g',a:0}); }
+          if(p.t==='a'||p.t==='m') fx.push({x:p.x+(Math.random()-.5)*16,y:p.y-26,t:'$'+fmt(b.val*(b.gold?10:1)),k:'h',a:0,r:(Math.random()-.5)*.5});
+        }
+      }
+    }
+    balls=balls.filter(b=>{ if(b.y>H-20||b.age>9){ fx.push({x:Math.max(30,Math.min(W-30,b.x)),y:H-34,t:'+$'+fmt(b.val*(b.gold?10:1)),k:b.gold?'g':'c',a:0}); return false; } return true; });
+    for(const f of fx) f.a+=dt; fx=fx.filter(f=>f.a<1); for(let i=0;i<8;i++) flash[i]=Math.max(0,flash[i]-dt*2.5);
+  }
+  function draw(){
+    ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,cv.width,cv.height);
+    ctx.setTransform(dpr*scale,0,0,dpr*scale,dpr*ox,dpr*oy); ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillStyle='rgba(255,255,255,.04)'; for(let y=0;y<H;y+=38) for(let x=0;x<W;x+=38) if(((x+y)/38)%2===0) ctx.fillRect(x,y,38,38);
+    for(let y=4;y<44;y+=8){ ctx.fillStyle='#2fb8ff'; ctx.fillRect(135,y,30,5); }
+    const g0=ctx.createLinearGradient(0,40,0,64); g0.addColorStop(0,'#ffc23d'); g0.addColorStop(1,'#ff7a00'); ctx.fillStyle=g0; ctx.beginPath(); ctx.roundRect?ctx.roundRect(126,40,48,24,10):ctx.rect(126,40,48,24); ctx.fill();
+    ctx.fillStyle='#dfe5ff'; ctx.beginPath(); for(let x=0;x<W;x+=14){ ctx.moveTo(x,H-2); ctx.lineTo(x+7,H-16); ctx.lineTo(x+14,H-2); } ctx.fill();
+    PEGS.forEach((p,i)=>{ const c=COL[p.t], f=flash[i], r=PR*(1+.12*f);
+      if(f>0){ ctx.beginPath(); ctx.arc(p.x,p.y,r+5+8*(1-f),0,7); ctx.fillStyle='rgba(47,224,112,'+(.35*f)+')'; ctx.fill(); }
+      ctx.beginPath(); ctx.arc(p.x,p.y,r+3,0,7); ctx.fillStyle=c[2]; ctx.fill();
+      const g=ctx.createLinearGradient(0,p.y-r,0,p.y+r); if(f>.55&&(p.t==='a'||p.t==='m')){ g.addColorStop(0,'#8dffb0'); g.addColorStop(1,'#16a447'); } else { g.addColorStop(0,c[0]); g.addColorStop(1,c[1]); }
+      ctx.beginPath(); ctx.arc(p.x,p.y,r,0,7); ctx.fillStyle=g; ctx.fill();
+      const t=p.t==='a'?'+'+p.v:p.t==='m'?'x'+p.v.toFixed(1):p.t==='s'?'SPLIT':'GOLD';
+      label(t,p.x,p.y+1,p.t==='s'||p.t==='g'?10:13,'#fff',p.t==='a'?'#0c3a7a':p.t==='m'?'#7a3400':p.t==='s'?'#3d0a6b':'#7a4a00');
+    });
+    for(const b of balls){
+      const gr=ctx.createRadialGradient(b.x-3,b.y-4,1,b.x,b.y,BR);
+      if(b.gold){ gr.addColorStop(0,'#fffbe0'); gr.addColorStop(.5,'#ffd23a'); gr.addColorStop(1,'#d48a00'); } else { gr.addColorStop(0,'#d9ffe4'); gr.addColorStop(.55,'#45d977'); gr.addColorStop(1,'#138a3e'); }
+      ctx.beginPath(); ctx.arc(b.x,b.y,BR,0,7); ctx.fillStyle=gr; ctx.fill(); ctx.strokeStyle=b.gold?'#a86400':'#0d6a2f'; ctx.lineWidth=1.6; ctx.stroke();
+      ctx.font='11px '+FONT; ctx.fillStyle=b.gold?'#7a4a00':'#0b5a28'; ctx.fillText('$',b.x,b.y+1);
+    }
+    for(const f of fx){ ctx.save(); ctx.globalAlpha=f.a<.7?1:1-(f.a-.7)/.3; ctx.translate(f.x,f.y-f.a*28); ctx.rotate(f.r||0);
+      const st=f.k==='h'?['#ffcf33','#5a3300',14]:f.k==='c'?['#7dffa6','#0b4a22',16]:f.k==='g'?['#ffe066','#7a4200',16]:['#ffffff','#1a1f5c',13];
+      label(f.t,0,0,st[2],st[0],st[1]); ctx.restore(); }
+  }
+  function frame(t){ const dt=Math.min(.05,(t-last)/1000||0); last=t; if(running){ step(dt); draw(); } requestAnimationFrame(frame); }
+  size(); addEventListener('resize',()=>{ size(); draw(); });
+  if(document.fonts&&document.fonts.load) document.fonts.load('16px "Lilita One"').then(draw).catch(()=>{});
+  if(reduced){ for(let i=0;i<40;i++){ step(1/30); } for(let k=0;k<5;k++){ spawn(); for(let i=0;i<14;i++) step(1/30); } draw(); return; }
+  if('IntersectionObserver' in window) new IntersectionObserver(es=>{ running=es[0].isIntersecting; },{threshold:0.05}).observe(cv);
+  requestAnimationFrame(t=>{ last=t; frame(t); });
+})();
+</script>
+</body>
+</html>
