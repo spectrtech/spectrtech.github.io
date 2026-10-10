@@ -337,7 +337,7 @@ var SRC='';
 qrcode.stringToBytes=qrcode.stringToBytesFuncs['UTF-8'];
 var LOGO_DARK=(document.getElementById('tpl-logo-dark')||{}).innerHTML||'';
 var LOGO_LIGHT=(document.getElementById('tpl-logo-light')||{}).innerHTML||'';
-var SITE='https://spectrtech.github.io/';
+var SITE='https://spectrtech.si/';
 
 var VERSION='2.1';
 var LANGS=['en'];
@@ -583,7 +583,7 @@ function doPrint(html,pageCss){demoBuy();}
 window.addEventListener('afterprint',function(){$('#print').innerHTML='';});
 
 /* ---------- shared bits ---------- */
-function logoLink(light,cls){return '<a class="sp-logo '+(cls||'')+'" href="'+SITE+'" target="_blank" rel="noopener" title="SpectrTech — spectrtech.github.io" aria-label="SpectrTech — spectrtech.github.io">'+(light?LOGO_LIGHT:LOGO_DARK)+'</a>';}
+function logoLink(light,cls){return '<a class="sp-logo '+(cls||'')+'" href="'+SITE+'" target="_blank" rel="noopener" title="SpectrTech — spectrtech.si" aria-label="SpectrTech — spectrtech.si">'+(light?LOGO_LIGHT:LOGO_DARK)+'</a>';}
 function iconBtn(act,icon,label,attrs){return '<button type="button" class="icon-btn" data-act="'+act+'" '+(attrs||'')+' aria-label="'+esc(label)+'" title="'+esc(label)+'">'+ic(icon)+'</button>';}
 
 /* ---------- views ---------- */
