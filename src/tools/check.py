@@ -190,7 +190,7 @@ async def browser_checks():
         await pg.fill("#f-email", "test@example.com"); await pg.fill("#f-company", "ACME")
         await pg.click("#lead [type=submit]")
         mail = await pg.evaluate("window.__mail")
-        if not mail or not mail.startswith("mailto:spectrtech@protonmail.com?subject=") or "ACME" not in unquote(mail): fails.append(f"form: mailto not built ({mail})")
+        if not mail or not mail.startswith("mailto:to@spectrtech.si?subject=") or "ACME" not in unquote(mail): fails.append(f"form: mailto not built ({mail})")
         if "ok" not in (await pg.get_attribute(".fstat", "class")): fails.append("form: status message not shown")
         # RTL
         if "ar" in LOCS:
