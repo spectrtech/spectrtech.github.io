@@ -1,0 +1,47 @@
+{
+  "products": [
+    {
+      "id": "wedding",
+      "page": "/wedding-planner/",
+      "buy": "https://spectrtech.gumroad.com/l/weddingplanner",
+      "demo": "/demo/",
+      "price": "$24.99",
+      "category": "LifestyleApplication",
+      "os": "Windows, macOS, Linux (web browser)",
+      "images": [
+        ["/blog/img/dashboard.jpg", 1400, 877],
+        ["/blog/img/seating-close.jpg", 1400, 877],
+        ["/blog/img/budget.jpg", 1400, 877]
+      ]
+    },
+    {
+      "id": "moving",
+      "page": "/moving-planner/",
+      "buy": "https://spectrtech.gumroad.com/l/moving-planner",
+      "demo": "/moving-planner/demo/",
+      "price": "$29",
+      "category": "LifestyleApplication",
+      "os": "Windows, macOS, Linux (web browser)",
+      "images": [
+        ["/moving-planner/img/g1.jpg", 1280, 720],
+        ["/moving-planner/img/s5-labels.jpg", 1400, 875],
+        ["/moving-planner/img/s2-boxes.jpg", 1400, 875]
+      ]
+    },
+    {
+      "id": "coin",
+      "page": "/coin-drop-tycoon/",
+      "join": "mailto:spectrtech@protonmail.com?subject=Coin%20Drop%20Tycoon%20closed%20test",
+      "price": null,
+      "category": "GameApplication",
+      "os": "Android 7.0+",
+      "portrait": true,
+      "images": [
+        ["/coin-drop-tycoon/img/shot-1.jpg", 540, 960],
+        ["/coin-drop-tycoon/img/shot-2.jpg", 540, 960],
+        ["/coin-drop-tycoon/img/shot-3.jpg", 540, 960]
+      ]
+    }
+  ],
+  "portfolio": []
+}

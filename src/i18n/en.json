@@ -1,0 +1,448 @@
+{
+  "meta": {
+    "home": {
+      "title": "SpectrTech — International Digital Studio for Business Websites",
+      "desc": "Business websites, redesign and custom web development. See your new site before you pay, receive the full source code, no subscription."
+    },
+    "websites": {
+      "title": "Website Development Packages — SpectrTech",
+      "desc": "Business website packages from a one-page site to a custom multi-page project. You approve the result first, then pay and receive the site with its source code."
+    },
+    "projects": {
+      "title": "Projects — Apps, Tools and Games by SpectrTech",
+      "desc": "Digital products built by SpectrTech: Wedding Planner, Moving Planner with QR box labels and the Android game Coin Drop Tycoon."
+    },
+    "contact": {
+      "title": "Start a Project — Contact SpectrTech",
+      "desc": "Tell us about your business and the website you need. Request a quote by form, email or Telegram."
+    },
+    "privacy": {
+      "title": "Privacy Notice — SpectrTech",
+      "desc": "What happens to the information you send through the SpectrTech website, and which analytics this site uses."
+    }
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language",
+    "home": "Home",
+    "services": "Services",
+    "websites": "Websites",
+    "process": "Process",
+    "projects": "Projects",
+    "contact": "Contact",
+    "startProject": "Start a project",
+    "seePackages": "See packages",
+    "allProjects": "All projects",
+    "learnMore": "Learn more",
+    "priceOnRequest": "Price on request",
+    "from": "from",
+    "bannerText": "This page is also available in English.",
+    "bannerSwitch": "Switch to English",
+    "bannerDismiss": "Stay on this page"
+  },
+  "home": {
+    "eyebrow": "International digital studio",
+    "title": "Websites that present your business <em>the way it deserves</em>.",
+    "lead": "SpectrTech designs and builds business websites, redesigns and custom web products. Our team has worked in design and development since 2013 and now works internationally under the SpectrTech brand.",
+    "heroNote": "You see the finished site before you pay.",
+    "facts": [
+      {
+        "k": "Since 2013",
+        "v": "design and development experience of our team"
+      },
+      {
+        "k": "Your code",
+        "v": "the complete source code is handed over after payment"
+      },
+      {
+        "k": "No subscription",
+        "v": "no monthly fee for the website we build"
+      },
+      {
+        "k": "Multilingual",
+        "v": "language versions for clients in other countries"
+      }
+    ],
+    "servicesTitle": "What we do",
+    "servicesLead": "Our main focus is websites for businesses. Our own apps and tools show how we build software end to end.",
+    "services": [
+      {
+        "t": "Business websites",
+        "d": "A clear site for your company: what you do, for whom, at what terms and how to reach you. Fast on any phone."
+      },
+      {
+        "t": "Website redesign",
+        "d": "An outdated or slow site rebuilt with a modern structure and design, keeping the content that already works."
+      },
+      {
+        "t": "Custom web development",
+        "d": "Multi-page projects with catalogues, forms, online payments or other features, scoped through a written brief."
+      },
+      {
+        "t": "Digital product development",
+        "d": "From idea to a working product: interface, logic, testing and launch. We build and sell our own products too."
+      },
+      {
+        "t": "Interactive tools and apps",
+        "d": "Calculators, planners, configurators and other tools that work right in the browser."
+      }
+    ],
+    "whyTitle": "Social media is a channel. A website is your home base.",
+    "whyLead": "Instagram and Facebook are great for reaching people. A website does a different job. Compare:",
+    "whySocial": "Social media page",
+    "whySite": "Own website",
+    "whyRows": [
+      {
+        "l": "Ownership",
+        "s": "Lives under the platform's rules, which can change or restrict your page.",
+        "w": "Your domain and your code. You decide what stays and how it looks."
+      },
+      {
+        "l": "Search",
+        "s": "Posts are found mostly inside the app.",
+        "w": "Pages can be indexed by Google and other search engines for the services you offer."
+      },
+      {
+        "l": "Structure",
+        "s": "A feed sorted by date: key information gets buried under new posts.",
+        "w": "Services, terms, contacts and answers arranged the way clients look for them."
+      },
+      {
+        "l": "Access",
+        "s": "Some content asks visitors to sign in or install the app.",
+        "w": "Opens in any browser on any device, no account needed."
+      },
+      {
+        "l": "Languages",
+        "s": "Usually one language per account.",
+        "w": "Separate language versions for clients abroad."
+      },
+      {
+        "l": "First impression",
+        "s": "Looks like every other profile on the platform.",
+        "w": "A professional address for business cards, invoices and email."
+      }
+    ],
+    "whyNote": "A website does not replace your social media and we do not promise specific sales results. It gives your business an independent, professional presence that you control.",
+    "modelEyebrow": "How we work",
+    "modelTitle": "We may build your website before you even ask.",
+    "modelLead": "We look for real businesses that have an active presence but no website of their own. We study what they do and prepare a personal preview. You only pay if you want to keep it.",
+    "modelSteps": [
+      {
+        "t": "We study your business",
+        "d": "Your public profiles, services, products and visual style."
+      },
+      {
+        "t": "We build a personal preview",
+        "d": "Marked as a demo. It is a proposal from SpectrTech, not your official site."
+      },
+      {
+        "t": "You request changes",
+        "d": "We implement agreed changes within the revision rounds of your package."
+      },
+      {
+        "t": "Pay after approval",
+        "d": "Once you approve the final version, you pay and receive the site with its source code."
+      }
+    ],
+    "modelNote": "Unsold previews are deleted after 30 days. Prefer to start from scratch? Send us a brief.",
+    "packagesTitle": "Packages",
+    "packagesLead": "Four clear packages, from a ready one-page site to a fully custom project.",
+    "projectsTitle": "Our own products",
+    "projectsLead": "Besides client work, we build our own apps and games. They show how we design, build and launch software end to end.",
+    "ctaTitle": "Let's talk about your website.",
+    "ctaLead": "Tell us about your business. We reply with questions or a proposal, without obligation."
+  },
+  "websites": {
+    "eyebrow": "Website development",
+    "title": "A website you see finished <em>before you pay</em>.",
+    "lead": "Modern, fast and mobile-first websites for businesses. You approve the result, then pay and receive the site together with its full source code.",
+    "reasonsTitle": "Why a business needs its own website",
+    "reasons": [
+      {
+        "t": "A professional first impression",
+        "d": "Clients often check a company online before they call. A clear site answers their first questions."
+      },
+      {
+        "t": "Found in search",
+        "d": "Search engines can show your pages to people who look for your services, not only to your followers."
+      },
+      {
+        "t": "Independent presence",
+        "d": "Algorithm changes, blocked accounts or a platform losing popularity do not take your website away."
+      },
+      {
+        "t": "Available internationally",
+        "d": "Language versions, correct metadata and fast loading make your business accessible to clients abroad."
+      },
+      {
+        "t": "Everything in one place",
+        "d": "Services, terms, contacts, location and answers to common questions, in a structure you control."
+      },
+      {
+        "t": "A base for all channels",
+        "d": "Your ads, social profiles and business cards can all point to one address that you own."
+      }
+    ],
+    "processTitle": "How a project runs",
+    "process": [
+      {
+        "t": "Research",
+        "d": "We study your business, audience and visual style, or you send us a brief."
+      },
+      {
+        "t": "Preview",
+        "d": "We build the site and share a preview link clearly marked as a demo."
+      },
+      {
+        "t": "Revisions",
+        "d": "You send changes. We implement agreed revisions within the rounds of your package."
+      },
+      {
+        "t": "Approval",
+        "d": "You confirm the final version."
+      },
+      {
+        "t": "Payment",
+        "d": "Payment after final approval, before handover and launch."
+      },
+      {
+        "t": "Handover",
+        "d": "You receive the clean site without demo marks, and its source code."
+      }
+    ],
+    "packagesTitle": "Packages",
+    "packagesLead": "The exact price is confirmed before any paid work starts. Domain and hosting are not included unless agreed separately.",
+    "packages": {
+      "ready": {
+        "name": "READY",
+        "tag": "One-page website",
+        "d": "A finished one-page site based on the preview you approved.",
+        "f": [
+          "One page with anchor navigation",
+          "Adapted for phones, tablets and desktops",
+          "Approved design kept as is",
+          "Two rounds of agreed revisions",
+          "Site and source code handed over"
+        ]
+      },
+      "extend": {
+        "name": "EXTEND",
+        "tag": "More pages",
+        "d": "Everything in READY, with room to grow.",
+        "f": [
+          "Everything in READY",
+          "2–3 extra pages or 3–4 extra sections",
+          "Original design preserved"
+        ]
+      },
+      "redesign": {
+        "name": "REDESIGN",
+        "tag": "Significant design changes",
+        "d": "For when the preview is close, but the look needs to change substantially.",
+        "f": [
+          "Substantial design changes",
+          "Separate structured change process",
+          "Scope limited to the agreed task"
+        ]
+      },
+      "custom": {
+        "name": "CUSTOM",
+        "tag": "Custom website",
+        "d": "A fully individual multi-page website, scoped through a written brief.",
+        "f": [
+          "Several pages",
+          "Catalogue, online payments or extended features if needed",
+          "Exact scope and complexity defined in the brief"
+        ]
+      }
+    },
+    "packagesCta": "Request a quote",
+    "includedTitle": "Included and not included",
+    "included": [
+      "Responsive layout for phones, tablets and desktops",
+      "Basic SEO: titles, descriptions, Open Graph, sitemap",
+      "Accessible, keyboard-friendly markup",
+      "Complete source code after payment"
+    ],
+    "notIncluded": [
+      "Domain and hosting (paid to providers; typical cost depends on the provider)",
+      "Mandatory support or a subscription: there is none",
+      "A content management editor after handover"
+    ],
+    "includedYes": "Included",
+    "includedNo": "Not included",
+    "faqTitle": "Questions",
+    "faq": [
+      {
+        "q": "Do I have to pay before I see the website?",
+        "a": "No. You see the site first. Payment is due after you approve the final version and before we hand over the source code and launch the site on your infrastructure."
+      },
+      {
+        "q": "Is the preview my official website?",
+        "a": "No. A preview is a commercial proposal from SpectrTech, clearly marked as a demo. It becomes your site only after approval and payment."
+      },
+      {
+        "q": "Are domain and hosting included?",
+        "a": "No, unless agreed separately. You pay the providers directly; the actual amount depends on the providers you choose."
+      },
+      {
+        "q": "Is there a subscription or mandatory support?",
+        "a": "No. You pay once for the agreed work. Further changes can be discussed as a separate project."
+      },
+      {
+        "q": "Can I edit the website myself?",
+        "a": "The site is delivered without a built-in editor. You receive clean source code that you or any developer can change."
+      },
+      {
+        "q": "Do you build multilingual websites?",
+        "a": "Yes. Languages are agreed in the brief, and each version gets its own address and metadata."
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "Products we build, launch and <em>sell ourselves</em>.",
+    "lead": "SpectrTech also develops its own digital products. Two are on sale today, and our first game is in closed testing.",
+    "features": "Features",
+    "platforms": "Platforms",
+    "status": "Status",
+    "details": "Details",
+    "buy": "Buy on Gumroad",
+    "demo": "Try the live demo",
+    "seeGame": "See the game",
+    "joinTest": "Join the closed test",
+    "oneTime": "one-time payment",
+    "items": {
+      "wedding": {
+        "name": "Wedding Planner",
+        "kind": "Offline wedding planning application",
+        "d": "A complete wedding planner in one HTML file. Guest list, seating, budget, vendors and invitations are connected, so a change in one place updates the others.",
+        "f": [
+          "17 connected sections: guests, seating plan with Auto Arrange, floor plan, budget, vendors, payments, timeline, invitations",
+          "Import guests from Excel or CSV; export invitations as PDF or ZIP",
+          "9 interface languages, any currency, 5 colour themes",
+          "Works offline, no account, one-click backup"
+        ],
+        "platforms": "Windows, macOS and Linux in Chrome, Edge, Safari or Firefox",
+        "status": "Available"
+      },
+      "moving": {
+        "name": "Moving Planner with QR Box Labels",
+        "kind": "Digital moving organisation tool",
+        "d": "Add boxes and items, print labels and stick them on. Any phone camera reads the QR code and shows the full contents list, with no app and no internet.",
+        "f": [
+          "QR box labels for A4, Letter and Avery sticker sheets",
+          "Box inventory with rooms, photos, flags and search",
+          "8-week moving checklist, address changes and budget",
+          "Realtor mode: a branded copy for every client"
+        ],
+        "platforms": "Windows, macOS, Linux and tablets, in the browser",
+        "status": "Available"
+      },
+      "coin": {
+        "name": "Coin Drop Tycoon",
+        "kind": "Mobile game",
+        "d": "An idle plinko and merge game: drop coins through pegs, merge equal numbers and stack multipliers to grow your cash.",
+        "f": [
+          "Stages with new boards of up to 11 pegs",
+          "Splitter, golden and gem pegs; Gold Shop upgrades",
+          "Daily quests, 7-day rewards, achievements and coin skins",
+          "No sign-up; plays without internet"
+        ],
+        "platforms": "Android 7.0 and newer",
+        "status": "Closed test, coming to Google Play"
+      }
+    },
+    "moreTitle": "More from SpectrTech",
+    "tools": "Free planning tools",
+    "toolsD": "Budget calculator, seating chart maker, checklists and a moving box calculator.",
+    "guides": "Guides",
+    "guidesD": "Practical articles on wedding planning and moving.",
+    "affiliates": "Affiliate program",
+    "affiliatesD": "Recommend our planners and keep 50% of each sale.",
+    "portfolioTitle": "Website portfolio",
+    "portfolioLead": "Client websites delivered by SpectrTech, published with the client's permission."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Tell us about <em>your project</em>.",
+    "lead": "A few details are enough to start. We answer with questions or a proposal, without obligation.",
+    "name": "Your name",
+    "email": "Email",
+    "company": "Company",
+    "country": "Country",
+    "link": "Instagram, Facebook or current website",
+    "linkHint": "Optional. Helps us understand your business.",
+    "interest": "I'm interested in",
+    "interests": [
+      "A business website",
+      "Website redesign",
+      "Custom web development",
+      "A digital product or app",
+      "Something else"
+    ],
+    "message": "Message",
+    "messageHint": "What does your business do and what should the website achieve?",
+    "consent": "I agree that SpectrTech uses these details to reply to my request.",
+    "privacyLink": "Privacy notice",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "success": "Thank you. Your request has been sent.",
+    "mailtoReady": "Your email app should now open with the request filled in. Press Send there to deliver it.",
+    "mailtoFallback": "If nothing opened, write to us directly at",
+    "error": "The request could not be sent. Please write to us by email.",
+    "required": "Please fill in this field.",
+    "invalidEmail": "Please enter a valid email address.",
+    "consentRequired": "Please confirm consent to continue.",
+    "directTitle": "Or write directly",
+    "emailLabel": "Email",
+    "telegramLabel": "Telegram",
+    "azNote": "Business in Azerbaijan? Visit"
+  },
+  "privacy": {
+    "eyebrow": "Privacy",
+    "title": "Privacy notice",
+    "updated": "Last updated: 25 October 2026",
+    "sections": [
+      {
+        "h": "What this notice covers",
+        "p": "This notice explains what happens to the information you send through the SpectrTech website at spectrtech.si."
+      },
+      {
+        "h": "Contact form",
+        "p": "The form collects your name, email and the details you choose to write. We use them only to answer your request and to prepare a proposal. We do not sell or share them for advertising."
+      },
+      {
+        "h": "Email and Telegram",
+        "p": "If you write to us by email or Telegram, your message is processed by those services under their own terms."
+      },
+      {
+        "h": "Analytics",
+        "p": "This site counts visits with GoatCounter, a privacy-friendly analytics service that does not use cookies for tracking."
+      },
+      {
+        "h": "Your choices",
+        "p": "You can ask us to delete the details you sent by writing to spectrtech@protonmail.com."
+      },
+      {
+        "h": "Products",
+        "p": "Our apps have their own privacy information on their pages, for example the Coin Drop Tycoon privacy policy."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "International digital studio. Design and development experience since 2013.",
+    "studio": "Studio",
+    "products": "Products",
+    "follow": "Follow us",
+    "regional": "Regional site",
+    "privacy": "Privacy",
+    "rights": "All rights reserved."
+  },
+  "og": {
+    "tagline": "Business websites · Redesign · Custom development"
+  }
+}

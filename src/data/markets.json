@@ -1,0 +1,15 @@
+{
+  "_comment": "Prices per market. price = null shows 'Price on request'. Never copy Azerbaijan (AZN) prices here: spectrtech.az has its own market. To add a market: add a key, then point a locale to it in config.json.",
+  "intl": {
+    "label": "International",
+    "currency": "EUR",
+    "packages": {
+      "ready":    { "price": null },
+      "extend":   { "price": null },
+      "redesign": { "price": null },
+      "custom":   { "price": null, "from": true }
+    },
+    "channels": ["form", "email", "telegram"],
+    "legal": { "vatIncluded": null }
+  }
+}

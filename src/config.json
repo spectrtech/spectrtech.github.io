@@ -1,0 +1,103 @@
+{
+  "siteUrl": "https://spectrtech.si",
+  "updated": "2026-10-25",
+  "defaultLocale": "en",
+  "locales": {
+    "en": {
+      "name": "English",
+      "dir": "ltr",
+      "path": "",
+      "market": "intl",
+      "intl": "en-GB",
+      "og": "en_GB"
+    },
+    "ru": {
+      "name": "Русский",
+      "dir": "ltr",
+      "path": "ru",
+      "market": "intl",
+      "intl": "ru-RU",
+      "og": "ru_RU"
+    },
+    "de": {
+      "name": "Deutsch",
+      "dir": "ltr",
+      "path": "de",
+      "market": "intl",
+      "intl": "de-DE",
+      "og": "de_DE"
+    },
+    "fr": {
+      "name": "Français",
+      "dir": "ltr",
+      "path": "fr",
+      "market": "intl",
+      "intl": "fr-FR",
+      "og": "fr_FR"
+    },
+    "es": {
+      "name": "Español",
+      "dir": "ltr",
+      "path": "es",
+      "market": "intl",
+      "intl": "es-ES",
+      "og": "es_ES"
+    },
+    "ar": {
+      "name": "العربية",
+      "dir": "rtl",
+      "path": "ar",
+      "market": "intl",
+      "intl": "ar",
+      "og": "ar_AR"
+    }
+  },
+  "pages": [
+    "home",
+    "websites",
+    "projects",
+    "contact",
+    "privacy"
+  ],
+  "contact": {
+    "email": "spectrtech@protonmail.com",
+    "telegram": "https://t.me/spectrtechdev"
+  },
+  "leadEndpoint": "",
+  "social": [
+    [
+      "Telegram",
+      "https://t.me/spectrtechdev"
+    ],
+    [
+      "Instagram",
+      "https://www.instagram.com/spectr.tech/"
+    ],
+    [
+      "Threads",
+      "https://www.threads.com/@spectr.tech"
+    ],
+    [
+      "Facebook",
+      "https://www.facebook.com/1265005823369842"
+    ],
+    [
+      "TikTok",
+      "https://www.tiktok.com/@spectrtech"
+    ],
+    [
+      "Pinterest",
+      "https://www.pinterest.com/spectrtech/"
+    ],
+    [
+      "Medium",
+      "https://medium.com/@spectrtech"
+    ]
+  ],
+  "regionalSites": [
+    {
+      "label": "Azerbaijan",
+      "url": "https://spectrtech.az"
+    }
+  ]
+}
