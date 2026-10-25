@@ -59,9 +59,10 @@ function price(l, id) {
   const mk = markets[cfg.locales[l].market];
   const p = mk.packages[id];
   const T = dict[l].ui;
-  if (!p || p.price == null) return { text: T.priceOnRequest, value: null, currency: mk.currency };
-  const f = new Intl.NumberFormat(cfg.locales[l].intl, { style: "currency", currency: mk.currency, maximumFractionDigits: 0 }).format(p.price);
-  return { text: p.from ? `${T.from} ${f}` : f, value: p.price, currency: mk.currency };
+  if (!p || p.price == null) return { html: esc(T.priceOnRequest), value: null, currency: mk.currency };
+  const fmtLocale = cfg.locales[l].currencyLocale || cfg.locales[l].intl;
+  const f = new Intl.NumberFormat(fmtLocale, { style: "currency", currency: mk.currency, currencyDisplay: "narrowSymbol", maximumFractionDigits: 0 }).format(p.price);
+  return { html: (p.from ? `${esc(T.from)} ` : "") + `<bdi dir="ltr">${esc(f)}</bdi>`, value: p.price, currency: mk.currency };
 }
 
 /* ---------- assets ---------- */
@@ -222,7 +223,7 @@ function packages(l, { teaser = false } = {}) {
   const cards = ids.map((id) => {
     const p = W.packages[id], pr = price(l, id);
     return `<article class="rv${id === "ready" ? " hl" : ""}"><span class="name">${esc(p.name)}</span><span class="tag">${esc(p.tag)}</span>
-${pr.value ? `<div class="price">${esc(pr.text)} <small>${esc(dict[l].projects.oneTime)}</small></div>` : `<div class="price req">${esc(pr.text)}</div>`}<p class="tag">${esc(p.d)}</p>
+${pr.value ? `<div class="price">${pr.html} <small>${esc(dict[l].projects.oneTime)}</small></div>` : `<div class="price req">${pr.html}</div>`}<p class="tag">${esc(p.d)}</p>
 ${teaser ? "" : `<ul>${p.f.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>`}
 <a class="btn ${id === "ready" ? "" : "line"}" href="${url(l, "contact")}?package=${id}">${esc(W.packagesCta)}</a></article>`;
   }).join("");
