@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "home": { "title": "SpectrTech — Estudio digital internacional de sitios web para empresas", "desc": "Sitios web para empresas, rediseño y desarrollo a medida. Vea su sitio terminado antes de pagar y reciba todo el código fuente, sin suscripción." },
+    "websites": { "title": "Paquetes de desarrollo web — SpectrTech", "desc": "Paquetes desde un sitio de una página hasta un proyecto a medida de varias páginas. Primero aprueba el resultado; después paga y recibe el sitio con su código fuente." },
+    "projects": { "title": "Proyectos — apps, herramientas y juegos de SpectrTech", "desc": "Productos digitales propios de SpectrTech: Wedding Planner, Moving Planner con etiquetas QR para cajas y el juego para Android Coin Drop Tycoon." },
+    "contact": { "title": "Iniciar un proyecto — contactar con SpectrTech", "desc": "Cuéntenos sobre su negocio y el sitio web que necesita. Solicite un presupuesto por formulario, correo electrónico o Telegram." },
+    "privacy": { "title": "Aviso de privacidad — SpectrTech", "desc": "Qué ocurre con la información que envía a través del sitio de SpectrTech y qué analítica utiliza este sitio." }
+  },
+  "ui": {
+    "skip": "Ir al contenido",
+    "menu": "Menú",
+    "close": "Cerrar",
+    "language": "Idioma",
+    "home": "Inicio",
+    "services": "Servicios",
+    "websites": "Sitios web",
+    "process": "Proceso",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "startProject": "Iniciar un proyecto",
+    "seePackages": "Ver paquetes",
+    "allProjects": "Todos los proyectos",
+    "learnMore": "Más información",
+    "priceOnRequest": "Precio a consultar",
+    "from": "desde",
+    "bannerText": "Esta página también está disponible en español.",
+    "bannerSwitch": "Cambiar a español",
+    "bannerDismiss": "Quedarme en esta página"
+  },
+  "home": {
+    "eyebrow": "Estudio digital internacional",
+    "title": "Sitios web que presentan su negocio <em>como se merece</em>.",
+    "lead": "SpectrTech diseña y desarrolla sitios web para empresas, rediseños y productos web a medida. Nuestro equipo trabaja en diseño y desarrollo desde 2013 y ahora opera a nivel internacional con la marca SpectrTech.",
+    "heroNote": "Usted ve el sitio terminado antes de pagar.",
+    "facts": [
+      { "k": "Desde 2013", "v": "experiencia de nuestro equipo en diseño y desarrollo" },
+      { "k": "Su código", "v": "el código fuente completo se entrega tras el pago" },
+      { "k": "Sin suscripción", "v": "sin cuotas mensuales por el sitio que creamos" },
+      { "k": "Multilingüe", "v": "versiones en otros idiomas para clientes de otros países" }
+    ],
+    "servicesTitle": "Qué hacemos",
+    "servicesLead": "Nuestro enfoque principal son los sitios web para empresas. Nuestras propias apps y herramientas muestran cómo creamos software de principio a fin.",
+    "services": [
+      { "t": "Sitios web para empresas", "d": "Un sitio claro para su empresa: qué hace, para quién, en qué condiciones y cómo contactarle. Rápido en cualquier teléfono." },
+      { "t": "Rediseño web", "d": "Un sitio anticuado o lento, reconstruido con una estructura y un diseño modernos, conservando el contenido que ya funciona." },
+      { "t": "Desarrollo web a medida", "d": "Proyectos de varias páginas con catálogo, formularios, pagos en línea u otras funciones, definidos en un brief por escrito." },
+      { "t": "Desarrollo de productos digitales", "d": "De la idea a un producto que funciona: interfaz, lógica, pruebas y lanzamiento. También creamos y vendemos productos propios." },
+      { "t": "Herramientas y apps interactivas", "d": "Calculadoras, planificadores, configuradores y otras herramientas que funcionan directamente en el navegador." }
+    ],
+    "whyTitle": "Las redes sociales son un canal. Su sitio web es su base.",
+    "whyLead": "Instagram y Facebook son ideales para llegar a la gente. Un sitio web cumple otra función. Compare:",
+    "whySocial": "Página en redes sociales",
+    "whySite": "Sitio web propio",
+    "whyRows": [
+      { "l": "Propiedad", "s": "Depende de las reglas de la plataforma, que puede cambiar o restringir su página.", "w": "Su dominio y su código. Usted decide qué se queda y cómo se ve." },
+      { "l": "Búsqueda", "s": "Las publicaciones se encuentran sobre todo dentro de la app.", "w": "Las páginas pueden ser indexadas por Google y otros buscadores para los servicios que ofrece." },
+      { "l": "Estructura", "s": "Un feed ordenado por fecha: lo importante queda enterrado bajo nuevas publicaciones.", "w": "Servicios, condiciones, contactos y respuestas, organizados como los buscan sus clientes." },
+      { "l": "Acceso", "s": "Parte del contenido pide iniciar sesión o instalar la app.", "w": "Se abre en cualquier navegador y dispositivo, sin necesidad de cuenta." },
+      { "l": "Idiomas", "s": "Normalmente, un idioma por cuenta.", "w": "Versiones independientes en otros idiomas para clientes del extranjero." },
+      { "l": "Primera impresión", "s": "Se parece a cualquier otro perfil de la plataforma.", "w": "Una dirección profesional para tarjetas de visita, facturas y correos." }
+    ],
+    "whyNote": "Un sitio web no sustituye a sus redes sociales y no prometemos resultados de ventas concretos. Le da a su negocio una presencia profesional e independiente que usted controla.",
+    "modelEyebrow": "Cómo trabajamos",
+    "modelTitle": "Puede que creemos su sitio web antes de que nos lo pida.",
+    "modelLead": "Buscamos empresas reales que tienen presencia activa pero no un sitio web propio. Estudiamos lo que hacen y preparamos una vista previa personalizada. Solo paga si quiere quedársela.",
+    "modelSteps": [
+      { "t": "Estudiamos su negocio", "d": "Sus perfiles públicos, servicios, productos y estilo visual." },
+      { "t": "Creamos una vista previa personalizada", "d": "Marcada como demo. Es una propuesta de SpectrTech, no su sitio oficial." },
+      { "t": "Usted solicita cambios", "d": "Aplicamos los cambios acordados dentro de las rondas de revisión de su paquete." },
+      { "t": "Pago tras la aprobación", "d": "Cuando aprueba la versión final, paga y recibe el sitio con su código fuente." }
+    ],
+    "modelNote": "Las vistas previas no vendidas se eliminan a los 30 días. ¿Prefiere empezar desde cero? Envíenos un brief.",
+    "packagesTitle": "Paquetes",
+    "packagesLead": "Cuatro paquetes claros, desde un sitio de una página listo hasta un proyecto totalmente a medida.",
+    "projectsTitle": "Nuestros propios productos",
+    "projectsLead": "Además del trabajo para clientes, creamos nuestras propias apps y juegos. Muestran cómo diseñamos, desarrollamos y lanzamos software de principio a fin.",
+    "ctaTitle": "Hablemos de su sitio web.",
+    "ctaLead": "Cuéntenos sobre su negocio. Le responderemos con preguntas o una propuesta, sin compromiso."
+  },
+  "websites": {
+    "eyebrow": "Desarrollo web",
+    "title": "Un sitio web que ve terminado <em>antes de pagar</em>.",
+    "lead": "Sitios web modernos y rápidos para empresas, pensados primero para el móvil. Usted aprueba el resultado; después paga y recibe el sitio junto con todo su código fuente.",
+    "reasonsTitle": "Por qué una empresa necesita su propio sitio web",
+    "reasons": [
+      { "t": "Una primera impresión profesional", "d": "Los clientes suelen consultar una empresa en internet antes de llamar. Un sitio claro responde a sus primeras preguntas." },
+      { "t": "Presencia en los buscadores", "d": "Los buscadores pueden mostrar sus páginas a quienes buscan sus servicios, no solo a sus seguidores." },
+      { "t": "Presencia independiente", "d": "Los cambios de algoritmo, una cuenta bloqueada o una plataforma que pierde popularidad no le quitan su sitio web." },
+      { "t": "Accesible internacionalmente", "d": "Versiones en varios idiomas, metadatos correctos y carga rápida hacen que su negocio sea accesible para clientes del extranjero." },
+      { "t": "Todo en un solo lugar", "d": "Servicios, condiciones, contactos, ubicación y respuestas a preguntas frecuentes, en una estructura que usted controla." },
+      { "t": "La base de todos sus canales", "d": "Sus anuncios, perfiles sociales y tarjetas de visita pueden llevar a una sola dirección que le pertenece." }
+    ],
+    "processTitle": "Cómo se desarrolla un proyecto",
+    "process": [
+      { "t": "Investigación", "d": "Estudiamos su negocio, su público y su estilo visual, o usted nos envía un brief." },
+      { "t": "Vista previa", "d": "Creamos el sitio y compartimos un enlace de vista previa claramente marcado como demo." },
+      { "t": "Revisiones", "d": "Usted envía los cambios. Aplicamos las revisiones acordadas dentro de las rondas de su paquete." },
+      { "t": "Aprobación", "d": "Usted confirma la versión final." },
+      { "t": "Pago", "d": "Pago tras la aprobación final, antes de la entrega y el lanzamiento." },
+      { "t": "Entrega", "d": "Recibe el sitio limpio, sin marcas de demo, y su código fuente." }
+    ],
+    "packagesTitle": "Paquetes",
+    "packagesLead": "El precio exacto se confirma antes de iniciar cualquier trabajo de pago. El dominio y el alojamiento no están incluidos, salvo acuerdo por separado.",
+    "packages": {
+      "ready": { "name": "READY", "tag": "Sitio de una página", "d": "Un sitio de una página terminado, basado en la vista previa que usted aprobó.", "f": ["Una página con navegación por anclas", "Adaptado a teléfonos, tabletas y ordenadores", "Se mantiene el diseño aprobado", "Dos rondas de revisiones acordadas", "Entrega del sitio y del código fuente"] },
+      "extend": { "name": "EXTEND", "tag": "Más páginas", "d": "Todo lo de READY, con margen para crecer.", "f": ["Todo lo incluido en READY", "2–3 páginas o 3–4 secciones adicionales", "Se conserva el diseño original"] },
+      "redesign": { "name": "REDESIGN", "tag": "Cambios de diseño importantes", "d": "Para cuando la vista previa se acerca, pero el aspecto debe cambiar de forma importante.", "f": ["Cambios de diseño sustanciales", "Proceso de cambios estructurado e independiente", "Alcance limitado a la tarea acordada"] },
+      "custom": { "name": "CUSTOM", "tag": "Sitio web a medida", "d": "Un sitio web de varias páginas totalmente a medida, definido en un brief por escrito.", "f": ["Varias páginas", "Catálogo, pagos en línea o funciones avanzadas si es necesario", "Alcance y complejidad exactos definidos en el brief"] }
+    },
+    "packagesCta": "Solicitar presupuesto",
+    "includedTitle": "Qué incluye y qué no",
+    "included": ["Diseño adaptable para teléfonos, tabletas y ordenadores", "SEO básico: títulos, descripciones, Open Graph, sitemap", "Código accesible y navegable con teclado", "Código fuente completo tras el pago"],
+    "notIncluded": ["Dominio y alojamiento (se pagan a los proveedores; el coste depende del proveedor)", "Soporte obligatorio o suscripción: no existen", "Un editor de contenidos tras la entrega"],
+    "includedYes": "Incluido",
+    "includedNo": "No incluido",
+    "faqTitle": "Preguntas",
+    "faq": [
+      { "q": "¿Tengo que pagar antes de ver el sitio?", "a": "No. Primero ve el sitio. El pago se realiza después de que apruebe la versión final y antes de que entreguemos el código fuente y publiquemos el sitio en su infraestructura." },
+      { "q": "¿La vista previa es mi sitio oficial?", "a": "No. Una vista previa es una propuesta comercial de SpectrTech, claramente marcada como demo. Solo se convierte en su sitio tras la aprobación y el pago." },
+      { "q": "¿Están incluidos el dominio y el alojamiento?", "a": "No, salvo acuerdo por separado. Usted paga directamente a los proveedores; el importe real depende de los proveedores que elija." },
+      { "q": "¿Hay suscripción o soporte obligatorio?", "a": "No. Paga una sola vez por el trabajo acordado. Otros cambios pueden tratarse como un proyecto aparte." },
+      { "q": "¿Puedo editar el sitio yo mismo?", "a": "El sitio se entrega sin editor integrado. Recibe un código fuente limpio que usted o cualquier desarrollador puede modificar." },
+      { "q": "¿Crean sitios web multilingües?", "a": "Sí. Los idiomas se acuerdan en el brief, y cada versión tiene su propia dirección y sus propios metadatos." }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Proyectos",
+    "title": "Productos que creamos, lanzamos y <em>vendemos nosotros mismos</em>.",
+    "lead": "SpectrTech también desarrolla sus propios productos digitales. Dos ya están a la venta y nuestro primer juego está en prueba cerrada.",
+    "features": "Funciones",
+    "platforms": "Plataformas",
+    "status": "Estado",
+    "details": "Detalles",
+    "buy": "Comprar en Gumroad",
+    "demo": "Probar la demo",
+    "seeGame": "Ver el juego",
+    "joinTest": "Unirse a la prueba cerrada",
+    "oneTime": "pago único",
+    "items": {
+      "wedding": {
+        "name": "Wedding Planner",
+        "kind": "Aplicación sin conexión para organizar bodas",
+        "d": "Un organizador de bodas completo en un solo archivo HTML. Invitados, distribución de mesas, presupuesto, proveedores e invitaciones están conectados: un cambio en un lugar actualiza el resto.",
+        "f": ["17 secciones conectadas: invitados, plano de mesas con Auto Arrange, plano del salón, presupuesto, proveedores, pagos, cronograma, invitaciones", "Importación de invitados desde Excel o CSV; exportación de invitaciones en PDF o ZIP", "9 idiomas de interfaz, cualquier moneda, 5 temas de color", "Funciona sin conexión, sin cuenta, copia de seguridad en un clic"],
+        "platforms": "Windows, macOS y Linux en Chrome, Edge, Safari o Firefox",
+        "status": "Disponible"
+      },
+      "moving": {
+        "name": "Moving Planner with QR Box Labels",
+        "kind": "Herramienta digital para organizar mudanzas",
+        "d": "Añada cajas y objetos, imprima las etiquetas y péguelas. La cámara de cualquier teléfono lee el código QR y muestra la lista completa del contenido, sin app y sin internet.",
+        "f": ["Etiquetas QR para cajas en A4, Letter y hojas de etiquetas Avery", "Inventario de cajas con habitaciones, fotos, marcas y búsqueda", "Lista de tareas de mudanza de 8 semanas, cambios de dirección y presupuesto", "Modo agente inmobiliario: una copia personalizada para cada cliente"],
+        "platforms": "Windows, macOS, Linux y tabletas, en el navegador",
+        "status": "Disponible"
+      },
+      "coin": {
+        "name": "Coin Drop Tycoon",
+        "kind": "Juego para móvil",
+        "d": "Un juego idle de plinko y fusión: deje caer monedas entre clavijas, fusione números iguales y acumule multiplicadores para hacer crecer su dinero.",
+        "f": ["Niveles con tableros nuevos de hasta 11 clavijas", "Clavijas divisoras, doradas y de gemas; mejoras en la Gold Shop", "Misiones diarias, recompensas de 7 días, logros y aspectos de monedas", "Sin registro; se juega sin internet"],
+        "platforms": "Android 7.0 o superior",
+        "status": "Prueba cerrada, pronto en Google Play"
+      }
+    },
+    "moreTitle": "Más de SpectrTech",
+    "tools": "Herramientas de planificación gratuitas",
+    "toolsD": "Calculadora de presupuesto, creador de planos de mesas, listas de tareas y calculadora de cajas para mudanzas.",
+    "guides": "Guías",
+    "guidesD": "Artículos prácticos sobre la organización de bodas y mudanzas (en inglés).",
+    "affiliates": "Programa de afiliados",
+    "affiliatesD": "Recomiende nuestros organizadores y quédese con el 50 % de cada venta.",
+    "portfolioTitle": "Portafolio de sitios web",
+    "portfolioLead": "Sitios web de clientes realizados por SpectrTech, publicados con el permiso del cliente."
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Cuéntenos sobre <em>su proyecto</em>.",
+    "lead": "Bastan unos pocos datos para empezar. Le responderemos con preguntas o una propuesta, sin compromiso.",
+    "name": "Su nombre",
+    "email": "Correo electrónico",
+    "company": "Empresa",
+    "country": "País",
+    "link": "Instagram, Facebook o sitio web actual",
+    "linkHint": "Opcional. Nos ayuda a entender su negocio.",
+    "interest": "Me interesa",
+    "interests": ["Un sitio web para mi empresa", "Un rediseño web", "Desarrollo web a medida", "Un producto digital o una app", "Otra cosa"],
+    "message": "Mensaje",
+    "messageHint": "¿A qué se dedica su negocio y qué debería lograr el sitio web?",
+    "consent": "Acepto que SpectrTech utilice estos datos para responder a mi solicitud.",
+    "privacyLink": "Aviso de privacidad",
+    "submit": "Enviar solicitud",
+    "sending": "Enviando…",
+    "success": "Gracias. Su solicitud se ha enviado.",
+    "mailtoReady": "Su aplicación de correo debería abrirse con la solicitud ya completada. Pulse Enviar para entregarla.",
+    "mailtoFallback": "Si no se abrió nada, escríbanos directamente a",
+    "error": "No se pudo enviar la solicitud. Escríbanos por correo electrónico.",
+    "required": "Rellene este campo.",
+    "invalidEmail": "Introduzca una dirección de correo válida.",
+    "consentRequired": "Confirme su consentimiento para continuar.",
+    "directTitle": "O escríbanos directamente",
+    "emailLabel": "Correo electrónico",
+    "telegramLabel": "Telegram",
+    "azNote": "¿Su empresa está en Azerbaiyán? Visite"
+  },
+  "privacy": {
+    "eyebrow": "Privacidad",
+    "title": "Aviso de privacidad",
+    "updated": "Última actualización: 25 de octubre de 2026",
+    "sections": [
+      { "h": "Qué cubre este aviso", "p": "Este aviso explica qué ocurre con la información que envía a través del sitio web de SpectrTech en spectrtech.si." },
+      { "h": "Formulario de contacto", "p": "El formulario recoge su nombre, su correo electrónico y los datos que decida escribir. Solo los usamos para responder a su solicitud y preparar una propuesta. No los vendemos ni los compartimos con fines publicitarios." },
+      { "h": "Correo electrónico y Telegram", "p": "Si nos escribe por correo electrónico o Telegram, su mensaje es tratado por esos servicios según sus propias condiciones." },
+      { "h": "Analítica", "p": "Este sitio cuenta las visitas con GoatCounter, un servicio de analítica respetuoso con la privacidad que no utiliza cookies de seguimiento." },
+      { "h": "Sus opciones", "p": "Puede pedirnos que eliminemos los datos que nos envió escribiendo a spectrtech@protonmail.com." },
+      { "h": "Productos", "p": "Nuestras aplicaciones tienen su propia información de privacidad en sus páginas, por ejemplo la política de privacidad de Coin Drop Tycoon." }
+    ]
+  },
+  "footer": {
+    "tagline": "Estudio digital internacional. Experiencia en diseño y desarrollo desde 2013.",
+    "studio": "Estudio",
+    "products": "Productos",
+    "follow": "Síganos",
+    "regional": "Sitio regional",
+    "privacy": "Privacidad",
+    "rights": "Todos los derechos reservados."
+  },
+  "og": { "tagline": "Sitios para empresas · Rediseño · Desarrollo a medida" }
+}

@@ -1,0 +1,448 @@
+{
+  "meta": {
+    "home": {
+      "title": "SpectrTech — Internationales Digitalstudio für Firmenwebsites",
+      "desc": "Websites für Unternehmen, Redesign und individuelle Webentwicklung. Sie sehen die fertige Website vor der Zahlung und erhalten den kompletten Quellcode – ohne Abo."
+    },
+    "websites": {
+      "title": "Website-Pakete — SpectrTech",
+      "desc": "Pakete von der One-Page-Website bis zum individuellen Projekt. Erst geben Sie das Ergebnis frei, dann zahlen Sie und erhalten Website und Quellcode."
+    },
+    "projects": {
+      "title": "Projekte — Apps, Tools und Spiele von SpectrTech",
+      "desc": "Eigene Digitalprodukte von SpectrTech: Wedding Planner, Moving Planner mit QR-Kartonetiketten und das Android-Spiel Coin Drop Tycoon."
+    },
+    "contact": {
+      "title": "Projekt starten — Kontakt zu SpectrTech",
+      "desc": "Erzählen Sie uns von Ihrem Unternehmen und der Website, die Sie brauchen. Angebot per Formular, E-Mail oder Telegram anfragen."
+    },
+    "privacy": {
+      "title": "Datenschutzhinweis — SpectrTech",
+      "desc": "Was mit den Informationen geschieht, die Sie über die SpectrTech-Website senden, und welche Analyse diese Website nutzt."
+    }
+  },
+  "ui": {
+    "skip": "Zum Inhalt springen",
+    "menu": "Menü",
+    "close": "Schließen",
+    "language": "Sprache",
+    "home": "Startseite",
+    "services": "Leistungen",
+    "websites": "Websites",
+    "process": "Ablauf",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "startProject": "Projekt starten",
+    "seePackages": "Pakete ansehen",
+    "allProjects": "Alle Projekte",
+    "learnMore": "Mehr erfahren",
+    "priceOnRequest": "Preis auf Anfrage",
+    "from": "ab",
+    "bannerText": "Diese Seite gibt es auch auf Deutsch.",
+    "bannerSwitch": "Auf Deutsch wechseln",
+    "bannerDismiss": "Auf dieser Seite bleiben"
+  },
+  "home": {
+    "eyebrow": "Internationales Digitalstudio",
+    "title": "Websites, die Ihrem Unternehmen <em>wirklich gerecht werden</em>.",
+    "lead": "SpectrTech gestaltet und entwickelt Websites für Unternehmen, Redesigns und individuelle Webprodukte. Unser Team arbeitet seit 2013 in Design und Entwicklung und ist jetzt unter der Marke SpectrTech international tätig.",
+    "heroNote": "Sie sehen die fertige Website, bevor Sie zahlen.",
+    "facts": [
+      {
+        "k": "Seit 2013",
+        "v": "Erfahrung unseres Teams in Design und Entwicklung"
+      },
+      {
+        "k": "Ihr Code",
+        "v": "der komplette Quellcode wird nach der Zahlung übergeben"
+      },
+      {
+        "k": "Kein Abo",
+        "v": "keine monatliche Gebühr für die Website, die wir bauen"
+      },
+      {
+        "k": "Mehrsprachig",
+        "v": "Sprachversionen für Kunden in anderen Ländern"
+      }
+    ],
+    "servicesTitle": "Was wir machen",
+    "servicesLead": "Unser Schwerpunkt sind Websites für Unternehmen. Unsere eigenen Apps und Tools zeigen, wie wir Software von Anfang bis Ende umsetzen.",
+    "services": [
+      {
+        "t": "Websites für Unternehmen",
+        "d": "Eine klare Website für Ihr Unternehmen: was Sie tun, für wen, zu welchen Konditionen und wie man Sie erreicht. Schnell auf jedem Smartphone."
+      },
+      {
+        "t": "Website-Redesign",
+        "d": "Eine veraltete oder langsame Website wird mit moderner Struktur und modernem Design neu aufgebaut – Inhalte, die funktionieren, bleiben erhalten."
+      },
+      {
+        "t": "Individuelle Webentwicklung",
+        "d": "Projekte mit mehreren Seiten, Katalog, Formularen, Online-Zahlungen oder weiteren Funktionen, festgelegt in einem schriftlichen Briefing."
+      },
+      {
+        "t": "Entwicklung digitaler Produkte",
+        "d": "Von der Idee zum funktionierenden Produkt: Oberfläche, Logik, Tests und Launch. Wir entwickeln und verkaufen auch eigene Produkte."
+      },
+      {
+        "t": "Interaktive Tools und Apps",
+        "d": "Rechner, Planer, Konfiguratoren und andere Tools, die direkt im Browser laufen."
+      }
+    ],
+    "whyTitle": "Social Media ist ein Kanal. Ihre Website ist Ihre Basis.",
+    "whyLead": "Instagram und Facebook sind ideal, um Menschen zu erreichen. Eine Website erfüllt eine andere Aufgabe. Im Vergleich:",
+    "whySocial": "Social-Media-Seite",
+    "whySite": "Eigene Website",
+    "whyRows": [
+      {
+        "l": "Eigentum",
+        "s": "Unterliegt den Regeln der Plattform, die Ihre Seite ändern oder einschränken kann.",
+        "w": "Ihre Domain und Ihr Code. Sie entscheiden, was bleibt und wie es aussieht."
+      },
+      {
+        "l": "Suche",
+        "s": "Beiträge werden vor allem innerhalb der App gefunden.",
+        "w": "Seiten können von Google und anderen Suchmaschinen für Ihre Leistungen indexiert werden."
+      },
+      {
+        "l": "Struktur",
+        "s": "Ein Feed nach Datum: Wichtiges verschwindet unter neuen Beiträgen.",
+        "w": "Leistungen, Konditionen, Kontakte und Antworten – so angeordnet, wie Kunden danach suchen."
+      },
+      {
+        "l": "Zugang",
+        "s": "Manche Inhalte verlangen eine Anmeldung oder die App.",
+        "w": "Öffnet sich in jedem Browser auf jedem Gerät, ohne Konto."
+      },
+      {
+        "l": "Sprachen",
+        "s": "Meist eine Sprache pro Konto.",
+        "w": "Eigene Sprachversionen für Kunden im Ausland."
+      },
+      {
+        "l": "Erster Eindruck",
+        "s": "Sieht aus wie jedes andere Profil auf der Plattform.",
+        "w": "Eine professionelle Adresse für Visitenkarten, Rechnungen und E-Mails."
+      }
+    ],
+    "whyNote": "Eine Website ersetzt Ihre Social-Media-Kanäle nicht, und wir versprechen keine bestimmten Umsatzergebnisse. Sie gibt Ihrem Unternehmen einen unabhängigen, professionellen Auftritt, den Sie selbst kontrollieren.",
+    "modelEyebrow": "So arbeiten wir",
+    "modelTitle": "Vielleicht bauen wir Ihre Website, bevor Sie danach fragen.",
+    "modelLead": "Wir suchen echte Unternehmen, die aktiv auftreten, aber keine eigene Website haben. Wir analysieren, was sie tun, und erstellen eine persönliche Vorschau. Sie zahlen nur, wenn Sie sie behalten möchten.",
+    "modelSteps": [
+      {
+        "t": "Wir analysieren Ihr Unternehmen",
+        "d": "Ihre öffentlichen Profile, Leistungen, Produkte und Ihren visuellen Stil."
+      },
+      {
+        "t": "Wir bauen eine persönliche Vorschau",
+        "d": "Als Demo gekennzeichnet. Es ist ein Angebot von SpectrTech, nicht Ihre offizielle Website."
+      },
+      {
+        "t": "Sie wünschen Änderungen",
+        "d": "Wir setzen vereinbarte Änderungen im Rahmen der Korrekturrunden Ihres Pakets um."
+      },
+      {
+        "t": "Zahlung nach Freigabe",
+        "d": "Sobald Sie die finale Version freigeben, zahlen Sie und erhalten die Website mit Quellcode."
+      }
+    ],
+    "modelNote": "Nicht verkaufte Vorschauen werden nach 30 Tagen gelöscht. Lieber bei null anfangen? Senden Sie uns ein Briefing.",
+    "packagesTitle": "Pakete",
+    "packagesLead": "Vier klare Pakete – von der fertigen One-Page-Website bis zum vollständig individuellen Projekt.",
+    "projectsTitle": "Unsere eigenen Produkte",
+    "projectsLead": "Neben Kundenprojekten entwickeln wir eigene Apps und Spiele. Sie zeigen, wie wir Software gestalten, entwickeln und auf den Markt bringen – von Anfang bis Ende.",
+    "ctaTitle": "Sprechen wir über Ihre Website.",
+    "ctaLead": "Erzählen Sie uns von Ihrem Unternehmen. Wir antworten mit Fragen oder einem Angebot – unverbindlich."
+  },
+  "websites": {
+    "eyebrow": "Website-Entwicklung",
+    "title": "Eine Website, die Sie fertig sehen, <em>bevor Sie zahlen</em>.",
+    "lead": "Moderne, schnelle Websites für Unternehmen, konsequent für Smartphones gedacht. Sie geben das Ergebnis frei, zahlen dann und erhalten die Website samt komplettem Quellcode.",
+    "reasonsTitle": "Warum ein Unternehmen eine eigene Website braucht",
+    "reasons": [
+      {
+        "t": "Ein professioneller erster Eindruck",
+        "d": "Kunden prüfen ein Unternehmen oft online, bevor sie anrufen. Eine klare Website beantwortet ihre ersten Fragen."
+      },
+      {
+        "t": "In der Suche gefunden werden",
+        "d": "Suchmaschinen können Ihre Seiten Menschen zeigen, die nach Ihren Leistungen suchen – nicht nur Ihren Followern."
+      },
+      {
+        "t": "Unabhängiger Auftritt",
+        "d": "Algorithmus-Änderungen, gesperrte Konten oder eine Plattform, die an Beliebtheit verliert, nehmen Ihnen Ihre Website nicht weg."
+      },
+      {
+        "t": "International erreichbar",
+        "d": "Sprachversionen, korrekte Metadaten und schnelle Ladezeiten machen Ihr Unternehmen für Kunden im Ausland zugänglich."
+      },
+      {
+        "t": "Alles an einem Ort",
+        "d": "Leistungen, Konditionen, Kontakte, Standort und Antworten auf häufige Fragen – in einer Struktur, die Sie kontrollieren."
+      },
+      {
+        "t": "Basis für alle Kanäle",
+        "d": "Anzeigen, Social-Media-Profile und Visitenkarten können alle auf eine Adresse verweisen, die Ihnen gehört."
+      }
+    ],
+    "processTitle": "So läuft ein Projekt ab",
+    "process": [
+      {
+        "t": "Analyse",
+        "d": "Wir analysieren Ihr Unternehmen, Ihre Zielgruppe und Ihren visuellen Stil – oder Sie senden uns ein Briefing."
+      },
+      {
+        "t": "Vorschau",
+        "d": "Wir bauen die Website und senden einen Vorschau-Link, klar als Demo gekennzeichnet."
+      },
+      {
+        "t": "Korrekturen",
+        "d": "Sie senden Änderungswünsche. Wir setzen vereinbarte Korrekturen im Rahmen der Runden Ihres Pakets um."
+      },
+      {
+        "t": "Freigabe",
+        "d": "Sie bestätigen die finale Version."
+      },
+      {
+        "t": "Zahlung",
+        "d": "Zahlung nach der finalen Freigabe, vor Übergabe und Launch."
+      },
+      {
+        "t": "Übergabe",
+        "d": "Sie erhalten die saubere Website ohne Demo-Kennzeichnung und ihren Quellcode."
+      }
+    ],
+    "packagesTitle": "Pakete",
+    "packagesLead": "Der genaue Preis wird bestätigt, bevor kostenpflichtige Arbeiten beginnen. Domain und Hosting sind nicht enthalten, sofern nicht gesondert vereinbart.",
+    "packages": {
+      "ready": {
+        "name": "READY",
+        "tag": "One-Page-Website",
+        "d": "Eine fertige One-Page-Website auf Basis der Vorschau, die Sie freigegeben haben.",
+        "f": [
+          "Eine Seite mit Anker-Navigation",
+          "Optimiert für Smartphones, Tablets und Desktop",
+          "Freigegebenes Design bleibt unverändert",
+          "Zwei Runden vereinbarter Korrekturen",
+          "Übergabe von Website und Quellcode"
+        ]
+      },
+      "extend": {
+        "name": "EXTEND",
+        "tag": "Mehr Seiten",
+        "d": "Alles aus READY, mit Raum zum Wachsen.",
+        "f": [
+          "Alles aus READY",
+          "2–3 zusätzliche Seiten oder 3–4 zusätzliche Abschnitte",
+          "Ursprüngliches Design bleibt erhalten"
+        ]
+      },
+      "redesign": {
+        "name": "REDESIGN",
+        "tag": "Deutliche Designänderungen",
+        "d": "Wenn die Vorschau passt, das Erscheinungsbild sich aber deutlich ändern soll.",
+        "f": [
+          "Umfangreiche Designänderungen",
+          "Eigener strukturierter Änderungsprozess",
+          "Umfang begrenzt auf die vereinbarte Aufgabe"
+        ]
+      },
+      "custom": {
+        "name": "CUSTOM",
+        "tag": "Individuelle Website",
+        "d": "Eine vollständig individuelle Website mit mehreren Seiten, festgelegt in einem schriftlichen Briefing.",
+        "f": [
+          "Mehrere Seiten",
+          "Katalog, Online-Zahlungen oder erweiterte Funktionen bei Bedarf",
+          "Genauer Umfang und Komplexität im Briefing festgelegt"
+        ]
+      }
+    },
+    "packagesCta": "Angebot anfragen",
+    "includedTitle": "Was enthalten ist – und was nicht",
+    "included": [
+      "Responsives Layout für Smartphones, Tablets und Desktop",
+      "SEO-Grundlagen: Titel, Beschreibungen, Open Graph, Sitemap",
+      "Barrierearmes, tastaturfreundliches Markup",
+      "Kompletter Quellcode nach der Zahlung"
+    ],
+    "notIncluded": [
+      "Domain und Hosting (direkt an die Anbieter zu zahlen; die Kosten hängen vom Anbieter ab)",
+      "Pflicht-Support oder Abo: gibt es nicht",
+      "Ein Content-Editor nach der Übergabe"
+    ],
+    "includedYes": "Enthalten",
+    "includedNo": "Nicht enthalten",
+    "faqTitle": "Fragen",
+    "faq": [
+      {
+        "q": "Muss ich zahlen, bevor ich die Website sehe?",
+        "a": "Nein. Sie sehen die Website zuerst. Die Zahlung erfolgt, nachdem Sie die finale Version freigegeben haben, und bevor wir den Quellcode übergeben und die Website auf Ihrer Infrastruktur starten."
+      },
+      {
+        "q": "Ist die Vorschau meine offizielle Website?",
+        "a": "Nein. Eine Vorschau ist ein klar als Demo gekennzeichnetes Angebot von SpectrTech. Ihre Website wird sie erst nach Freigabe und Zahlung."
+      },
+      {
+        "q": "Sind Domain und Hosting enthalten?",
+        "a": "Nein, sofern nicht gesondert vereinbart. Sie zahlen direkt an die Anbieter; der tatsächliche Betrag hängt von den gewählten Anbietern ab."
+      },
+      {
+        "q": "Gibt es ein Abo oder Pflicht-Support?",
+        "a": "Nein. Sie zahlen einmal für die vereinbarte Leistung. Weitere Änderungen können als separates Projekt besprochen werden."
+      },
+      {
+        "q": "Kann ich die Website selbst bearbeiten?",
+        "a": "Die Website wird ohne eingebauten Editor geliefert. Sie erhalten sauberen Quellcode, den Sie oder jeder Entwickler anpassen können."
+      },
+      {
+        "q": "Erstellen Sie mehrsprachige Websites?",
+        "a": "Ja. Die Sprachen werden im Briefing festgelegt, und jede Version erhält eine eigene Adresse und eigene Metadaten."
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "Projekte",
+    "title": "Produkte, die wir entwickeln, launchen und <em>selbst verkaufen</em>.",
+    "lead": "SpectrTech entwickelt auch eigene Digitalprodukte. Zwei sind bereits im Verkauf, und unser erstes Spiel befindet sich im geschlossenen Test.",
+    "features": "Funktionen",
+    "platforms": "Plattformen",
+    "status": "Status",
+    "details": "Details",
+    "buy": "Bei Gumroad kaufen",
+    "demo": "Live-Demo testen",
+    "seeGame": "Zum Spiel",
+    "joinTest": "Am geschlossenen Test teilnehmen",
+    "oneTime": "Einmalzahlung",
+    "items": {
+      "wedding": {
+        "name": "Wedding Planner",
+        "kind": "Offline-App für die Hochzeitsplanung",
+        "d": "Ein kompletter Hochzeitsplaner in einer HTML-Datei. Gästeliste, Sitzordnung, Budget, Dienstleister und Einladungen sind verknüpft: Eine Änderung an einer Stelle aktualisiert die anderen.",
+        "f": [
+          "17 verknüpfte Bereiche: Gäste, Sitzplan mit Auto Arrange, Raumplan, Budget, Dienstleister, Zahlungen, Zeitplan, Einladungen",
+          "Gäste aus Excel oder CSV importieren; Einladungen als PDF oder ZIP exportieren",
+          "9 Oberflächensprachen, jede Währung, 5 Farbthemen",
+          "Funktioniert offline, ohne Konto, Backup mit einem Klick"
+        ],
+        "platforms": "Windows, macOS und Linux in Chrome, Edge, Safari oder Firefox",
+        "status": "Erhältlich"
+      },
+      "moving": {
+        "name": "Moving Planner with QR Box Labels",
+        "kind": "Digitales Tool zur Umzugsorganisation",
+        "d": "Kartons und Gegenstände erfassen, Etiketten drucken und aufkleben. Jede Handykamera liest den QR-Code und zeigt die komplette Inhaltsliste – ohne App und ohne Internet.",
+        "f": [
+          "QR-Kartonetiketten für A4, Letter und Avery-Etikettenbögen",
+          "Karton-Inventar mit Räumen, Fotos, Markierungen und Suche",
+          "8-Wochen-Umzugscheckliste, Adressänderungen und Budget",
+          "Makler-Modus: eine gebrandete Kopie für jeden Kunden"
+        ],
+        "platforms": "Windows, macOS, Linux und Tablets, im Browser",
+        "status": "Erhältlich"
+      },
+      "coin": {
+        "name": "Coin Drop Tycoon",
+        "kind": "Mobile Game",
+        "d": "Ein Idle-Plinko- und Merge-Spiel: Münzen durch Pins fallen lassen, gleiche Zahlen verschmelzen und Multiplikatoren stapeln, um das Kapital zu vermehren.",
+        "f": [
+          "Level mit neuen Spielfeldern mit bis zu 11 Pins",
+          "Splitter-, Gold- und Edelstein-Pins; Upgrades im Gold Shop",
+          "Tägliche Quests, 7-Tage-Belohnungen, Erfolge und Münz-Skins",
+          "Ohne Registrierung; spielbar ohne Internet"
+        ],
+        "platforms": "Android 7.0 und neuer",
+        "status": "Geschlossener Test, bald bei Google Play"
+      }
+    },
+    "moreTitle": "Mehr von SpectrTech",
+    "tools": "Kostenlose Planungstools",
+    "toolsD": "Budgetrechner, Sitzplan-Ersteller, Checklisten und ein Umzugskarton-Rechner.",
+    "guides": "Ratgeber",
+    "guidesD": "Praktische Artikel zu Hochzeitsplanung und Umzug (auf Englisch).",
+    "affiliates": "Partnerprogramm",
+    "affiliatesD": "Empfehlen Sie unsere Planer und behalten Sie 50 % jedes Verkaufs.",
+    "portfolioTitle": "Website-Portfolio",
+    "portfolioLead": "Von SpectrTech umgesetzte Kunden-Websites, veröffentlicht mit Zustimmung der Kunden."
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Erzählen Sie uns von <em>Ihrem Projekt</em>.",
+    "lead": "Ein paar Angaben genügen für den Anfang. Wir antworten mit Fragen oder einem Angebot – unverbindlich.",
+    "name": "Ihr Name",
+    "email": "E-Mail",
+    "company": "Unternehmen",
+    "country": "Land",
+    "link": "Instagram, Facebook oder aktuelle Website",
+    "linkHint": "Optional. Hilft uns, Ihr Unternehmen zu verstehen.",
+    "interest": "Ich interessiere mich für",
+    "interests": [
+      "Eine Website für mein Unternehmen",
+      "Website-Redesign",
+      "Individuelle Webentwicklung",
+      "Ein digitales Produkt oder eine App",
+      "Etwas anderes"
+    ],
+    "message": "Nachricht",
+    "messageHint": "Was macht Ihr Unternehmen, und was soll die Website leisten?",
+    "consent": "Ich bin einverstanden, dass SpectrTech diese Angaben nutzt, um auf meine Anfrage zu antworten.",
+    "privacyLink": "Datenschutzhinweis",
+    "submit": "Anfrage senden",
+    "sending": "Wird gesendet…",
+    "success": "Vielen Dank. Ihre Anfrage wurde gesendet.",
+    "mailtoReady": "Ihr E-Mail-Programm sollte sich jetzt mit der ausgefüllten Anfrage öffnen. Klicken Sie dort auf Senden.",
+    "mailtoFallback": "Falls sich nichts geöffnet hat, schreiben Sie uns direkt an",
+    "error": "Die Anfrage konnte nicht gesendet werden. Bitte schreiben Sie uns per E-Mail.",
+    "required": "Bitte füllen Sie dieses Feld aus.",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "consentRequired": "Bitte bestätigen Sie Ihr Einverständnis, um fortzufahren.",
+    "directTitle": "Oder direkt schreiben",
+    "emailLabel": "E-Mail",
+    "telegramLabel": "Telegram",
+    "azNote": "Unternehmen in Aserbaidschan? Besuchen Sie"
+  },
+  "privacy": {
+    "eyebrow": "Datenschutz",
+    "title": "Datenschutzhinweis",
+    "updated": "Zuletzt aktualisiert: 25. Oktober 2026",
+    "sections": [
+      {
+        "h": "Worum es geht",
+        "p": "Dieser Hinweis erklärt, was mit den Informationen geschieht, die Sie über die SpectrTech-Website unter spectrtech.si senden."
+      },
+      {
+        "h": "Kontaktformular",
+        "p": "Das Formular erfasst Ihren Namen, Ihre E-Mail-Adresse und die Angaben, die Sie selbst machen. Wir nutzen sie nur, um Ihre Anfrage zu beantworten und ein Angebot vorzubereiten. Wir verkaufen sie nicht und geben sie nicht für Werbung weiter."
+      },
+      {
+        "h": "E-Mail und Telegram",
+        "p": "Wenn Sie uns per E-Mail oder Telegram schreiben, wird Ihre Nachricht von diesen Diensten nach deren eigenen Bedingungen verarbeitet."
+      },
+      {
+        "h": "Analyse",
+        "p": "Diese Website zählt Besuche mit GoatCounter, einem datenschutzfreundlichen Analysedienst, der keine Cookies zum Tracking verwendet."
+      },
+      {
+        "h": "Ihre Wahl",
+        "p": "Sie können uns bitten, die von Ihnen gesendeten Angaben zu löschen, indem Sie an spectrtech@protonmail.com schreiben."
+      },
+      {
+        "h": "Produkte",
+        "p": "Unsere Apps haben eigene Datenschutzinformationen auf ihren Seiten, zum Beispiel die Datenschutzerklärung von Coin Drop Tycoon."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Internationales Digitalstudio. Erfahrung in Design und Entwicklung seit 2013.",
+    "studio": "Studio",
+    "products": "Produkte",
+    "follow": "Folgen Sie uns",
+    "regional": "Regionale Website",
+    "privacy": "Datenschutz",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "og": {
+    "tagline": "Firmenwebsites · Redesign · Individuelle Entwicklung"
+  }
+}
