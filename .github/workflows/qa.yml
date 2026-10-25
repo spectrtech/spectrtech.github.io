@@ -1,0 +1,30 @@
+name: QA
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Build studio pages
+        run: node src/build.mjs
+      - name: Generated files are committed
+        run: git diff --exit-code || (echo "Run 'node src/build.mjs' locally and commit the result." && exit 1)
+      - name: QA (links, JS, overflow, images, SEO, hreflang, forms, i18n)
+        run: python src/tools/check.py

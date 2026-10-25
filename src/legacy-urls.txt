@@ -1,0 +1,23 @@
+# Legacy pages kept in sitemap.xml (path only). Generated studio pages are added by build.mjs.
+/wedding-planner/
+/blog/
+/blog/wedding-planning-checklist-by-month/
+/blog/wedding-seating-chart-guide/
+/blog/wedding-budget-estimated-quoted-final/
+/tools/
+/tools/wedding-budget-calculator/
+/tools/wedding-seating-chart-maker/
+/tools/wedding-planning-checklist/
+/blog/wedding-day-timeline-template/
+/blog/wedding-guest-list-rsvp-tracking/
+/blog/wedding-photography-shot-list/
+/blog/wedding-planner-app-vs-excel-vs-notion/
+/affiliates/
+/moving-planner/
+/blog/how-to-label-moving-boxes/
+/blog/moving-checklist-8-weeks/
+/blog/realtor-closing-gift-moving-planner/
+/tools/moving-checklist/
+/tools/moving-box-calculator/
+/coin-drop-tycoon/
+/coin-drop-tycoon/privacy/
