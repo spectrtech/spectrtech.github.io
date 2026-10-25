@@ -168,8 +168,7 @@ ${data.products.map((p) => `<li><a href="${p.page}" hreflang="en">${esc(P.items[
 <li><a href="/tools/" hreflang="en">${esc(P.tools)}</a></li>
 <li><a href="/blog/" hreflang="en">${esc(P.guides)}</a></li>
 <li><a href="/affiliates/" hreflang="en">${esc(P.affiliates)}</a></li></ul></nav>
-<div><h2>${esc(F.regional)}</h2><ul>
-${cfg.regionalSites.map((r) => `<li><a href="${r.url}" hreflang="az">${esc(r.url.replace("https://", ""))}</a></li>`).join("")}
+<div><h2>${esc(T.contact)}</h2><ul>
 <li><a href="mailto:${cfg.contact.email}"><bdi dir="ltr">${cfg.contact.email}</bdi></a></li>
 <li><a href="${url(l, "privacy")}">${esc(F.privacy)}</a></li></ul></div>
 </div>
