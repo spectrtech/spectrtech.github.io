@@ -169,7 +169,7 @@ ${data.products.map((p) => `<li><a href="${p.page}" hreflang="en">${esc(P.items[
 <li><a href="/affiliates/" hreflang="en">${esc(P.affiliates)}</a></li></ul></nav>
 <div><h2>${esc(F.regional)}</h2><ul>
 ${cfg.regionalSites.map((r) => `<li><a href="${r.url}" hreflang="az">${esc(r.url.replace("https://", ""))}</a></li>`).join("")}
-<li><a href="mailto:${cfg.contact.email}">${cfg.contact.email}</a></li>
+<li><a href="mailto:${cfg.contact.email}"><bdi dir="ltr">${cfg.contact.email}</bdi></a></li>
 <li><a href="${url(l, "privacy")}">${esc(F.privacy)}</a></li></ul></div>
 </div>
 <div class="bottom"><span>© ${y} SpectrTech. ${esc(F.rights)}</span>
@@ -259,7 +259,7 @@ ${H.whyRows.map((r) => `<tr><th scope="row">${esc(r.l)}</th><td class="social">$
 <section class="dark" id="process"><div class="glow"></div><div class="wrap" style="position:relative"><div class="shead"><span class="eyebrow">${esc(H.modelEyebrow)}</span><h2>${esc(H.modelTitle)}</h2><p class="lead">${esc(H.modelLead)}</p></div>
 <ol class="steps">${H.modelSteps.map((s) => `<li class="rv"><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p></li>`).join("")}</ol>
 <p class="note">${esc(H.modelNote)} <a href="${url(l, "contact")}" style="color:#fff">${esc(T.startProject)}</a></p></div></section>
-<section id="packages"><div class="wrap"><div class="shead split"><h2>${esc(H.packagesTitle)}</h2><p class="lead">${esc(H.packagesLead)} <a href="${url(l, "websites", "#packages")}">${esc(T.learnMore)}</a></p></div>${packages(l, { teaser: true })}</div></section>
+<section id="packages"><div class="wrap"><div class="shead split"><h2>${esc(H.packagesTitle)}</h2><p class="lead">${esc(H.packagesLead)} <a href="${url(l, "websites", "#packages")}">${esc(T.seePackages)}</a></p></div>${packages(l, { teaser: true })}</div></section>
 <section id="projects" style="padding-top:0"><div class="wrap"><div class="shead split"><h2>${esc(H.projectsTitle)}</h2><p class="lead">${esc(H.projectsLead)}</p></div>${productCards(l)}
 <p style="margin-top:24px"><a class="btn line" href="${url(l, "projects")}">${esc(T.allProjects)} ${arrow}</a></p></div></section>
 ${band(l, H.ctaTitle, H.ctaLead)}` + footer(l);
@@ -368,8 +368,8 @@ ${fld("message", C.message, { type: "textarea", req: true, full: true, hint: C.m
     hero(l, { eyebrow: C.eyebrow, title: C.title, lead: C.lead, ctas: false }, { compact: true }) +
     `<section><div class="wrap"><div class="cgrid">${form}
 <aside class="side"><h2 style="font-size:20px;margin-bottom:4px">${esc(C.directTitle)}</h2>
-<a class="ch" href="mailto:${cfg.contact.email}"><small>${esc(C.emailLabel)}</small>${cfg.contact.email}</a>
-<a class="ch" href="${cfg.contact.telegram}" target="_blank" rel="noopener">${esc(C.telegramLabel)}<small>@spectrtechdev</small></a>
+<a class="ch" href="mailto:${cfg.contact.email}"><small>${esc(C.emailLabel)}</small><bdi dir="ltr">${cfg.contact.email}</bdi></a>
+<a class="ch" href="${cfg.contact.telegram}" target="_blank" rel="noopener"><small>${esc(C.telegramLabel)}</small><bdi dir="ltr">@${cfg.contact.telegram.split("/").pop()}</bdi></a>
 <p>${esc(C.azNote)} <a href="https://spectrtech.az" hreflang="az">spectrtech.az</a></p></aside></div></div></section>` + footer(l);
 }
 

@@ -101,6 +101,9 @@ def static_checks():
 
 # ---------- i18n leftovers ----------
 KEEP = re.compile(r"^(READY|EXTEND|REDESIGN|CUSTOM|SpectrTech|Wedding Planner|Coin Drop Tycoon|Moving Planner with QR Box Labels|Telegram|Email|E-mail|DEMO|Instagram|Facebook)$")
+# Words that are spelled the same as in English in that language (reviewed).
+SAME_OK = {"de": {"Websites", "Status", "Details", "Studio"},
+           "fr": {"Menu", "Services", "Contact", "Structure", "Questions", "Guides", "Message", "Studio"}}
 def flat(o, p=""):
     if isinstance(o, dict):
         for k, v in o.items(): yield from flat(v, f"{p}.{k}" if p else k)
@@ -111,7 +114,7 @@ def i18n_checks():
     en = dict(flat(D["en"]))
     for l in LOCS:
         if l == "en": continue
-        same = [k for k, v in flat(D[l]) if en.get(k) == v and len(v) > 3 and not KEEP.match(v)]
+        same = [k for k, v in flat(D[l]) if en.get(k) == v and len(v) > 3 and not KEEP.match(v) and v not in SAME_OK.get(l, ())]
         for k in same: warns.append(f"i18n {l}: identical to English at {k}: {en[k][:50]}")
         if l == "ar":
             latin_heavy = [k for k, v in flat(D[l]) if len(re.findall(r"[A-Za-z]", v)) > 0.6 * max(1, len(v)) and not KEEP.match(v) and len(v) > 12]
