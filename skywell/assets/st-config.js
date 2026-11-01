@@ -55,7 +55,7 @@
     pages: [
       { id: 'index', file: 'index.html', name: { az: 'Ana səhifə', ru: 'Главная', en: 'Home' }, data: { MODELS: MODELS, TL: TL } },
       { id: 'et5', file: 'et5.html', name: { az: 'Skywell ET5', ru: 'Skywell ET5', en: 'Skywell ET5' },
-        data: { COLORS: COLORS, GAL_EXT: PHOTOS({ az: 'Xarici görünüş — fotolar', ru: 'Экстерьер — фото', en: 'Exterior — photos' }, 'img/et5/'), GAL_INT: PHOTOS({ az: 'Salon — fotolar', ru: 'Салон — фото', en: 'Interior — photos' }, 'img/et5/') } },
+        data: { GAL_EXT: PHOTOS({ az: 'Xarici görünüş — fotolar', ru: 'Экстерьер — фото', en: 'Exterior — photos' }, 'img/et5/'), GAL_INT: PHOTOS({ az: 'Salon — fotolar', ru: 'Салон — фото', en: 'Interior — photos' }, 'img/et5/') } },
       { id: 'hti', file: 'ht-i.html', name: { az: 'Skywell HT-i', ru: 'Skywell HT-i', en: 'Skywell HT-i' },
         data: { GAL_HTI: PHOTOS({ az: 'Qalereya', ru: 'Галерея', en: 'Gallery' }, 'img/hti/') } }
     ]

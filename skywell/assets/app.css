@@ -335,3 +335,7 @@ dialog.lb[open]{display:flex;align-items:center;justify-content:center}
 .phero-car.crop img{width:100%;height:100%;object-fit:cover;border-radius:0;mix-blend-mode:normal}
 .dimimg{margin:0 0 28px;border-radius:var(--r);overflow:hidden;background:#DCE4EE}
 .dimimg img{width:100%;height:auto}
+
+.gal.flat{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gal.flat .gi:first-child{grid-column:auto;grid-row:auto;aspect-ratio:3/2}
+.tcards img{object-fit:cover;background:#0E1520}
