@@ -10,7 +10,7 @@
   var STC = W.STC || { use: function () {}, img: function (p) { return p; } };
 
   var PD = PAGE === 'index' ? { MODELS: DATA.MODELS, TL: DATA.TL }
-    : PAGE === 'et5' ? { COLORS: DATA.COLORS, GAL_EXT: DATA.GAL_EXT, GAL_INT: DATA.GAL_INT }
+    : PAGE === 'et5' ? { GAL_EXT: DATA.GAL_EXT, GAL_INT: DATA.GAL_INT }
     : { GAL_HTI: DATA.GAL_HTI };
   STC.use(PAGE, { I: I, data: PD, wa: ['994994400007'], refresh: function () { apply(lang); } });
 
@@ -82,20 +82,22 @@
   /* ── ET5: версии ── */
   function renderTrims() {
     var b = $('trims'); if (!b) return;
+    var km = lang === 'ru' ? ' км' : ' km', kw = lang === 'ru' ? ' кВт' : lang === 'en' ? ' kW' : ' kVt', sec = lang === 'ru' ? ' с' : lang === 'en' ? ' s' : ' san', kmh = lang === 'ru' ? ' км/ч' : lang === 'en' ? ' km/h' : ' km/saat';
+    var num = function (v) { return lang === 'en' ? v : String(v).replace('.', ','); };
     b.innerHTML = (DATA.TRIMS || []).map(function (r) {
-      var cons = lang === 'en' ? r[3] : r[3].replace('.', ',');
-      return '<tr><th scope="row">' + esc(r[0]) + '</th><td>' + esc(r[1] + ' ' + t('kwh')) + '</td><td>' + esc(lang === 'ru' ? r[2].replace('km', 'км') : r[2]) + '</td><td>' + esc(cons + ' ' + t('per100')) + '</td><td>' + esc(r[4]) + '</td><td>' + esc(r[5]) + '</td></tr>';
+      return '<tr><th scope="row">' + esc(t(r[0]) || r[0]) + '</th><td>' + esc(num(r[1]) + ' ' + t('kwh')) + '</td><td>' + esc(r[2] + km + ' (' + r[3] + ')') + '</td><td>' + esc(r[4] ? r[4] + kw : '—') + '</td><td>' + esc(num(r[5]) + sec) + '</td><td>' + esc(r[6] ? r[6] + kmh : '—') + '</td></tr>';
     }).join('');
   }
 
   /* ── галереи + просмотр ── */
   var LB = { list: [], i: 0 };
-  function big(u) { return String(u).replace(/\/-\/resize\/\d+x\//, '/-/resize/1600x/'); }
-  function small(u, w) { return String(u).replace(/\/-\/resize\/\d+x\//, '/-/resize/' + w + 'x/'); }
+  function big(u) { return String(u).replace(/\/-\/resize\/\d+x\//, '/-/resize/1600x/').replace(/([?&]w=)\d+/, '$11600'); }
+  function small(u, w) { return String(u).replace(/\/-\/resize\/\d+x\//, '/-/resize/' + w + 'x/').replace(/([?&]w=)\d+/, '$1' + w); }
   function renderGals() {
     D.querySelectorAll('[data-gal]').forEach(function (box) {
       var name = box.getAttribute('data-gal'), list = (PD[name] || []).filter(Boolean), wide = box.classList.contains('wide');
       var alt = (W.SW_ALT || {})[name] || 'Skywell';
+      box.classList.toggle('flat', !wide && (list.length - 1) % 4 !== 0);
       box.innerHTML = list.map(function (u, i) {
         var src = img(u);
         var pic = '<img src="' + esc(wide ? src : small(src, 900)) + '" alt="' + esc(alt) + '" loading="lazy" width="900" height="600">';
