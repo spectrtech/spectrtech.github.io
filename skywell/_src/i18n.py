@@ -271,7 +271,14 @@ add('svAddr', '8QVJ+WR, Bakı', '8QVJ+WR, Баку', '8QVJ+WR, Baku')
 add('svBook', 'Servisə yazılın', 'Записаться на сервис', 'Book a service')
 add('svMap', 'Xəritədə aç', 'Открыть на карте', 'Open map')
 add('svVid', 'Servis mərkəzi — video', 'Сервисный центр — видео', 'Service centre — video')
-add('svVidL', 'Videonu YouTube-da izləyin', 'Смотреть видео на YouTube', 'Watch the video on YouTube')
+add('svVidL', 'Servis mərkəzi videosunu oynat', 'Воспроизвести видео о сервисном центре', 'Play the service centre video')
 I['svL'] = (['Plan üzrə texniki baxış', 'Zəmanət xidməti', 'Orijinal ehtiyat hissələri anbarı', 'Diaqnostika və proqram yeniləmələri'],
             ['Плановое техобслуживание', 'Гарантийное обслуживание', 'Склад оригинальных запчастей', 'Диагностика и обновление ПО'],
             ['Scheduled maintenance', 'Warranty service', 'Genuine spare parts in stock', 'Diagnostics and software updates'])
+
+# ── видео ──
+add('hvK', 'Video', 'Видео', 'Video')
+add('hvT', '125 000 km sonra elektromobilin vəziyyəti', 'Состояние электромобиля после 125 000 км', 'An EV after 125,000 km')
+add('hvP', '«4 Çarx / 4 Wheels» kanalının videosu: 125 000 km yol getmiş Skywell elektromobilinin vəziyyəti.', 'Видео канала «4 Çarx / 4 Wheels»: в каком состоянии электромобиль Skywell после 125 000 км.', 'A video by the “4 Çarx / 4 Wheels” channel: the condition of a Skywell EV after 125,000 km.')
+add('hvPlay', 'Videonu oynat', 'Воспроизвести видео', 'Play video')
+add('hvYt', 'YouTube-da açın', 'Открыть на YouTube', 'Open on YouTube')
