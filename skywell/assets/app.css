@@ -322,3 +322,16 @@ dialog.lb[open]{display:flex;align-items:center;justify-content:center}
 .et5-img img{height:100%}
 .colimg img{height:100%;width:auto}
 .phero-car img{border-radius:var(--r)}
+/* v3: 5 моделей — 2 в продаже крупно, 3 «скоро» */
+.mgrid{grid-template-columns:repeat(6,minmax(0,1fr))}
+.mc.is-sale{grid-column:span 3}
+.mc.is-soon{grid-column:span 2}
+.mc .ph{overflow:hidden}
+.mc.is-sale .ph{aspect-ratio:16/9}
+@media (max-width:1000px){.mgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.mc.is-sale,.mc.is-soon{grid-column:span 1}.mc.is-sale .ph{aspect-ratio:16/10}}
+@media (max-width:620px){.mgrid{grid-template-columns:1fr}}
+.mc .act .btn{white-space:nowrap}
+.phero-car.crop{aspect-ratio:2.3/1;overflow:hidden;border-radius:var(--r);background:#DCE4EE}
+.phero-car.crop img{width:100%;height:100%;object-fit:cover;border-radius:0;mix-blend-mode:normal}
+.dimimg{margin:0 0 28px;border-radius:var(--r);overflow:hidden;background:#DCE4EE}
+.dimimg img{width:100%;height:auto}

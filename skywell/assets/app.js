@@ -46,19 +46,26 @@
     g.innerHTML = (DATA.MODELS || []).map(function (m, i) {
       if (filter !== 'all' && m.st !== filter) return '';
       var src = img(m.img);
-      var ph = (src ? '<img src="' + esc(src) + '" alt="' + esc(m.name) + '" loading="lazy" width="900" height="560">' : '') +
+      var ph = (src ? '<img src="' + esc(src) + '" alt="' + esc(m.name) + '" loading="lazy" width="900" height="560"' + cropStyle(m.crop) + '>' : '') +
         '<div class="nf"' + (src ? ' hidden' : '') + '>' + CAR + '<span>' + esc(t('photoSoon')) + '</span></div>';
       var sp = (m.specs || []).filter(function (s) { return tr(s.v); }).map(function (s) { return '<div><dt>' + esc(tr(s.l)) + '</dt><dd>' + esc(tr(s.v)) + '</dd></div>'; }).join('');
       var note = tr(m.note);
+      var gl = (m.gal || []).filter(Boolean).length;
       var act = (m.page ? '<a class="btn p" href="' + esc(m.page) + '">' + esc(t('more')) + '</a>' : '') +
-        '<a class="btn ' + (m.page ? 'o' : 'p') + '" href="#contact" data-model="' + esc(m.name) + '">' + esc(t('ask')) + '</a>';
+        '<a class="btn ' + (m.page ? 'o' : 'p') + '" href="#contact" data-model="' + esc(m.name) + '">' + esc(t('ask')) + '</a>' +
+        (!m.page && gl ? '<button type="button" class="btn o" data-mgal="' + i + '">' + esc(t('photos')) + ' (' + gl + ')</button>' : '');
       var title = m.page ? '<a href="' + esc(m.page) + '">' + esc(m.name) + '</a>' : esc(m.name);
-      return '<article class="mc" data-st="MODELS.' + i + '"><div class="ph">' + ph + '<span class="badge ' + (m.st === 'sale' ? 'sale' : '') + '">' + esc(t(m.st === 'sale' ? 'sale' : 'soon')) + '</span></div>' +
+      return '<article class="mc ' + (m.st === 'sale' ? 'is-sale' : 'is-soon') + '" data-st="MODELS.' + i + '"><div class="ph">' + ph + '<span class="badge ' + (m.st === 'sale' ? 'sale' : '') + '">' + esc(t(m.st === 'sale' ? 'sale' : 'soon')) + '</span></div>' +
         '<div class="bd"><div><div class="tp">' + esc(tr(m.body)) + '</div><h3>' + title + '</h3></div>' +
         (sp ? '<dl class="specs">' + sp + '</dl>' : '') + (note ? '<p class="note">' + esc(note) + '</p>' : '') +
         '<div class="act">' + act + '</div></div></article>';
     }).join('');
     guard(g);
+  }
+  function cropStyle(c) {
+    var p = String(c || '').trim().split(/\s+/);
+    if (p.length !== 3 || !/^[\d.]+%$/.test(p[0]) || !/^[\d.]+%$/.test(p[1]) || !/^[\d.]+$/.test(p[2])) return '';
+    return ' style="object-position:' + p[0] + ' ' + p[1] + ';transform:scale(' + p[2] + ');transform-origin:' + p[0] + ' ' + p[1] + '"';
   }
   function renderTL() {
     var o = $('tl'); if (!o) return;
@@ -100,12 +107,12 @@
   }
   var lb = $('lb');
   function lbShow() {
-    var u = img(LB.list[LB.i]); $('lbI').src = big(u); $('lbI').alt = 'Skywell ET5 — ' + (LB.i + 1);
+    var u = img(LB.list[LB.i]); $('lbI').src = big(u); $('lbI').alt = (LB.alt || 'Skywell') + ' — ' + (LB.i + 1);
     $('lbC').textContent = (LB.i + 1) + ' / ' + LB.list.length;
   }
-  function lbOpen(name, i) {
+  function lbOpen(name, i, list, alt) {
     if (!lb || !lb.showModal) return;
-    LB.list = (PD[name] || []).filter(Boolean); LB.i = i; lbShow(); lb.showModal();
+    LB.list = (list || PD[name] || []).filter(Boolean); LB.i = i; LB.alt = alt || 'Skywell ET5'; lbShow(); lb.showModal();
   }
   if (lb) {
     $('lbX').addEventListener('click', function () { lb.close(); });
@@ -117,6 +124,8 @@
   D.addEventListener('click', function (e) {
     var g = e.target.closest && e.target.closest('button.gi[data-g]');
     if (g) lbOpen(g.getAttribute('data-g'), +g.getAttribute('data-i'));
+    var mg = e.target.closest && e.target.closest('[data-mgal]');
+    if (mg) { var m = (DATA.MODELS || [])[+mg.getAttribute('data-mgal')]; if (m) lbOpen('', 0, m.gal, m.name); }
   });
 
   /* ── ET5: цвета ── */
