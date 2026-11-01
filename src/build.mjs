@@ -252,12 +252,24 @@ ${teaser ? "" : `<ul>${p.f.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>`}
   return `<div class="pk">${cards}</div><p class="pknote">${esc(W.packagesLead)}</p>`;
 }
 
+/* Product picture in a fixed 16:10 frame. media: "cover" (screenshot fills the frame),
+   "contain" (whole picture on its own background), "phones" (three phone screenshots side by side). */
+function mediaHTML(p, name, { gallery = false } = {}) {
+  const imgs = p.images, mode = p.media || "cover";
+  const style = p.mediaBg ? ` style="--pc-bg:${p.mediaBg}"` : "";
+  const img = (im, i, cls = "") => `<img${cls ? ` class="${cls}"` : ""} src="${im[0]}" alt="${esc(name)} — ${i + 1}" width="${im[1]}" height="${im[2]}" loading="lazy" decoding="async">`;
+  if (mode === "phones") return `<div class="pc-media phones">${imgs.slice(0, 3).map((im, i) => img(im, i)).join("")}</div>`;
+  const thumbs = gallery && imgs.length > 1
+    ? `<div class="pc-thumbs">${imgs.map((im, i) => `<button type="button" data-src="${im[0]}" data-alt="${esc(name)} — ${i + 1}" aria-pressed="${i === 0}" aria-label="${esc(name)} — ${i + 1}"><img src="${im[0]}" alt="" width="${im[1]}" height="${im[2]}" loading="lazy" decoding="async"></button>`).join("")}</div>`
+    : "";
+  return `<div class="pc-media ${mode}${gallery ? " gal" : ""}"${style}>${img(imgs[0], 0, "pc-main")}${thumbs}</div>`;
+}
+
 function productCards(l) {
   const P = dict[l].projects;
   return `<div class="pcards">${data.products.map((p) => {
-    const it = P.items[p.id], im = p.card || p.images[0];
-    const [img, w, h] = im;
-    return `<a class="pcard rv" href="${url(l, "projects")}#${p.id}"><div class="im"><img src="${img}" alt="${esc(it.name)}" width="${w}" height="${h}" loading="lazy" decoding="async"></div><div class="tx"><span class="kind">${esc(it.kind)}</span><h3>${esc(it.name)}</h3><p>${esc(it.platforms)}</p></div></a>`;
+    const it = P.items[p.id];
+    return `<a class="pcard rv" href="${url(l, "projects")}#${p.id}">${mediaHTML(p, it.name)}<div class="tx"><span class="kind">${esc(it.kind)}</span><h3>${esc(it.name)}</h3><p>${esc(it.platforms)}</p></div></a>`;
   }).join("")}</div>`;
 }
 
@@ -333,20 +345,23 @@ function pageProjects(l) {
     }),
     crumbs(l, "projects"),
   ];
+  const en = l !== "en" ? ' hreflang="en"' : "";
   const items = data.products.map((p) => {
     const it = P.items[p.id];
-    const imgs = p.images;
-    const thumbs = imgs.map((im, i) => `<button type="button" data-src="${im[0]}" data-alt="${esc(it.name)} — ${i + 1}" aria-pressed="${i === 0}" aria-label="${esc(it.name)} — ${i + 1}"><img src="${im[0]}" alt="" width="${im[1]}" height="${im[2]}" loading="lazy" decoding="async"></button>`).join("");
-    const btns = p.buy
-      ? `<a class="btn" href="${p.buy}" rel="noopener">${esc(P.buy)} · ${esc(p.price)}</a><a class="btn line" href="${p.demo}" hreflang="en">${esc(P.demo)}</a><a class="btn line" href="${p.page}" hreflang="en">${esc(P.details)}</a>`
+    const more = `<a class="pc-more" href="${p.page}"${en}>${esc(P.details)} ${arrow}</a>`;
+    const act = p.buy
+      ? `<a class="btn" href="${p.buy}" rel="noopener">${esc(P.buy)} · ${esc(p.price)}</a><a class="btn line" href="${p.demo}"${en}>${esc(P.demoShort)}</a>${more}`
       : p.bot
-      ? `<a class="btn" href="${p.bot}" target="_blank" rel="noopener">${esc(P.openBot)}</a><a class="btn line" href="${p.page}" hreflang="en">${esc(P.details)}</a>`
-      : `<a class="btn" href="${p.page}" hreflang="en">${esc(P.seeGame)}</a><a class="btn line" href="${p.join}">${esc(P.joinTest)}</a>`;
-    return `<article class="pr" id="${p.id}"><div class="gal${p.portrait ? " portrait" : ""}"><div class="main"><img src="${imgs[0][0]}" alt="${esc(it.name)} — 1" width="${imgs[0][1]}" height="${imgs[0][2]}" loading="lazy" decoding="async"></div>${imgs.length > 1 ? `<div class="thumbs">${thumbs}</div>` : ""}</div>
-<div><span class="kind">${esc(it.kind)}</span><h3>${esc(it.name)}</h3><p class="d">${esc(it.d)}</p>
+      ? `<a class="btn" href="${p.bot}" target="_blank" rel="noopener">${esc(P.openBot)}</a>${more}`
+      : p.play
+      ? `<a class="btn" href="${p.play}" rel="noopener">${esc(P.getPlay)}</a>${more}`
+      : `<a class="btn" href="${p.page}"${en}>${esc(P.seeGame)}</a><a class="btn line" href="${p.join}">${esc(P.joinTest)}</a>`;
+    return `<article class="pc rv" id="${p.id}">${mediaHTML(p, it.name, { gallery: true })}
+<div class="pc-body"><div class="pc-top"><span class="kind">${esc(it.kind)}</span><span class="pc-status${p.status === "test" ? " test" : ""}">${esc(it.status)}</span></div>
+<h3>${esc(it.name)}</h3><p class="d">${esc(it.d)}</p>
 <h4 class="sr">${esc(P.features)}</h4><ul>${it.f.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>
-<dl><dt>${esc(P.platforms)}</dt><dd>${esc(it.platforms)}</dd><dt>${esc(P.status)}</dt><dd>${esc(it.status)}</dd></dl>
-<div class="btns">${btns}</div></div></article>`;
+<p class="pc-plat"><span>${esc(P.platforms)}:</span> ${esc(it.platforms)}</p>
+<div class="pc-act">${act}</div></div></article>`;
   }).join("");
   const portfolio = data.portfolio.length
     ? `<section id="portfolio" style="padding-top:0"><div class="wrap"><div class="shead"><h2>${esc(P.portfolioTitle)}</h2><p class="lead">${esc(P.portfolioLead)}</p></div>
@@ -354,7 +369,7 @@ function pageProjects(l) {
     : "";
   return head(l, "projects", { jsonld }) + header(l, "projects") +
     hero(l, { eyebrow: P.eyebrow, title: P.title, lead: P.lead, ctas: false }, { compact: true }) +
-    `<section><div class="wrap"><div class="prj">${items}</div></div></section>${portfolio}
+    `<section><div class="wrap"><div class="pcs">${items}</div></div></section>${portfolio}
 <section style="padding-top:0"><div class="wrap"><div class="shead"><h2>${esc(P.moreTitle)}</h2></div><div class="more">
 <a href="/tools/" hreflang="en"><b>${esc(P.tools)}</b><span>${esc(P.toolsD)}</span></a>
 <a href="/blog/" hreflang="en"><b>${esc(P.guides)}</b><span>${esc(P.guidesD)}</span></a>

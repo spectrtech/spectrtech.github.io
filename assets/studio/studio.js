@@ -53,8 +53,8 @@
 
   /* project galleries */
   document.querySelectorAll(".gal").forEach(function (g) {
-    var main = g.querySelector(".main img");
-    var tb = g.querySelectorAll(".thumbs button");
+    var main = g.querySelector("img.pc-main");
+    var tb = g.querySelectorAll(".pc-thumbs button");
     tb.forEach(function (b) {
       b.addEventListener("click", function () {
         main.src = b.dataset.src; main.alt = b.dataset.alt;
