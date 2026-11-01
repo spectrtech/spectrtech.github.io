@@ -339,3 +339,9 @@ dialog.lb[open]{display:flex;align-items:center;justify-content:center}
 .gal.flat{grid-template-columns:repeat(2,minmax(0,1fr))}
 .gal.flat .gi:first-child{grid-column:auto;grid-row:auto;aspect-ratio:3/2}
 .tcards img{object-fit:cover;background:#0E1520}
+/* машина справа от текста на широких экранах */
+.phero-bg,.hero-bg{background:linear-gradient(90deg,#0A111B 0%,#2A3441 60%,#56616E 100%)}
+@media (min-width:900px){
+  .phero.dark .phero-bg img,.hero .hero-bg img{position:absolute;right:0;top:0;width:72%;height:100%;object-fit:cover;object-position:35% 60%}
+  .phero.dark .phero-bg::after,.hero .hero-bg::after{background:linear-gradient(90deg,rgba(10,17,27,1) 0%,rgba(10,17,27,.92) 30%,rgba(10,17,27,.35) 55%,rgba(10,17,27,.05) 100%),linear-gradient(0deg,rgba(6,12,20,.55),transparent 40%)}
+}
