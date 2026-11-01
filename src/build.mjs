@@ -68,10 +68,10 @@ function price(l, id) {
 /* ---------- assets ---------- */
 const ASSET_DIR = path.join(ROOT, "assets/studio");
 fs.mkdirSync(path.join(ASSET_DIR, "fonts"), { recursive: true });
-for (const f of ["studio.css", "studio.js", "spectrtech-mark.svg"]) fs.copyFileSync(path.join(SRC, "assets", f), path.join(ASSET_DIR, f));
+for (const f of ["studio.css", "studio.js", "chrome.css", "chrome.js", "spectrtech-mark.svg"]) fs.copyFileSync(path.join(SRC, "assets", f), path.join(ASSET_DIR, f));
 const fontSrc = path.join(SRC, "assets/fonts");
 for (const f of fs.readdirSync(fontSrc)) fs.copyFileSync(path.join(fontSrc, f), path.join(ASSET_DIR, "fonts", f));
-const V = { css: hash(path.join(ASSET_DIR, "studio.css")), js: hash(path.join(ASSET_DIR, "studio.js")) };
+const V = { css: hash(path.join(ASSET_DIR, "studio.css")), js: hash(path.join(ASSET_DIR, "studio.js")), ccss: hash(path.join(ASSET_DIR, "chrome.css")), cjs: hash(path.join(ASSET_DIR, "chrome.js")) };
 const PRELOAD = {
   latin: ["onest-latin-400-normal.woff2", "unbounded-latin-500-normal.woff2"],
   cyrillic: ["onest-cyrillic-400-normal.woff2", "unbounded-cyrillic-500-normal.woff2"],
@@ -115,7 +115,9 @@ ${alts}
 <link rel="icon" href="/assets/spectrtech-avatar.jpg">
 ${preloadFor(l).map((f) => `<link rel="preload" href="/assets/studio/fonts/${f}" as="font" type="font/woff2" crossorigin>`).join("\n")}
 <link rel="stylesheet" href="/assets/studio/studio.css?v=${V.css}">
+<link rel="stylesheet" href="/assets/studio/chrome.css?v=${V.ccss}">
 <script>document.documentElement.classList.remove("no-js")</script>
+<script defer src="/assets/studio/chrome.js?v=${V.cjs}"></script>
 <script defer src="/assets/studio/studio.js?v=${V.js}"></script>
 <script data-goatcounter="https://spectrtech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 ${jsonld.map((j) => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n")}
@@ -128,53 +130,74 @@ function langAlt(l, page) {
   return o;
 }
 
-function header(l, page) {
-  const T = dict[l].ui;
-  const cur = (p) => (p === page ? ' aria-current="page"' : "");
+const ICON_CHEV = '<svg class="st-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+const GLOBE = ICON_GLOBE.replace("<svg ", '<svg class="st-globe" ');
+const TG = cfg.contact.telegram.split("/").pop();
+
+/* One header for every page. opts.page = studio page key; opts.path = URL path of a product page;
+   opts.langHref(x) = where each language item points (studio pages: same page; other pages: that language's home). */
+function chromeHeader(l, { page = null, path = null, langHref = null, skip = "#main" } = {}) {
+  const T = dict[l].ui, P = dict[l].projects;
+  const en = l !== "en" ? ' hreflang="en"' : "";
+  const cur = (on) => (on ? ' aria-current="page"' : "");
+  const prods = data.products.map((p) => `<a href="${p.page}"${en}${cur(path === p.page)}>${esc(P.items[p.id].name)}<small>${esc(P.items[p.id].kind)}</small></a>`).join("");
+  const more = [["/tools/", P.tools], ["/blog/", P.guides], ["/affiliates/", P.affiliates]].map(([h, n]) => `<a href="${h}"${en}${cur(path === h)}>${esc(n)}</a>`).join("");
   const langs = LIVE.concat(complete[l] ? [] : [l]).map((x) =>
-    `<li><a href="${url(x, page)}" hreflang="${x}" lang="${x}"${x === l ? ' aria-current="true"' : ""}>${esc(cfg.locales[x].name)}<small>${x}</small></a></li>`).join("");
-  return `<body>
-<a class="skip" href="#main">${esc(T.skip)}</a>
-<div class="langbar" id="langbar" hidden><div class="wrap"><span data-t></span><a href="#"></a><button type="button"></button></div></div>
-<script>window.ST={alt:${JSON.stringify(langAlt(l, page)).replace(/</g, "\\u003c")}}</script>
-<header class="top"><div class="wrap">
-<a class="logo" href="${url(l, "home")}" aria-label="SpectrTech — ${esc(T.home)}"><img src="/assets/studio/spectrtech-mark.svg" alt="SpectrTech" width="134" height="40"></a>
-<button class="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="${esc(T.menu)}" data-open="${esc(T.menu)}" data-close="${esc(T.close)}"><span></span></button>
-<nav class="nav" id="nav" aria-label="${esc(T.home)}">
-<a href="${url(l, "home", "#services")}">${esc(T.services)}</a>
-<a href="${url(l, "websites")}"${cur("websites")}>${esc(T.websites)}</a>
-<a href="${url(l, "projects")}"${cur("projects")}>${esc(T.projects)}</a>
-<details class="lang"><summary aria-label="${esc(T.language)}: ${esc(cfg.locales[l].name)}">${ICON_GLOBE}<span>${l.toUpperCase()}</span></summary><ul>${langs}</ul></details>
-<a class="btn" href="${url(l, "contact")}"${cur("contact")}>${esc(T.startProject)}</a>
-</nav>
-</div></header>
-<main id="main">`;
+    `<a class="st-row" href="${langHref ? langHref(x) : url(x, page)}" hreflang="${x}" lang="${x}"${x === l ? ' aria-current="true"' : ""}>${esc(cfg.locales[x].name)}<small>${x}</small></a>`).join("");
+  return `<!--st:header--><a class="st-skip" href="${skip}">${esc(T.skip)}</a>
+<div class="st-top" role="banner"><div class="st-in">
+<a class="st-logo" href="${url(l, "home")}" aria-label="SpectrTech — ${esc(T.home)}"><img src="/assets/studio/spectrtech-mark.svg" alt="SpectrTech" width="134" height="40"></a>
+<button class="st-burger" type="button" aria-expanded="false" aria-controls="st-nav" aria-label="${esc(T.menu)}" data-open="${esc(T.menu)}" data-close="${esc(T.close)}"><span></span></button>
+<nav class="st-nav" id="st-nav" aria-label="${esc(T.mainNav)}">
+<a class="st-link" href="${url(l, "websites")}"${cur(page === "websites")}>${esc(T.websites)}</a>
+<div class="st-dd"><button class="st-link st-dd-btn" type="button" aria-expanded="false" aria-controls="st-dd-p">${esc(T.products)}${ICON_CHEV}</button>
+<div class="st-menu" id="st-dd-p"><a class="st-all" href="${url(l, "projects")}"${cur(page === "projects")}>${esc(T.allProjects)}</a>${prods}<span class="st-sep" role="separator"></span>${more}</div></div>
+<a class="st-link" href="${url(l, "contact")}"${cur(page === "contact")}>${esc(T.contact)}</a>
+<div class="st-dd st-lang"><button class="st-link st-dd-btn" type="button" aria-expanded="false" aria-controls="st-dd-l" aria-label="${esc(T.language)}: ${esc(cfg.locales[l].name)}">${GLOBE}<span>${l.toUpperCase()}</span>${ICON_CHEV}</button>
+<div class="st-menu st-end" id="st-dd-l">${langs}</div></div>
+<a class="st-cta" href="${url(l, "contact")}">${esc(T.startProject)}</a>
+</nav></div></div><!--/st:header-->`;
 }
 
-function footer(l) {
-  const F = dict[l].footer, T = dict[l].ui, P = dict[l].projects;
-  const y = 2026;
-  return `</main>
-<footer class="foot"><div class="wrap">
-<div class="cols">
-<div class="about"><a class="logo" href="${url(l, "home")}"><img src="/assets/studio/spectrtech-mark.svg" alt="SpectrTech" width="134" height="40" loading="lazy"></a><p>${esc(F.tagline)}</p></div>
-<nav aria-label="${esc(F.studio)}"><h2>${esc(F.studio)}</h2><ul>
+/* One footer for every page. */
+function chromeFooter(l) {
+  const F = dict[l].footer, T = dict[l].ui, P = dict[l].projects, C = dict[l].contact;
+  const en = l !== "en" ? ' hreflang="en"' : "";
+  return `<!--st:footer--><div class="st-foot" role="contentinfo"><div class="st-in">
+<div class="st-cols">
+<div class="st-about"><a class="st-logo" href="${url(l, "home")}" aria-label="SpectrTech — ${esc(T.home)}"><img src="/assets/studio/spectrtech-mark.svg" alt="SpectrTech" width="134" height="40" loading="lazy"></a><p>${esc(F.tagline)}</p></div>
+<nav aria-label="${esc(F.studio)}"><p class="st-h">${esc(F.studio)}</p><ul>
 <li><a href="${url(l, "websites")}">${esc(T.websites)}</a></li>
 <li><a href="${url(l, "websites", "#process")}">${esc(T.process)}</a></li>
 <li><a href="${url(l, "websites", "#packages")}">${esc(dict[l].websites.packagesTitle)}</a></li>
 <li><a href="${url(l, "contact")}">${esc(T.contact)}</a></li></ul></nav>
-<nav aria-label="${esc(F.products)}"><h2>${esc(F.products)}</h2><ul>
-${data.products.map((p) => `<li><a href="${p.page}" hreflang="en">${esc(P.items[p.id].name)}</a></li>`).join("")}
-<li><a href="/tools/" hreflang="en">${esc(P.tools)}</a></li>
-<li><a href="/blog/" hreflang="en">${esc(P.guides)}</a></li>
-<li><a href="/affiliates/" hreflang="en">${esc(P.affiliates)}</a></li></ul></nav>
-<div><h2>${esc(T.contact)}</h2><ul>
+<nav aria-label="${esc(F.products)}"><p class="st-h">${esc(F.products)}</p><ul>
+<li><a href="${url(l, "projects")}">${esc(T.allProjects)}</a></li>
+${data.products.map((p) => `<li><a href="${p.page}"${en}>${esc(P.items[p.id].name)}</a></li>`).join("")}
+<li><a href="/tools/"${en}>${esc(P.tools)}</a></li>
+<li><a href="/blog/"${en}>${esc(P.guides)}</a></li>
+<li><a href="/affiliates/"${en}>${esc(P.affiliates)}</a></li></ul></nav>
+<div class="st-col"><p class="st-h">${esc(T.contact)}</p><ul>
 <li><a href="mailto:${cfg.contact.email}"><bdi dir="ltr">${cfg.contact.email}</bdi></a></li>
+<li><a href="${cfg.contact.telegram}" target="_blank" rel="noopener">${esc(C.telegramLabel)} <bdi dir="ltr">@${TG}</bdi></a></li>
 <li><a href="${url(l, "privacy")}">${esc(F.privacy)}</a></li></ul></div>
 </div>
-<div class="bottom"><span>© ${y} SpectrTech. ${esc(F.rights)}</span>
-<nav class="soc" aria-label="${esc(F.follow)}">${cfg.social.map(([n, u]) => `<a href="${u}" target="_blank" rel="noopener me">${n}</a>`).join("")}</nav></div>
-</div></footer>
+<div class="st-bottom"><span>© 2026 SpectrTech. ${esc(F.rights)}</span>
+<nav class="st-soc" aria-label="${esc(F.follow)}">${cfg.social.map(([n, u]) => `<a href="${u}" target="_blank" rel="noopener me">${n}</a>`).join("")}</nav></div>
+</div></div><!--/st:footer-->`;
+}
+
+function header(l, page) {
+  return `<body>
+${chromeHeader(l, { page })}
+<div class="langbar" id="langbar" hidden><div class="wrap"><span data-t></span><a href="#"></a><button type="button"></button></div></div>
+<script>window.ST={alt:${JSON.stringify(langAlt(l, page)).replace(/</g, "\\u003c")}}</script>
+<main id="main" tabindex="-1">`;
+}
+
+function footer(l) {
+  return `</main>
+${chromeFooter(l)}
 </body>
 </html>
 `;
@@ -232,9 +255,8 @@ ${teaser ? "" : `<ul>${p.f.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>`}
 function productCards(l) {
   const P = dict[l].projects;
   return `<div class="pcards">${data.products.map((p) => {
-    const it = P.items[p.id], im = p.images[p.portrait ? 0 : 0];
-    const img = p.portrait ? "/coin-drop-tycoon/img/og.jpg" : im[0];
-    const [w, h] = p.portrait ? [1024, 500] : [im[1], im[2]];
+    const it = P.items[p.id], im = p.card || p.images[0];
+    const [img, w, h] = im;
     return `<a class="pcard rv" href="${url(l, "projects")}#${p.id}"><div class="im"><img src="${img}" alt="${esc(it.name)}" width="${w}" height="${h}" loading="lazy" decoding="async"></div><div class="tx"><span class="kind">${esc(it.kind)}</span><h3>${esc(it.name)}</h3><p>${esc(it.platforms)}</p></div></a>`;
   }).join("")}</div>`;
 }
@@ -304,6 +326,7 @@ function pageProjects(l) {
   const jsonld = [
     ...data.products.map((p) => {
       const it = P.items[p.id];
+      if (p.type === "service") return { "@context": "https://schema.org", "@type": "Service", name: it.name, serviceType: p.serviceType, description: it.d, url: abs(p.page), image: abs(p.images[0][0]), provider: { "@id": ORG["@id"] } };
       const o = { "@context": "https://schema.org", "@type": "SoftwareApplication", name: it.name, applicationCategory: p.category, operatingSystem: p.os, description: it.d, url: abs(p.page), image: abs(p.images[0][0]), author: { "@id": ORG["@id"] } };
       if (p.price) o.offers = { "@type": "Offer", price: p.price.replace(/[^0-9.]/g, ""), priceCurrency: "USD", url: p.buy };
       return o;
@@ -316,8 +339,10 @@ function pageProjects(l) {
     const thumbs = imgs.map((im, i) => `<button type="button" data-src="${im[0]}" data-alt="${esc(it.name)} — ${i + 1}" aria-pressed="${i === 0}" aria-label="${esc(it.name)} — ${i + 1}"><img src="${im[0]}" alt="" width="${im[1]}" height="${im[2]}" loading="lazy" decoding="async"></button>`).join("");
     const btns = p.buy
       ? `<a class="btn" href="${p.buy}" rel="noopener">${esc(P.buy)} · ${esc(p.price)}</a><a class="btn line" href="${p.demo}" hreflang="en">${esc(P.demo)}</a><a class="btn line" href="${p.page}" hreflang="en">${esc(P.details)}</a>`
+      : p.bot
+      ? `<a class="btn" href="${p.bot}" target="_blank" rel="noopener">${esc(P.openBot)}</a><a class="btn line" href="${p.page}" hreflang="en">${esc(P.details)}</a>`
       : `<a class="btn" href="${p.page}" hreflang="en">${esc(P.seeGame)}</a><a class="btn line" href="${p.join}">${esc(P.joinTest)}</a>`;
-    return `<article class="pr" id="${p.id}"><div class="gal${p.portrait ? " portrait" : ""}"><div class="main"><img src="${imgs[0][0]}" alt="${esc(it.name)} — 1" width="${imgs[0][1]}" height="${imgs[0][2]}" loading="lazy" decoding="async"></div><div class="thumbs">${thumbs}</div></div>
+    return `<article class="pr" id="${p.id}"><div class="gal${p.portrait ? " portrait" : ""}"><div class="main"><img src="${imgs[0][0]}" alt="${esc(it.name)} — 1" width="${imgs[0][1]}" height="${imgs[0][2]}" loading="lazy" decoding="async"></div>${imgs.length > 1 ? `<div class="thumbs">${thumbs}</div>` : ""}</div>
 <div><span class="kind">${esc(it.kind)}</span><h3>${esc(it.name)}</h3><p class="d">${esc(it.d)}</p>
 <h4 class="sr">${esc(P.features)}</h4><ul>${it.f.map((f) => `<li>${esc(f)}</li>`).join("")}</ul>
 <dl><dt>${esc(P.platforms)}</dt><dd>${esc(it.platforms)}</dd><dt>${esc(P.status)}</dt><dd>${esc(it.status)}</dd></dl>
@@ -392,6 +417,34 @@ for (const l of LOCS) for (const page of cfg.pages) {
   written.push(rel);
 }
 
+/* ---------- product, guide and tool pages (English only): same header and footer ---------- */
+const LEGACY_HEAD = `<!--st:head--><link rel="preload" href="/assets/studio/fonts/onest-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/studio/chrome.css?v=${V.ccss}"><script defer src="/assets/studio/chrome.js?v=${V.cjs}"></script><!--/st:head-->`;
+const OLD_HEADER = [/<header>\s*<a class="site-logo"[\s\S]*?<\/header>/, /<nav>\s*<div class="brand">[\s\S]*?<\/nav>/];
+let legacyDone = 0;
+for (const rel of cfg.chromePages) {
+  const file = path.join(ROOT, rel);
+  let s = fs.readFileSync(file, "utf8");
+  if (!s.includes("<!--st:header-->")) {
+    // first run on this page: take out the old header, "Follow us" strip and footer, then add markers
+    const hdr = OLD_HEADER.find((re) => re.test(s));
+    if (!hdr) throw new Error(`${rel}: old header not found`);
+    const foots = s.match(/<footer>[\s\S]*?<\/footer>/g) || [];
+    if (foots.length !== 1) throw new Error(`${rel}: expected one old <footer>, found ${foots.length}`);
+    s = s.replace(hdr, "").replace(/<nav class="social"[^>]*>[\s\S]*?<\/nav>/g, "").replace(foots[0], "")
+      .replace(/<div class="wrap">\s*<\/div>/g, "")
+      .replace(/<\/head>/, "<!--st:head--><!--/st:head-->\n</head>")
+      .replace(/<body([^>]*)>/, "<body$1>\n<!--st:header--><!--/st:header-->")
+      .replace(/<\/body>/, "<!--st:footer--><!--/st:footer-->\n</body>");
+  }
+  const pagePath = rel === "404.html" ? "/404.html" : "/" + rel.replace(/index\.html$/, "");
+  const H = chromeHeader("en", { path: pagePath, skip: "#st-content", langHref: (x) => (x === "en" ? pagePath : url(x, "home")) }).replace("<!--/st:header-->", '<span id="st-content"></span><!--/st:header-->');
+  s = s.replace(/<!--st:head-->[\s\S]*?<!--\/st:head-->/, () => LEGACY_HEAD)
+    .replace(/<!--st:header-->[\s\S]*?<!--\/st:header-->/, () => H)
+    .replace(/<!--st:footer-->[\s\S]*?<!--\/st:footer-->/, () => chromeFooter("en"));
+  fs.writeFileSync(file, s);
+  legacyDone++;
+}
+
 /* ---------- sitemap ---------- */
 const legacy = fs.readFileSync(path.join(SRC, "legacy-urls.txt"), "utf8").split("\n").map((s) => s.trim()).filter((s) => s && !s.startsWith("#"));
 const today = cfg.updated; // bump in config.json when studio content changes
@@ -405,4 +458,4 @@ for (const u of legacy) sm += `<url><loc>${cfg.siteUrl}${u}</loc></url>\n`;
 sm += "</urlset>\n";
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sm);
 
-console.log(`Built ${written.length} pages for ${LOCS.length} locales (indexable: ${LIVE.join(", ")}). i18n problems: ${problems}. Sitemap: ${LIVE.length * cfg.pages.length + legacy.length} URLs.`);
+console.log(`Built ${written.length} pages for ${LOCS.length} locales (indexable: ${LIVE.join(", ")}), header/footer on ${legacyDone} more pages. i18n problems: ${problems}. Sitemap: ${LIVE.length * cfg.pages.length + legacy.length} URLs.`);

@@ -1,6 +1,6 @@
 {
   "siteUrl": "https://spectrtech.si",
-  "updated": "2026-10-25",
+  "updated": "2026-11-01",
   "defaultLocale": "en",
   "locales": {
     "en": {
@@ -100,5 +100,31 @@
       "label": "Azerbaijan",
       "url": "https://spectrtech.az"
     }
+  ],
+  "chromePages": [
+    "404.html",
+    "affiliates/index.html",
+    "blog/index.html",
+    "blog/how-to-label-moving-boxes/index.html",
+    "blog/moving-checklist-8-weeks/index.html",
+    "blog/realtor-closing-gift-moving-planner/index.html",
+    "blog/wedding-budget-estimated-quoted-final/index.html",
+    "blog/wedding-day-timeline-template/index.html",
+    "blog/wedding-guest-list-rsvp-tracking/index.html",
+    "blog/wedding-photography-shot-list/index.html",
+    "blog/wedding-planner-app-vs-excel-vs-notion/index.html",
+    "blog/wedding-planning-checklist-by-month/index.html",
+    "blog/wedding-seating-chart-guide/index.html",
+    "coin-drop-tycoon/index.html",
+    "coin-drop-tycoon/privacy/index.html",
+    "moving-planner/index.html",
+    "tools/index.html",
+    "tools/moving-box-calculator/index.html",
+    "tools/moving-checklist/index.html",
+    "tools/wedding-budget-calculator/index.html",
+    "tools/wedding-planning-checklist/index.html",
+    "tools/wedding-seating-chart-maker/index.html",
+    "vpn/index.html",
+    "wedding-planner/index.html"
   ]
 }

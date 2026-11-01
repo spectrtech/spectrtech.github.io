@@ -31,6 +31,8 @@
     "websites": "Websites",
     "process": "Process",
     "projects": "Projects",
+    "products": "Products",
+    "mainNav": "Main",
     "contact": "Contact",
     "startProject": "Start a project",
     "seePackages": "See packages",
@@ -151,7 +153,7 @@
     "packagesTitle": "Packages",
     "packagesLead": "Four clear packages, from a ready one-page site to a fully custom project.",
     "projectsTitle": "Our own products",
-    "projectsLead": "Besides client work, we build our own apps and games. They show how we design, build and launch software end to end.",
+    "projectsLead": "Besides client work, we build and run our own products. They show how we design, build and launch software end to end.",
     "ctaTitle": "Let's talk about your website.",
     "ctaLead": "Tell us about your business. We reply with questions or a proposal, without obligation."
   },
@@ -305,7 +307,7 @@
   "projects": {
     "eyebrow": "Projects",
     "title": "Products we build, launch and <em>sell ourselves</em>.",
-    "lead": "SpectrTech also develops its own digital products. Two are on sale today, and our first game is in closed testing.",
+    "lead": "SpectrTech also develops its own digital products: two planners on sale, a VPN service in Telegram and our first game in closed testing.",
     "features": "Features",
     "platforms": "Platforms",
     "status": "Status",
@@ -314,6 +316,7 @@
     "demo": "Try the live demo",
     "seeGame": "See the game",
     "joinTest": "Join the closed test",
+    "openBot": "Open the bot",
     "oneTime": "one-time payment",
     "items": {
       "wedding": {
@@ -354,6 +357,19 @@
         ],
         "platforms": "Android 7.0 and newer",
         "status": "Closed test, coming to Google Play"
+      },
+      "vpn": {
+        "name": "SpectrTech VPN",
+        "kind": "VPN service in Telegram",
+        "d": "A personal VPN subscription link from our Telegram bot. Add it to your VPN app once and the server list keeps itself up to date.",
+        "f": [
+          "Plans by number of devices, shown in the bot before you pay",
+          "Works with Happ, v2rayNG, INCY, sing-box and other apps that support subscription links",
+          "Servers update by themselves; the same link keeps working after renewal",
+          "Buying, renewing and reminders in Telegram, no account on a website"
+        ],
+        "platforms": "VPN apps that support subscription links: Happ, v2rayNG, INCY, sing-box",
+        "status": "Available in Telegram"
       }
     },
     "moreTitle": "More from SpectrTech",

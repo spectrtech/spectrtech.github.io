@@ -20,6 +20,8 @@ def url(l, page):
     return b if page == "home" else f"{b}{page}/"
 
 PAGES = [(l, p, url(l, p)) for l in LOCS for p in cfg["pages"]]
+# product, guide and tool pages that share the same header and footer
+CHROME = [("/404.html" if r == "404.html" else "/" + r[:-len("index.html")], r) for r in cfg.get("chromePages", [])]
 
 def serve():
     class Q(http.server.SimpleHTTPRequestHandler):
@@ -88,6 +90,30 @@ def static_checks():
                 if not tf.exists(): fails.append(f"{tag}: hreflang target missing {href}"); continue
                 back = dict(re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"', tf.read_text("utf-8")))
                 if back.get(l) != cfg["siteUrl"] + u: fails.append(f"{tag}: hreflang not reciprocal with {x}")
+    # product / guide / tool pages: links and the shared header + footer
+    for u, rel in CHROME:
+        s = (ROOT / rel).read_text("utf-8")
+        base = u if u.endswith("/") else "/"
+        for m in re.finditer(r'(?:href|src)="([^"]+)"', s):
+            v = html.unescape(m.group(1))
+            if v.startswith(("mailto:", "tel:", "#", "data:", "javascript:")) or "${" in v: continue
+            if v.startswith("//"): ext.add("https:" + v); continue
+            if v.startswith("http"):
+                if v.startswith(cfg["siteUrl"]):
+                    if not local_exists(v[len(cfg["siteUrl"]):] or "/"): fails.append(f"{u}: broken absolute link {v}")
+                else: ext.add(v)
+                continue
+            if not local_exists(v if v.startswith("/") else base + v): fails.append(f"{u}: broken link {v}")
+        for cls in ("st-top", "st-foot"):
+            if s.count(f'class="{cls}"') != 1: fails.append(f"{u}: {cls} count {s.count(f'class=\"{cls}\"')}")
+        if 'class="social"' in s: fails.append(f"{u}: old 'Follow us' strip left")
+        if "spectrtech-logo.svg" in s: fails.append(f"{u}: old logo left")
+        if "<footer" in s: fails.append(f"{u}: old <footer> left")
+        if not re.search(r"<title>[^<]+</title>", s): fails.append(f"{u}: no <title>")
+    for l, p, u in PAGES:
+        s = (ROOT / u.lstrip("/") / "index.html").read_text("utf-8")
+        for cls in ("st-top", "st-foot"):
+            if s.count(f'class="{cls}"') != 1: fails.append(f"{u}: {cls} missing")
     # sitemap
     sm = (ROOT / "sitemap.xml").read_text("utf-8")
     locs = re.findall(r"<loc>([^<]+)</loc>", sm)
@@ -96,11 +122,11 @@ def static_checks():
     if len(locs) != len(set(locs)): fails.append("sitemap: duplicate URLs")
     rb = (ROOT / "robots.txt").read_text("utf-8")
     if "Sitemap: https://spectrtech.si/sitemap.xml" not in rb: fails.append("robots.txt: sitemap line")
-    passes.append(f"static: {len(PAGES)} pages, {len(locs)} sitemap URLs checked")
+    passes.append(f"static: {len(PAGES)} studio pages + {len(CHROME)} product/guide/tool pages, {len(locs)} sitemap URLs checked")
     return sorted(ext)
 
 # ---------- i18n leftovers ----------
-KEEP = re.compile(r"^(READY|EXTEND|REDESIGN|CUSTOM|SpectrTech|Wedding Planner|Coin Drop Tycoon|Moving Planner with QR Box Labels|Telegram|Email|E-mail|DEMO|Instagram|Facebook)$")
+KEEP = re.compile(r"^(READY|EXTEND|REDESIGN|CUSTOM|SpectrTech|SpectrTech VPN|Wedding Planner|Coin Drop Tycoon|Moving Planner with QR Box Labels|Telegram|Email|E-mail|DEMO|Instagram|Facebook)$")
 # Words that are spelled the same as in English in that language (reviewed).
 SAME_OK = {"de": {"Websites", "Status", "Details", "Studio"},
            "fr": {"Menu", "Services", "Contact", "Structure", "Questions", "Guides", "Message", "Studio"}}
@@ -134,7 +160,7 @@ async def browser_checks():
             pg.on("pageerror", lambda e: errs.append(str(e)))
             bad = []
             pg.on("response", lambda r: r.status >= 400 and r.url.startswith(BASE) and bad.append(f"{r.status} {r.url}"))
-            for l, page, u in PAGES:
+            for l, page, u in PAGES + [("en", rel, u) for u, rel in CHROME]:
                 errs.clear(); bad.clear()
                 await pg.goto(BASE + u, wait_until="load")
                 await pg.evaluate("""async()=>{document.querySelectorAll('img[loading=lazy]').forEach(i=>i.loading='eager');
@@ -148,21 +174,23 @@ async def browser_checks():
                 for x in broken: fails.append(f"{u} @{w}: image failed {x}")
                 for e in errs: fails.append(f"{u} @{w}: JS error {e}")
                 for x in bad: fails.append(f"{u} @{w}: HTTP {x}")
-                if w == 390:
-                    small = await pg.evaluate("""[...document.querySelectorAll('a,button,summary,input,select,textarea')].filter(e=>{const r=e.getBoundingClientRect();const s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!='hidden'&&r.height<24&&!e.closest('.foot,.lang ul,p,li,dd,label,.pknote,.cmpnote,.note')}).map(e=>e.tagName+' '+(e.textContent||'').trim().slice(0,20))""")
+                if w == 390 and page in cfg["pages"]:
+                    small = await pg.evaluate("""[...document.querySelectorAll('a,button,summary,input,select,textarea')].filter(e=>{const r=e.getBoundingClientRect();const s=getComputedStyle(e);return r.width>0&&r.height>0&&s.visibility!='hidden'&&r.height<24&&!e.closest('.st-foot,.st-menu,p,li,dd,label,.pknote,.cmpnote,.note')}).map(e=>e.tagName+' '+(e.textContent||'').trim().slice(0,20))""")
                     for x in small: warns.append(f"{u} @390: small tap target {x}")
             await ctx.close()
-        passes.append(f"browser: {len(PAGES)} pages x {len(widths)} widths (overflow, images, JS, HTTP)")
+        passes.append(f"browser: {len(PAGES) + len(CHROME)} pages x {len(widths)} widths (overflow, images, JS, HTTP)")
 
         # interactions
         ctx = await b.new_context(viewport={"width": 390, "height": 860}, locale="ru-RU")
         await ctx.route(re.compile(r"^https?://(?!127\.0\.0\.1)"), lambda r: r.abort())
         pg = await ctx.new_page()
         await pg.goto(BASE + "/")
-        await pg.click(".burger")
-        if not await pg.is_visible("#nav"): fails.append("mobile menu does not open")
-        await pg.keyboard.press("Escape")
-        if await pg.is_visible("#nav"): fails.append("mobile menu does not close on Escape")
+        await pg.click(".st-burger")
+        if not await pg.is_visible("#st-nav"): fails.append("mobile menu does not open")
+        await pg.click("#st-nav [aria-controls=st-dd-p]")
+        if not await pg.is_visible("#st-dd-p a[href='/vpn/']"): fails.append("mobile: products list does not open")
+        await pg.keyboard.press("Escape"); await pg.keyboard.press("Escape")
+        if await pg.is_visible("#st-nav"): fails.append("mobile menu does not close on Escape")
         if "ru" in LOCS:
             vis = await pg.is_visible("#langbar")
             href = await pg.get_attribute("#langbar a", "href")
@@ -202,9 +230,27 @@ async def browser_checks():
         # keyboard: skip link
         await pg.goto(BASE + "/")
         await pg.keyboard.press("Tab")
-        if await pg.evaluate("document.activeElement.className") != "skip": fails.append("skip link is not first focusable")
+        if await pg.evaluate("document.activeElement.className") != "st-skip": fails.append("skip link is not first focusable")
         await ctx.close()
-        passes.append("interactions: menu, language banner, compare, gallery, form validation + mailto, RTL, skip link")
+        # desktop header menus, on a studio page and on a product page
+        ctx = await b.new_context(viewport={"width": 1366, "height": 860})
+        await ctx.route(re.compile(r"^https?://(?!127\.0\.0\.1)"), lambda r: r.abort())
+        pg = await ctx.new_page()
+        for u in ["/de/websites/", "/vpn/"]:
+            await pg.goto(BASE + u)
+            await pg.click("[aria-controls=st-dd-p]")
+            if not await pg.is_visible("#st-dd-p"): fails.append(f"{u}: products menu does not open")
+            n = await pg.eval_on_selector_all("#st-dd-p a", "e=>e.length")
+            if n != 1 + 4 + 3: fails.append(f"{u}: products menu has {n} links")
+            await pg.mouse.move(5, 600); await pg.keyboard.press("Escape")
+            if await pg.is_visible("#st-dd-p"): fails.append(f"{u}: products menu does not close")
+            await pg.click("[aria-controls=st-dd-l]")
+            langs = await pg.eval_on_selector_all("#st-dd-l a", "e=>e.map(x=>x.getAttribute('href'))")
+            if len(langs) != len(LOCS): fails.append(f"{u}: language menu {langs}")
+            await pg.mouse.click(5, 600)
+            if await pg.is_visible("#st-dd-l"): fails.append(f"{u}: language menu does not close on outside click")
+        await ctx.close()
+        passes.append("interactions: mobile menu, products/language menus, language banner, compare, gallery, form validation + mailto, RTL, skip link")
         await b.close()
 
 serve()
