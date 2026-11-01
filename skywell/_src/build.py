@@ -102,7 +102,7 @@ TRIMS = [['ET5 LV0', '56', '410 km', '15', 'GB/T', '235/50 R18'],
 DATA = {
     'MODELS': MODELS, 'TL': TL, 'TRIMS': TRIMS,
     'COLORS': [e('c1', 1400), e('c2', 1400), e('c3', 1400), e('c4', 1400)],
-    'GAL_EXT': [e(k, 1600) for k in ['k_34b', 'w_front', 'k_rear', 'w_34', 'b_34', 'w_side', 'b_rear', 'k_lights', 'k_front']],
+    'GAL_EXT': [e(k, 1600) for k in ['k_lights', 'w_front', 'k_rear', 'w_34', 'b_34', 'w_side', 'b_rear', 'k_34b', 'k_34a']],
     'GAL_INT': [e(k, 1600) for k in ['i_dash', 'i_wheel', 'i_seats', 'i_console', 'w_trunk']],
     'GAL_HTI': [HTI + 'hti2/' + f + '?v=v2' for f in ['HTi2-list4.jpg', 'HTi2-list5.jpg', 'HTi2-list3.jpg', 'HTi2-wlist7.jpg', 'HTi2-list9.jpg']],
 }
@@ -300,12 +300,12 @@ def gal(name, cls='gal'):
     return f'<div class="{cls}" data-gal="{name}"></div>'
 
 def page_et5():
-    out = head('et5', 't_et5', 'Skywell ET5 — tam elektrik ailə krossoveri: 520 km yürüş (NEDC), 72 kVt·saat batareya, 30 dəqiqəyə 20→80% şarj, 5 il zəmanət. Bakıda, Onvolt şourumunda.', 'https://skywell.az/et5', e('k_34b', 1200))
+    out = head('et5', 't_et5', 'Skywell ET5 — tam elektrik ailə krossoveri: 520 km yürüş (NEDC), 72 kVt·saat batareya, 30 dəqiqəyə 20→80% şarj, 5 il zəmanət. Bakıda, Onvolt şourumunda.', 'https://skywell.az/et5', e('k_front', 1200))
     out += '''<script type="application/ld+json">{"@context":"https://schema.org","@type":"Car","name":"Skywell ET5","brand":{"@type":"Brand","name":"Skywell"},"bodyType":"SUV","fuelType":"Electricity","vehicleSeatingCapacity":5,"offers":{"@type":"Offer","availability":"https://schema.org/InStock","seller":{"@type":"AutoDealer","name":"Onvolt MMC","telephone":"+994124400007"}}}</script>
 '''
     out += header('et5')
     out += f'''<section class="phero dark" id="top" aria-labelledby="h1" data-st-block data-st-label="Əsas ekran">
-  <div class="phero-bg"><img src="{e('k_34b', 1600)}" alt="Skywell ET5" fetchpriority="high" width="1920" height="1280"></div>
+  <div class="phero-bg"><img src="{e('k_front', 1600)}" alt="Skywell ET5" fetchpriority="high" width="1920" height="1280"></div>
   <div class="wrap">
     <div class="kicker" data-i18n="xK">[[xK]]</div>
     <h1 id="h1">Skywell ET5</h1>
