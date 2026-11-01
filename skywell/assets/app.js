@@ -151,6 +151,7 @@
     var tk = { index: 't_index', et5: 't_et5', hti: 't_hti' }[PAGE]; if (t(tk)) D.title = t(tk);
     D.querySelectorAll('[data-i18n]').forEach(function (el) { var v = t(el.getAttribute('data-i18n')); if (v !== '' && !Array.isArray(v)) el.textContent = v; });
     D.querySelectorAll('[data-i18n-html]').forEach(function (el) { var v = t(el.getAttribute('data-i18n-html')); if (v !== '') el.innerHTML = STC.clean ? STC.clean(v) : v; });
+    D.querySelectorAll('[data-i18n-alt]').forEach(function (el) { var v = t(el.getAttribute('data-i18n-alt')); if (v) el.setAttribute('alt', v); });
     D.querySelectorAll('[data-i18n-aria]').forEach(function (el) { var v = t(el.getAttribute('data-i18n-aria')); if (v) el.setAttribute('aria-label', v); });
     D.querySelectorAll('[data-i18n-list]').forEach(function (el) { var v = t(el.getAttribute('data-i18n-list')); if (Array.isArray(v)) el.innerHTML = v.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join(''); });
     D.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
