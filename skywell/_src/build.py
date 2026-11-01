@@ -193,7 +193,7 @@ def header(page):
         a(f'{h}#models', '<span data-i18n="nModels">[[nModels]]</span>'),
         a('et5.html', 'Skywell ET5', page == 'et5'),
         a('ht-i.html', 'Skywell HT-i', page == 'hti'),
-        a(f'{h}#why', '<span data-i18n="nWhy">[[nWhy]]</span>'),
+        a(f'{h}#service', '<span data-i18n="nService">[[nService]]</span>'),
         a(f'{h}#charging', '<span data-i18n="nCharge">[[nCharge]]</span>'),
         a(f'{h}#contact', '<span data-i18n="nContact">[[nContact]]</span>'),
     ]
@@ -247,6 +247,7 @@ def footer(page):
           <li><a href="{h}#models" data-i18n="nModels">[[nModels]]</a></li>
           <li><a href="et5.html">Skywell ET5</a></li>
           <li><a href="ht-i.html">Skywell HT-i</a></li>
+          <li><a href="{h}#service" data-i18n="nService">[[nService]]</a></li>
           <li><a href="{h}#charging" data-i18n="nCharge">[[nCharge]]</a></li>
           <li><a href="{h}#contact" data-i18n="nContact">[[nContact]]</a></li>
         </ul>

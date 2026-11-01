@@ -75,7 +75,7 @@ add('w1T', 'Zəmanət', 'Гарантия', 'Warranty')
 add('w1P', 'İstehsalçı zəmanəti: avtomobilə 5 il və ya 150 000 km, batareyaya 8 il və ya 200 000 km.', 'Гарантия производителя: на автомобиль 5 лет или 150 000 км, на батарею 8 лет или 200 000 км.', 'Manufacturer warranty: 5 years or 150,000 km on the car, 8 years or 200,000 km on the battery.')
 add('w2T', 'Rəsmi servis', 'Официальный сервис', 'Official service')
 add('w2P', 'Plan üzrə texniki baxış, zəmanət xidməti, diaqnostika və proqram yeniləmələri.', 'Плановое ТО, гарантийное обслуживание, диагностика и обновление ПО.', 'Scheduled maintenance, warranty service, diagnostics and software updates.')
-add('w2L', 'Servis mərkəzi xəritədə →', 'Сервисный центр на карте →', 'Service centre on the map →')
+add('w2L', 'Servis haqqında ətraflı →', 'Подробнее о сервисе →', 'More about service →')
 add('w3T', 'Ehtiyat hissələri', 'Запчасти', 'Spare parts')
 add('w3P', 'İdxal olunan hər avtomobil üçün istehsalçının tələb etdiyi sayda orijinal ehtiyat hissəsi anbarda saxlanılır.', 'Для каждого ввезённого автомобиля на складе хранится требуемое производителем количество оригинальных запчастей.', 'For every imported car, the number of genuine spare parts required by the manufacturer is kept in stock.')
 add('w4T', 'Rəsmi idxalçı', 'Официальный импортёр', 'Official importer')
@@ -260,3 +260,18 @@ I['heq'] = (['15,6" mərkəzi ekran və 12,3" cihazlar paneli', 'Adaptiv kruiz-k
 add('hNote', 'Göstəricilər istehsalçının 2026 model ili üçün açıqladığı məlumatlardır; avadanlıq versiyadan asılıdır. Bakıda satılan versiyaların komplektasiyası və qiyməti üçün satış şöbəsi ilə əlaqə saxlayın.', 'Данные производителя для 2026 модельного года; оснащение зависит от версии. Комплектацию и цену версий, которые продаются в Баку, уточняйте в отделе продаж.', 'Manufacturer data for the 2026 model year; equipment depends on the version. Ask our sales team for the specification and price of the versions sold in Baku.')
 add('hctaT', 'Skywell HT-i-ni şourumda görün', 'Посмотрите Skywell HT-i в шоуруме', 'See the Skywell HT-i in our showroom')
 add('hctaP', 'Bakı, Ceyhun Hacıbəyli 194. Zəng edin, WhatsApp-a yazın və ya sorğu göndərin.', 'Баку, ул. Джейхуна Гаджибейли, 194. Позвоните, напишите в WhatsApp или отправьте запрос.', '194 Jeyhun Hajibeyli St, Baku. Call, message us on WhatsApp or send a request.')
+
+# ── сервис ──
+add('nService', 'Servis', 'Сервис', 'Service')
+add('svK', 'Servis', 'Сервис', 'Service')
+add('svT', 'Rəsmi servis və ehtiyat hissələri', 'Официальный сервис и запчасти', 'Official service and spare parts')
+add('svP', 'Skywell avtomobilləri üçün peşəkar texniki xidmət, zəmanət dəstəyi və orijinal ehtiyat hissələri — rəsmi idxalçı Onvolt-un servis mərkəzində.', 'Профессиональное техобслуживание, гарантийная поддержка и оригинальные запчасти для автомобилей Skywell — в сервисном центре официального импортёра Onvolt.', 'Professional maintenance, warranty support and genuine spare parts for Skywell cars — at the service centre of the official importer, Onvolt.')
+add('svAddrL', 'Servis mərkəzi', 'Сервисный центр', 'Service centre')
+add('svAddr', '8QVJ+WR, Bakı', '8QVJ+WR, Баку', '8QVJ+WR, Baku')
+add('svBook', 'Servisə yazılın', 'Записаться на сервис', 'Book a service')
+add('svMap', 'Xəritədə aç', 'Открыть на карте', 'Open map')
+add('svVid', 'Servis mərkəzi — video', 'Сервисный центр — видео', 'Service centre — video')
+add('svVidL', 'Videonu YouTube-da izləyin', 'Смотреть видео на YouTube', 'Watch the video on YouTube')
+I['svL'] = (['Plan üzrə texniki baxış', 'Zəmanət xidməti', 'Orijinal ehtiyat hissələri anbarı', 'Diaqnostika və proqram yeniləmələri'],
+            ['Плановое техобслуживание', 'Гарантийное обслуживание', 'Склад оригинальных запчастей', 'Диагностика и обновление ПО'],
+            ['Scheduled maintenance', 'Warranty service', 'Genuine spare parts in stock', 'Diagnostics and software updates'])

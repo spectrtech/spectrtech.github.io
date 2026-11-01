@@ -345,3 +345,21 @@ dialog.lb[open]{display:flex;align-items:center;justify-content:center}
   .phero.dark .phero-bg img,.hero .hero-bg img{position:absolute;right:0;top:0;width:72%;height:100%;object-fit:cover;object-position:35% 60%}
   .phero.dark .phero-bg::after,.hero .hero-bg::after{background:linear-gradient(90deg,rgba(10,17,27,1) 0%,rgba(10,17,27,.92) 30%,rgba(10,17,27,.35) 55%,rgba(10,17,27,.05) 100%),linear-gradient(0deg,rgba(6,12,20,.55),transparent 40%)}
 }
+/* сервис */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.svc h2{margin-bottom:16px}
+.svc .lead2{font-size:18px;color:var(--ink2)}
+.checks{list-style:none;padding:0;margin:20px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.checks li{position:relative;padding:12px 14px 12px 42px;background:var(--bg);border:1px solid var(--line);border-radius:12px;font-weight:500}
+.checks li::before{content:"";position:absolute;left:14px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--acc) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/12px no-repeat}
+.svc .ci{margin-bottom:18px;align-items:center}
+.svc .ci .go{margin-left:auto;color:var(--acc);font-weight:600;font-size:14px;white-space:nowrap}
+.svc .acts{display:flex;flex-wrap:wrap;gap:10px}
+.vid{position:relative;display:block;border-radius:var(--r);overflow:hidden;background:var(--dark);aspect-ratio:16/10;color:#fff;text-decoration:none}
+.vid img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:transform .5s}
+.vid:hover img{transform:scale(1.03)}
+.vid .play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--acc);display:flex;align-items:center;justify-content:center}
+.vid .play svg{width:34px;height:34px;margin-left:4px}
+.vid .cap{position:absolute;left:0;right:0;bottom:0;padding:16px 20px;background:linear-gradient(0deg,rgba(6,12,20,.85),transparent);font-weight:600}
+@media (max-width:900px){.svc{grid-template-columns:1fr}}
+@media (max-width:480px){.checks{grid-template-columns:1fr}.svc .ci .go{display:none}}
