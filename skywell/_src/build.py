@@ -55,9 +55,10 @@ def WS(u, w):  # сжатие тяжёлых фото производителя
 KA = 'https://cdn-skywellev.coolwellcloud.com/resource/v2/'   # en.skyworthev.com/Skyworth_K_LHD — новый ET5
 KB = 'https://cdn-skyworthev.coolwellcloud.com/resource/'
 N34, NFRONT, NSIDE = KA + '9703384641b046efa6c5688ae25d6958.png', KA + '15eb5fa38f814216bf6d2ae3f711a495.png', KA + 'd7888d0e1a644f49925858a6d198ef99.png'
-NREAR = KB + 'df88bb8df89647b8a1d0e280fbfee8c6.jpg'
-NINT = [KB + 'd8df77e6528f458d9a64a240c97d3a03.png', KB + '374230ba419a408d855682b9d0594105.jpeg', KB + '7c19cbc4d9cb4234b3478a4dfbc359db.png', KB + '65322d7d291342c3b2afa7c82be59eb8.png', KB + 'ff314acde70941c3b829efb87485ebd9.png']
-N_ADAS, N_SCREEN = KB + '98f0089eed54408980b593332c77310b.png', KB + 'd8846084b378491d9d4eb7fa29016408.jpg'
+NREAR = KA + '242432adc7f74cef8efad59a50c7ee8c.jpg'  # моб. версии фото (cdn-skyworthev недоступен у части посетителей)
+NINT = [KA + '4bd247298fe7454aa68b2a3de7bcef2d.jpg', KA + '10d94d5076514d5f8cb0c0d8f5213070.jpg', KA + 'f224f6417b3a4055993dd1cfa338840f.jpg', KA + 'ff09245046bb4d1983f9392c8b603460.jpg']
+N_ADAS = KA + '7acec416a80441c680fac1bdc6185930.jpg'
+N_SCREEN = 'https://thb.tildacdn.one/tild3065-3335-4663-b633-643738336330/-/resize/800x/DSC08550.jpg'  # фото Onvolt, старый skywell.az
 N_SKYLINK, N_CLUSTER = 'https://en.skyworthev.com/static/web/img_K_LHD/et5-list8.png?v=v1', 'https://en.skyworthev.com/static/web/img/double-et513.jpg?v=v1'
 HTI = 'https://www.skyworthev.com/static/web/img/'  # официальный сайт производителя (Китай)
 CE11 = 'https://cdn-skyworthev.coolwellcloud.com/resource/'  # en.skyworthev.com/CE11 (Skyhome)
@@ -74,7 +75,7 @@ MODELS = [
      'img': WS(N34, 900),
      'specs': [{'l': L('Yürüş (NEDC)', 'Запас хода (NEDC)', 'Range (NEDC)'), 'v': L('620 km', '620 км', '620 km')},
                {'l': L('Batareya', 'Батарея', 'Battery'), 'v': L('85,97 kVt·saat', '85,97 кВт·ч', '85.97 kWh')},
-               {'l': L('0–100 km/saat', '0–100 км/ч', '0–100 km/h'), 'v': L('9,6 san', '9,6 с', '9.6 s')},
+               {'l': L('Baqaj', 'Багажник', 'Boot'), 'v': L('467–1141 l', '467–1141 л', '467–1141 L')},
                {'l': L('Şarj 20→70%', 'Зарядка 20→70%', 'Charge 20→70%'), 'v': L('≤45 dəq', '≤45 мин', '≤45 min')}],
      'note': L('', '', '')},
     {'id': 'ht-i', 'name': 'Skywell HT-i', 'st': 'sale', 'page': 'ht-i.html', 'body': L('SUV · plug-in hibrid (PHEV)', 'SUV · подключаемый гибрид (PHEV)', 'SUV · plug-in hybrid (PHEV)'),
@@ -94,7 +95,7 @@ MODELS = [
      'note': L('Avropa üçün hazırlanmış model, 2024-cü ildə Paris avtosalonunda təqdim olunub.', 'Модель, созданная для Европы; представлена на Парижском автосалоне 2024 года.', 'Designed for Europe; unveiled at the 2024 Paris Motor Show.')},
     {'id': 'skyhome', 'name': 'Skywell Skyhome', 'st': 'soon', 'page': '', 'body': L('Sedan · elektrik', 'Седан · электро', 'Sedan · electric'),
      'img': 'img/m/skyhome-900.jpg',
-     'gal': ['img/m/skyhome.jpg'] + [CE11 + f + '.jpeg' for f in ['0c13a7d67101448584b9fed7a380a207', 'fafae09840bc434fb36d1ce73d95371c', '65e892379b38422eb59cbd71c1d4ad38', '2f583903aaff4b9f94004b7076392e2f', 'ba2b80df13e34b7f969797c8830f54b6', '2a457522dc54409fa6e2ada8f641495f']],
+     'gal': ['img/m/skyhome.jpg'] + [KA + f + '.jpg' for f in ['0a5d3904106e4f40b1b6a2f10476b934', 'cad12ba770814c84893ee5f8baebb246', '83953f9c975744d18a847cc1ee01c052', '1878af12f5204557a4c2b1e42ffde39b', '3030333d4bf34079a739dc08fb3d2dbf', '3aac8f34e77e41a5a5c1bb53ccf9bf87']],
      'specs': [{'l': L('Güc (flaqman)', 'Мощность (флагман)', 'Power (flagship)'), 'v': L('460 kVt', '460 кВт', '460 kW')},
                {'l': L('0–100 km/saat', '0–100 км/ч', '0–100 km/h'), 'v': L('3,5 san', '3,5 с', '3.5 s')},
                {'l': L('Elektromotorlar', 'Электромоторы', 'Electric motors'), 'v': S('2')},
@@ -315,7 +316,7 @@ def page_index():
     out = head('index', 't_index', 'Skywell elektrik avtomobillərinin Azərbaycanda rəsmi idxalçısı Onvolt: Skywell ET5, yeni HT-i, Q və Skyhome modelləri, rəsmi servis, zəmanət və şarj stansiyaları.', 'https://skywell.az/', WS(N34, 1200))
     out += '''<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Onvolt — Skywell Azərbaycan","url":"https://skywell.az/","brand":{"@type":"Brand","name":"Skywell"},"telephone":"+994124400007","email":"sales@onvolt.az","address":{"@type":"PostalAddress","streetAddress":"Ceyhun Hacıbəyli küç., 194","addressLocality":"Bakı","addressCountry":"AZ"},"geo":{"@type":"GeoCoordinates","latitude":40.3984375,"longitude":49.8430625},"parentOrganization":{"@type":"Organization","name":"Onvolt MMC","url":"https://onvolt.az"},"sameAs":["https://www.instagram.com/skywell.az/","https://www.facebook.com/profile.php?id=100089702104191","https://www.youtube.com/@SkywellAzerbaijan","https://www.linkedin.com/company/skywellazerbaijan"]}</script>
 '''
-    body = INDEX_BODY.replace('{{HERO}}', WS(N34, 1600)).replace('{{ET5IMG}}', 'img/et5-white.jpg').replace('{{CONTACT_CARDS}}', contact_cards())
+    body = INDEX_BODY.replace('{{HERO}}', WS(N34, 1600)).replace('{{ET5IMG}}', 'img/et5-black.jpg').replace('{{CONTACT_CARDS}}', contact_cards())
     return out + header('index') + body + footer('index')
 
 # ── ET5 ──
@@ -337,7 +338,7 @@ def page_et5():
       <a class="btn w" href="index.html?model=Skywell%20ET5#contact" data-i18n="ask">[[ask]]</a>
       <a class="btn ow" href="https://turbo.az/avtosalonlar/onvoltskywell" target="_blank" rel="noopener" data-i18n="btnStock">[[btnStock]]</a>
     </div>
-    {kv([('k1v', 'k1'), ('kWh72', 'k2'), ('k3v', 'k3'), ('k4v', 'k4')], 'hstats four')}
+    {kv([('k1v', 'k1'), ('kWh72', 'k2'), ('k3v', 'k3')], 'hstats')}
   </div>
 </section>
 
@@ -376,39 +377,6 @@ def page_et5():
       <div class="rv"><h3 data-i18n="fe3T">[[fe3T]]</h3><ul data-i18n-list="fe3"></ul></div>
     </div>
     <p class="fine" data-i18n="eFine">[[eFine]]</p>
-  </div>
-</section>
-
-<section class="sec" id="specs" aria-labelledby="spH" data-st-block data-st-label="Göstəricilər">
-  <div class="wrap">
-    <div class="sec-h rv"><div class="kicker" data-i18n="spK">[[spK]]</div><h2 id="spH" data-i18n="spT">[[spT]]</h2></div>
-    <div class="tbl light rv">
-      <table>
-        <caption class="vh" data-i18n="tCap">[[tCap]]</caption>
-        <thead><tr><th scope="col" data-i18n="t0">[[t0]]</th><th scope="col" data-i18n="t1">[[t1]]</th><th scope="col" data-i18n="t2">[[t2]]</th><th scope="col" data-i18n="t3">[[t3]]</th><th scope="col" data-i18n="t4">[[t4]]</th><th scope="col" data-i18n="t5">[[t5]]</th></tr></thead>
-        <tbody id="trims"></tbody>
-      </table>
-    </div>
-    <p class="disc" data-i18n="trNote">[[trNote]]</p>
-    <div class="dims light">
-      <span><span data-i18n="d1">[[d1]]</span>: <b>4720 × 1908 × 1696 mm</b></span>
-      <span><span data-i18n="d2">[[d2]]</span>: <b>2800 mm</b></span>
-      <span><span data-i18n="d3">[[d3]]</span>: <b>177 mm</b></span>
-      <span><span data-i18n="d4">[[d4]]</span>: <b data-i18n="d4v">[[d4v]]</b></span>
-      <span><span data-i18n="d5">[[d5]]</span>: <b data-i18n="d5v">[[d5v]]</b></span>
-    </div>
-    <div class="split rv">
-      <img src="{WS(NFRONT, 1200)}" alt="Skywell ET5" loading="lazy" width="1200" height="675">
-      <div>
-        <h3 data-i18n="xcT">[[xcT]]</h3>
-        <p data-i18n="xcP">[[xcP]]</p>
-        <div class="wbox">
-          <div><b data-i18n="wr1v">[[wr1v]]</b><span data-i18n="wr1">[[wr1]]</span></div>
-          <div><b data-i18n="wr2v">[[wr2v]]</b><span data-i18n="wr2">[[wr2]]</span></div>
-        </div>
-        <p class="links"><a href="index.html#charging" data-i18n="xcL">[[xcL]]</a></p>
-      </div>
-    </div>
   </div>
 </section>
 '''
