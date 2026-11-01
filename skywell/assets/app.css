@@ -363,3 +363,19 @@ dialog.lb[open]{display:flex;align-items:center;justify-content:center}
 .vid .cap{position:absolute;left:0;right:0;bottom:0;padding:16px 20px;background:linear-gradient(0deg,rgba(6,12,20,.85),transparent);font-weight:600}
 @media (max-width:900px){.svc{grid-template-columns:1fr}}
 @media (max-width:480px){.checks{grid-template-columns:1fr}.svc .ci .go{display:none}}
+/* видео */
+.hv{background:var(--dark);color:#fff}
+.hv .kicker{color:#7CC0FF}
+.hv-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
+.hv h2{margin-bottom:14px}
+.hv p{color:#C3CCD8}
+.hv .meta{font-size:14px;color:#8D9AAB;margin:12px 0 22px}
+.yt{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000}
+.yt img{width:100%;height:100%;object-fit:cover}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt .play{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;border:0;background:rgba(255,255,255,.94);color:var(--acc);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .2s}
+.yt .play:hover{transform:scale(1.08)}
+.yt .play svg{width:38px;height:38px;margin-left:5px}
+.vid.yt{aspect-ratio:16/10}
+.yt.on .cap{display:none}
+@media (max-width:900px){.hv-g{grid-template-columns:1fr}}

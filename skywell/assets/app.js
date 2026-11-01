@@ -234,6 +234,24 @@
     });
   }
 
+  /* видео YouTube: превью → плеер по клику (без загрузки YouTube до клика) */
+  D.querySelectorAll('.yt[data-yt]').forEach(function (box) {
+    var im = box.querySelector('img');
+    if (im && im.getAttribute('data-fb')) im.addEventListener('load', function () { if (im.naturalWidth <= 120) im.src = im.getAttribute('data-fb'); });
+    if (im && im.getAttribute('data-fb')) im.addEventListener('error', function () { im.src = im.getAttribute('data-fb'); });
+    var btn = box.querySelector('.play');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var f = D.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(box.getAttribute('data-yt')) + '?autoplay=1&rel=0';
+      f.title = box.getAttribute('data-title') || 'YouTube';
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      box.innerHTML = ''; box.appendChild(f); box.classList.add('on');
+      f.focus();
+    });
+  });
+
   /* появление блоков */
   var rv = D.querySelectorAll('.rv');
   if ('IntersectionObserver' in W && !W.matchMedia('(prefers-reduced-motion: reduce)').matches) {
