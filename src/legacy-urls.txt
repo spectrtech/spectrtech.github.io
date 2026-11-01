@@ -21,3 +21,4 @@
 /tools/moving-box-calculator/
 /coin-drop-tycoon/
 /coin-drop-tycoon/privacy/
+/vpn/
