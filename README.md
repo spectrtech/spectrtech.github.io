@@ -40,4 +40,6 @@ python3 src/tools/og.py     # regenerate social preview images (after text chang
 python3 src/tools/check.py  # QA: links, JS errors, overflow, images, SEO, hreflang, form, i18n
 ```
 
-A language whose dictionary is incomplete is built with `noindex` and left out of hreflang and the sitemap automatically. Product pages, guides and tools are not touched by the generator.
+A language whose dictionary is incomplete is built with `noindex` and left out of hreflang and the sitemap automatically.
+
+**One header and footer on every page.** `src/assets/chrome.css` + `chrome.js` and the `chromeHeader` / `chromeFooter` functions in `src/build.mjs` render them. Studio pages get them at build time; product, guide and tool pages listed in `src/config.json` → `chromePages` get them between `<!--st:header-->`, `<!--st:footer-->` and `<!--st:head-->` markers (the rest of those pages is never touched). A new product: add it to `src/data/projects.json` and its texts to `src/i18n/*.json`; a new hand-made page: add it to `chromePages`, then run the build.

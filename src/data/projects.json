@@ -9,9 +9,21 @@
       "category": "LifestyleApplication",
       "os": "Windows, macOS, Linux (web browser)",
       "images": [
-        ["/blog/img/dashboard.jpg", 1400, 877],
-        ["/blog/img/seating-close.jpg", 1400, 877],
-        ["/blog/img/budget.jpg", 1400, 877]
+        [
+          "/blog/img/dashboard.jpg",
+          1400,
+          877
+        ],
+        [
+          "/blog/img/seating-close.jpg",
+          1400,
+          877
+        ],
+        [
+          "/blog/img/budget.jpg",
+          1400,
+          877
+        ]
       ]
     },
     {
@@ -23,9 +35,21 @@
       "category": "LifestyleApplication",
       "os": "Windows, macOS, Linux (web browser)",
       "images": [
-        ["/moving-planner/img/g1.jpg", 1280, 720],
-        ["/moving-planner/img/s5-labels.jpg", 1400, 875],
-        ["/moving-planner/img/s2-boxes.jpg", 1400, 875]
+        [
+          "/moving-planner/img/g1.jpg",
+          1280,
+          720
+        ],
+        [
+          "/moving-planner/img/s5-labels.jpg",
+          1400,
+          875
+        ],
+        [
+          "/moving-planner/img/s2-boxes.jpg",
+          1400,
+          875
+        ]
       ]
     },
     {
@@ -37,9 +61,41 @@
       "os": "Android 7.0+",
       "portrait": true,
       "images": [
-        ["/coin-drop-tycoon/img/shot-1.jpg", 540, 960],
-        ["/coin-drop-tycoon/img/shot-2.jpg", 540, 960],
-        ["/coin-drop-tycoon/img/shot-3.jpg", 540, 960]
+        [
+          "/coin-drop-tycoon/img/shot-1.jpg",
+          540,
+          960
+        ],
+        [
+          "/coin-drop-tycoon/img/shot-2.jpg",
+          540,
+          960
+        ],
+        [
+          "/coin-drop-tycoon/img/shot-3.jpg",
+          540,
+          960
+        ]
+      ],
+      "card": [
+        "/coin-drop-tycoon/img/og.jpg",
+        1024,
+        500
+      ]
+    },
+    {
+      "id": "vpn",
+      "page": "/vpn/",
+      "bot": "https://t.me/Spectrtechvpnbot",
+      "type": "service",
+      "serviceType": "VPN subscription",
+      "price": null,
+      "images": [
+        [
+          "/vpn/img/og.jpg",
+          1200,
+          630
+        ]
       ]
     }
   ],

@@ -7,36 +7,6 @@
     try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; }
   }
 
-  /* sticky header border */
-  var top = document.querySelector(".top");
-  if (top) {
-    var onScroll = function () { top.classList.toggle("scrolled", window.scrollY > 8); };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
-
-  /* mobile menu */
-  var burger = document.querySelector(".burger");
-  var nav = document.getElementById("nav");
-  if (burger && nav) {
-    var setMenu = function (open) {
-      burger.setAttribute("aria-expanded", open ? "true" : "false");
-      burger.setAttribute("aria-label", open ? burger.dataset.close : burger.dataset.open);
-      nav.classList.toggle("open", open);
-    };
-    burger.addEventListener("click", function () { setMenu(burger.getAttribute("aria-expanded") !== "true"); });
-    nav.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("open")) { setMenu(false); burger.focus(); } });
-  }
-
-  /* language switcher: remember explicit choice, close on outside click */
-  document.querySelectorAll(".lang a[hreflang]").forEach(function (a) {
-    a.addEventListener("click", function () { store("st-lang", a.getAttribute("hreflang")); });
-  });
-  document.addEventListener("click", function (e) {
-    document.querySelectorAll("details.lang[open]").forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute("open"); });
-  });
-
   /* browser language suggestion (never auto-redirects) */
   (function () {
     var bar = document.getElementById("langbar");

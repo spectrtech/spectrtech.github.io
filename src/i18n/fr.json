@@ -31,6 +31,8 @@
     "websites": "Sites web",
     "process": "Méthode",
     "projects": "Projets",
+    "products": "Produits",
+    "mainNav": "Menu principal",
     "contact": "Contact",
     "startProject": "Lancer un projet",
     "seePackages": "Voir les formules",
@@ -151,7 +153,7 @@
     "packagesTitle": "Formules",
     "packagesLead": "Quatre formules claires, du site d’une page prêt à l’emploi au projet entièrement sur mesure.",
     "projectsTitle": "Nos propres produits",
-    "projectsLead": "En plus des projets clients, nous créons nos propres applications et jeux. Ils montrent comment nous concevons, développons et lançons un logiciel de A à Z.",
+    "projectsLead": "En plus des projets clients, nous créons et faisons vivre nos propres produits. Ils montrent comment nous concevons, développons et lançons un logiciel de A à Z.",
     "ctaTitle": "Parlons de votre site.",
     "ctaLead": "Parlez-nous de votre entreprise. Nous répondons par des questions ou une proposition, sans engagement."
   },
@@ -305,7 +307,7 @@
   "projects": {
     "eyebrow": "Projets",
     "title": "Des produits que nous créons, lançons et <em>vendons nous-mêmes</em>.",
-    "lead": "SpectrTech développe aussi ses propres produits numériques. Deux sont déjà en vente, et notre premier jeu est en test fermé.",
+    "lead": "SpectrTech développe aussi ses propres produits numériques : deux organisateurs en vente, un service VPN sur Telegram et notre premier jeu en test fermé.",
     "features": "Fonctionnalités",
     "platforms": "Plateformes",
     "status": "Statut",
@@ -314,6 +316,7 @@
     "demo": "Essayer la démo",
     "seeGame": "Découvrir le jeu",
     "joinTest": "Rejoindre le test fermé",
+    "openBot": "Ouvrir le bot",
     "oneTime": "paiement unique",
     "items": {
       "wedding": {
@@ -354,6 +357,19 @@
         ],
         "platforms": "Android 7.0 et versions ultérieures",
         "status": "Test fermé, bientôt sur Google Play"
+      },
+      "vpn": {
+        "name": "SpectrTech VPN",
+        "kind": "Service VPN sur Telegram",
+        "d": "Un lien d’abonnement VPN personnel fourni par notre bot Telegram. Ajoutez-le une fois à votre application VPN : la liste des serveurs se met à jour toute seule.",
+        "f": [
+          "Formules selon le nombre d’appareils, affichées dans le bot avant le paiement",
+          "Compatible avec Happ, v2rayNG, INCY, sing-box et les autres applications qui prennent en charge les liens d’abonnement",
+          "Les serveurs se mettent à jour tout seuls ; le même lien reste valable après le renouvellement",
+          "Achat, renouvellement et rappels sur Telegram, sans compte sur un site"
+        ],
+        "platforms": "Applications VPN compatibles avec les liens d’abonnement : Happ, v2rayNG, INCY, sing-box",
+        "status": "Disponible sur Telegram"
       }
     },
     "moreTitle": "Plus de SpectrTech",
