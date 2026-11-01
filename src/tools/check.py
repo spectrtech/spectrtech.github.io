@@ -201,8 +201,8 @@ async def browser_checks():
         await pg.click(".seg button[data-show=social]")
         if await pg.get_attribute(".cmp", "data-show") != "social" or not await pg.is_visible(".cmp td.social"): fails.append("compare toggle")
         await pg.goto(BASE + "/projects/")
-        await pg.click("#wedding .thumbs button:nth-child(2)")
-        src = await pg.get_attribute("#wedding .main img", "src")
+        await pg.click("#wedding .pc-thumbs button:nth-child(2)")
+        src = await pg.get_attribute("#wedding img.pc-main", "src")
         if "seating-close" not in src: fails.append("gallery thumbnail switch")
         # form
         await pg.goto(BASE + "/contact/?package=extend")

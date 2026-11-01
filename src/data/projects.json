@@ -24,7 +24,9 @@
           1400,
           877
         ]
-      ]
+      ],
+      "media": "cover",
+      "status": "ok"
     },
     {
       "id": "moving",
@@ -36,9 +38,9 @@
       "os": "Windows, macOS, Linux (web browser)",
       "images": [
         [
-          "/moving-planner/img/g1.jpg",
-          1280,
-          720
+          "/moving-planner/img/s1-home.jpg",
+          1400,
+          875
         ],
         [
           "/moving-planner/img/s5-labels.jpg",
@@ -50,7 +52,9 @@
           1400,
           875
         ]
-      ]
+      ],
+      "media": "cover",
+      "status": "ok"
     },
     {
       "id": "coin",
@@ -59,7 +63,6 @@
       "price": null,
       "category": "GameApplication",
       "os": "Android 7.0+",
-      "portrait": true,
       "images": [
         [
           "/coin-drop-tycoon/img/shot-1.jpg",
@@ -77,11 +80,8 @@
           960
         ]
       ],
-      "card": [
-        "/coin-drop-tycoon/img/og.jpg",
-        1024,
-        500
-      ]
+      "media": "phones",
+      "status": "test"
     },
     {
       "id": "vpn",
@@ -96,7 +96,10 @@
           1200,
           630
         ]
-      ]
+      ],
+      "media": "contain",
+      "mediaBg": "#121c34",
+      "status": "ok"
     }
   ],
   "portfolio": []
