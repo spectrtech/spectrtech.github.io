@@ -321,3 +321,4 @@ dialog.lb[open]{display:flex;align-items:center;justify-content:center}
 .tcards img,.adas img,.split img,.et5-img img{height:auto}
 .et5-img img{height:100%}
 .colimg img{height:100%;width:auto}
+.phero-car img{border-radius:var(--r)}
