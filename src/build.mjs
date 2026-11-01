@@ -341,6 +341,7 @@ function pageProjects(l) {
       if (p.type === "service") return { "@context": "https://schema.org", "@type": "Service", name: it.name, serviceType: p.serviceType, description: it.d, url: abs(p.page), image: abs(p.images[0][0]), provider: { "@id": ORG["@id"] } };
       const o = { "@context": "https://schema.org", "@type": "SoftwareApplication", name: it.name, applicationCategory: p.category, operatingSystem: p.os, description: it.d, url: abs(p.page), image: abs(p.images[0][0]), author: { "@id": ORG["@id"] } };
       if (p.price) o.offers = { "@type": "Offer", price: p.price.replace(/[^0-9.]/g, ""), priceCurrency: "USD", url: p.buy };
+      else if (p.play) { o.offers = { "@type": "Offer", price: "0", priceCurrency: "USD", url: p.play }; o.installUrl = p.play; }
       return o;
     }),
     crumbs(l, "projects"),

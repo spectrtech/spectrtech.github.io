@@ -307,7 +307,7 @@
   "projects": {
     "eyebrow": "Projekte",
     "title": "Produkte, die wir entwickeln, launchen und <em>selbst verkaufen</em>.",
-    "lead": "SpectrTech entwickelt auch eigene Digitalprodukte: zwei Planer im Verkauf, einen VPN-Dienst in Telegram und unser erstes Spiel im geschlossenen Test.",
+    "lead": "SpectrTech entwickelt auch eigene Digitalprodukte: zwei Planer im Verkauf, einen VPN-Dienst in Telegram und unser erstes Spiel bei Google Play.",
     "features": "Funktionen",
     "platforms": "Plattformen",
     "status": "Status",
@@ -316,7 +316,7 @@
     "demo": "Live-Demo testen",
     "demoShort": "Live-Demo",
     "seeGame": "Zum Spiel",
-    "joinTest": "Am geschlossenen Test teilnehmen",
+    "getPlay": "Jetzt bei Google Play",
     "openBot": "Bot öffnen",
     "oneTime": "Einmalzahlung",
     "items": {
@@ -357,7 +357,7 @@
           "Ohne Registrierung; spielbar ohne Internet"
         ],
         "platforms": "Android 7.0 und neuer",
-        "status": "Geschlossener Test, bald bei Google Play"
+        "status": "Bei Google Play erhältlich"
       },
       "vpn": {
         "name": "SpectrTech VPN",
