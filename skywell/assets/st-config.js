@@ -15,6 +15,11 @@
         { k: 'st', label: { az: 'Status', ru: 'Статус', en: 'Status' }, type: 'select', w: 'md', options: opts(ST) },
         { k: 'body', label: { az: 'Kuzov və mühərrik növü', ru: 'Кузов и тип привода', en: 'Body and powertrain' }, type: 'i18n' },
         { k: 'img', label: { az: 'Foto', ru: 'Фото', en: 'Photo' }, type: 'image', dir: 'img/m/', ext: '.jpg', optional: true },
+        { k: 'crop', label: { az: 'Fotonun kəsilməsi', ru: 'Обрезка фото', en: 'Photo crop' }, type: 'text', w: 'md', optional: true, hint: { az: 'Məsələn: 55% 100% 1.4 (mərkəz X, mərkəz Y, böyütmə). Boş — tam foto.', ru: 'Например: 55% 100% 1.4 (центр X, центр Y, увеличение). Пусто — фото целиком.', en: 'E.g. 55% 100% 1.4 (centre X, centre Y, zoom). Empty — whole photo.' } },
+        { k: 'gal', label: { az: 'Əlavə fotolar (Fotolar düyməsi)', ru: 'Дополнительные фото (кнопка «Фото»)', en: 'Extra photos (Photos button)' }, type: 'list', optional: true,
+          item: { title: function (u, ctx, i) { return (ctx.lang === 'ru' ? 'Фото ' : ctx.lang === 'en' ? 'Photo ' : 'Foto ') + (i + 1); },
+            fields: [{ k: '$', label: { az: 'Foto', ru: 'Фото', en: 'Photo' }, type: 'image', dir: 'img/m/', ext: '.jpg' }],
+            add: function () { return ''; } } },
         { k: 'page', label: { az: 'Modelin səhifəsi (məs. et5.html)', ru: 'Страница модели (напр. et5.html)', en: 'Model page (e.g. et5.html)' }, type: 'text', w: 'md', optional: true },
         { k: 'specs', label: { az: 'Göstəricilər', ru: 'Характеристики', en: 'Specs' }, type: 'list',
           item: { title: function (s, ctx) { return ((s.l && (s.l[ctx.lang] || s.l.az)) || '…') + ': ' + ((s.v && (s.v[ctx.lang] || s.v.az)) || ''); },
@@ -25,7 +30,7 @@
             add: function () { return { l: { az: '', ru: '', en: '' }, v: { az: '', ru: '', en: '' } }; } } },
         { k: 'note', label: { az: 'Qeyd', ru: 'Примечание', en: 'Note' }, type: 'i18n', optional: true }
       ],
-      add: function () { return { id: uid('m'), name: 'Skywell ', st: 'soon', body: { az: '', ru: '', en: '' }, img: '', page: '', specs: [], note: { az: '', ru: '', en: '' } }; } } };
+      add: function () { return { id: uid('m'), name: 'Skywell ', st: 'soon', body: { az: '', ru: '', en: '' }, img: '', crop: '', gal: [], page: '', specs: [], note: { az: '', ru: '', en: '' } }; } } };
 
   var TL = { title: { az: 'Brendin tarixi', ru: 'История бренда', en: 'Brand history' },
     item: { title: function (x) { return x.y || '…'; },

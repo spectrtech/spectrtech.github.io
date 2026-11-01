@@ -55,6 +55,10 @@ LOGO = 'https://static.tildacdn.one/tild6266-6636-4631-a532-363538336337/Logo_Sk
 FAV = 'https://static.tildacdn.one/tild3437-6133-4763-b461-616133623839/favicon.png'
 OG = 'https://static.tildacdn.one/tild3266-3162-4630-a332-336234663730/SKYWELL_-_Day-min.png'
 
+HTI_CROP = '55% 100% 1.4'  # обрезка фото HT-i: убирает надписи сверху
+ROCK = ['https://image.bitautoimg.com/appimage-921-w1/mapi/news/2025/03/27/93e559e5a02a456cb2d8c7ebd3c052a9.png',
+        'https://image.bitautoimg.com/appimage-914-w1/mapi/news/2025/03/27/bb12c0eda41b4876ab9dc90b9efb02c2.png',
+        'https://image.bitautoimg.com/appimage-914-w1/mapi/news/2025/03/27/6a129deabecb4f55b95a0ab89c11b4fc.png']  # Skywell Rock (创维磐石), фото с выставки
 MODELS = [
     {'id': 'et5', 'name': 'Skywell ET5', 'st': 'sale', 'page': 'et5.html', 'body': L('SUV · elektrik', 'SUV · электро', 'SUV · electric'),
      'img': e('w_front', 900),
@@ -63,15 +67,16 @@ MODELS = [
                {'l': L('0–100 km/saat', '0–100 км/ч', '0–100 km/h'), 'v': L('8 san', '8 с', '8 s')},
                {'l': L('Şarj 20→80%', 'Зарядка 20→80%', 'Charge 20→80%'), 'v': L('~30 dəq', '~30 мин', '~30 min')}],
      'note': L('', '', '')},
-    {'id': 'ht-i', 'name': 'Skywell HT-i', 'st': 'soon', 'page': 'ht-i.html', 'body': L('SUV · plug-in hibrid (PHEV)', 'SUV · подключаемый гибрид (PHEV)', 'SUV · plug-in hybrid (PHEV)'),
-     'img': HTI + 'HT-i-prop-web.jpg?v=v2',
+    {'id': 'ht-i', 'name': 'Skywell HT-i', 'st': 'sale', 'page': 'ht-i.html', 'body': L('SUV · plug-in hibrid (PHEV)', 'SUV · подключаемый гибрид (PHEV)', 'SUV · plug-in hybrid (PHEV)'),
+     'img': HTI + 'HTi-list2.jpg?v=v2', 'crop': HTI_CROP,
      'specs': [{'l': L('Elektrik yürüşü (CLTC)', 'На электротяге (CLTC)', 'Electric range (CLTC)'), 'v': L('200 km', '200 км', '200 km')},
                {'l': L('Batareya', 'Батарея', 'Battery'), 'v': L('32,76 kVt·saat', '32,76 кВт·ч', '32.76 kWh')},
                {'l': L('Elektromotor', 'Электромотор', 'Electric motor'), 'v': L('160 kVt', '160 кВт', '160 kW')},
                {'l': L('Benzin mühərriki', 'Бензиновый двигатель', 'Petrol engine'), 'v': L('1.5T, 115 kVt', '1.5T, 115 кВт', '1.5T, 115 kW')}],
-     'note': L('Göstəricilər 2026 model ilinin Çin bazarı versiyasına aiddir.', 'Данные для версии 2026 модельного года для рынка Китая.', 'Figures for the 2026 model year, China-market version.')},
+     'note': L('Göstəricilər istehsalçının 2026 model ili üçün məlumatlarıdır.', 'Данные производителя для 2026 модельного года.', 'Manufacturer data for the 2026 model year.')},
     {'id': 'q', 'name': 'Skywell Q', 'st': 'soon', 'page': '', 'body': L('Hetçbek · elektrik', 'Хэтчбек · электро', 'Hatchback · electric'),
      'img': 'https://car-images.bauersecure.com/wp-images/199979/1056x594/skywellq_50.jpg',
+     'gal': ['https://car-images.bauersecure.com/wp-images/199979/1056x594/skywellq_5%d.jpg' % n for n in (0, 1, 2)],
      'specs': [{'l': L('Güc', 'Мощность', 'Power'), 'v': L('150 kVt', '150 кВт', '150 kW')},
                {'l': L('Uzunluq', 'Длина', 'Length'), 'v': L('4,30 m', '4,30 м', '4.30 m')},
                {'l': L('Mərkəzi ekran', 'Центральный экран', 'Centre screen'), 'v': S('15.6"')},
@@ -79,11 +84,19 @@ MODELS = [
      'note': L('Avropa üçün hazırlanmış model, 2024-cü ildə Paris avtosalonunda təqdim olunub.', 'Модель, созданная для Европы; представлена на Парижском автосалоне 2024 года.', 'Designed for Europe; unveiled at the 2024 Paris Motor Show.')},
     {'id': 'skyhome', 'name': 'Skywell Skyhome', 'st': 'soon', 'page': '', 'body': L('Sedan · elektrik', 'Седан · электро', 'Sedan · electric'),
      'img': CE11 + '0c13a7d67101448584b9fed7a380a207.jpeg',
+     'gal': [CE11 + f + '.jpeg' for f in ['0c13a7d67101448584b9fed7a380a207', '241f582cb25d4218bbd9fef2684b69e2', '727ff3a0eff9464da8ea4f546ff4f053', 'fafae09840bc434fb36d1ce73d95371c', '65e892379b38422eb59cbd71c1d4ad38', '2f583903aaff4b9f94004b7076392e2f', 'ba2b80df13e34b7f969797c8830f54b6', '2a457522dc54409fa6e2ada8f641495f']],
      'specs': [{'l': L('Güc (flaqman)', 'Мощность (флагман)', 'Power (flagship)'), 'v': L('460 kVt', '460 кВт', '460 kW')},
                {'l': L('0–100 km/saat', '0–100 км/ч', '0–100 km/h'), 'v': L('3,5 san', '3,5 с', '3.5 s')},
                {'l': L('Elektromotorlar', 'Электромоторы', 'Electric motors'), 'v': S('2')},
                {'l': L('Ötürücü', 'Привод', 'Drive'), 'v': S('AWD')}],
      'note': L('Pnevmatik asqı, arxa sərnişinlər üçün uzanan oturacaqlar və tavandan enən ekran. İstehsalçının ilkin məlumatlarıdır.', 'Пневмоподвеска, откидывающиеся задние кресла и экран, опускающийся с потолка. Предварительные данные производителя.', 'Air suspension, reclining rear seats and a roof-mounted screen. Manufacturer’s preliminary data.')},
+    {'id': 'rock', 'name': 'Skywell Rock', 'st': 'soon', 'page': '', 'body': L('SUV · elektrik və plug-in hibrid', 'SUV · электро и подключаемый гибрид', 'SUV · electric and plug-in hybrid'),
+     'img': ROCK[0], 'crop': '50% 0% 1', 'gal': ROCK,
+     'specs': [{'l': L('Yürüş (CLTC, elektrik)', 'Запас хода (CLTC, электро)', 'Range (CLTC, electric)'), 'v': L('620 km', '620 км', '620 km')},
+               {'l': L('Platforma', 'Платформа', 'Platform'), 'v': L('800 V', '800 В', '800 V')},
+               {'l': L('Təkər bazası', 'Колёсная база', 'Wheelbase'), 'v': L('2800 mm', '2800 мм', '2800 mm')},
+               {'l': L('Mərkəzi ekran', 'Центральный экран', 'Centre screen'), 'v': S('15.6"')}],
+     'note': L('Orta ölçülü 5 yerlik SUV: tam elektrik və 1.5T plug-in hibrid versiyaları. Göstəricilər istehsalçının ilkin məlumatlarıdır, fotolar sərgidən.', 'Среднеразмерный 5-местный SUV: полностью электрическая версия и подключаемый гибрид 1.5T. Предварительные данные производителя, фото с выставки.', 'Mid-size 5-seat SUV: all-electric and 1.5T plug-in hybrid versions. Manufacturer’s preliminary data; photos from a motor show.')},
 ]
 
 TL = [
@@ -413,8 +426,12 @@ def page_et5():
     return out + footer('et5')
 
 # ── HT-i ──
+def crop_style(c):
+    x, y, k = c.split()
+    return f'object-position:{x} {y};transform:scale({k});transform-origin:{x} {y}'
+
 def page_hti():
-    out = head('hti', 't_hti', 'Skywell HT-i — plug-in hibrid SUV: 200 km-ə qədər elektrik yürüşü (CLTC), 160 kVt elektromotor və 1.5T mühərrik. Tezliklə Azərbaycanda, rəsmi idxalçı Onvolt.', 'https://skywell.az/ht-i', HTI + 'HT-i-prop-web.jpg?v=v2')
+    out = head('hti', 't_hti', 'Skywell HT-i — plug-in hibrid SUV: 200 km-ə qədər elektrik yürüşü (CLTC), 160 kVt elektromotor və 1.5T mühərrik. Bakıda satışda, rəsmi idxalçı Onvolt.', 'https://skywell.az/ht-i', HTI + 'HT-i-prop-web.jpg?v=v2')
     out += header('hti')
     rows = [('hs_dim', '4720 × 1908 × 1701 mm'), ('hs_wb', '2800 mm'), ('hs_boot', 'hs_bootv'), ('hs_w', 'hs_wv'), ('hs_tank', 'hs_tankv'),
             ('hs_drive', 'hs_drivev'), ('hs_top', 'hs_topv'), ('hs_ac', 'hs_acv'), ('hs_v2l', 'hs_v2lv')]
@@ -426,9 +443,9 @@ def page_hti():
     <p class="lead" data-i18n="hP">[[hP]]</p>
     <div class="ctas">
       <a class="btn p" href="index.html?model=Skywell%20HT-i#contact" data-i18n="ask">[[ask]]</a>
-      <a class="btn o" href="index.html#models" data-i18n="allModels">[[allModels]]</a>
+      <a class="btn o" href="https://turbo.az/avtosalonlar/onvoltskywell" target="_blank" rel="noopener" data-i18n="btnStock">[[btnStock]]</a>
     </div>
-    <div class="phero-car"><img src="{HTI}HT-i-prop-web.jpg?v=v2" alt="Skywell HT-i" fetchpriority="high" width="1920" height="960"></div>
+    <div class="phero-car crop"><img src="{HTI}HTi-list2.jpg?v=v2" alt="Skywell HT-i" fetchpriority="high" width="1920" height="960" style="{crop_style(HTI_CROP)}"></div>
     {kv([('hk1v', 'hk1'), ('hk2v', 'hk2'), ('hk3v', 'hk3'), ('hk4v', 'hk4'), ('hk5v', 'hk5'), ('hk6v', 'hk6')], 'kv light')}
   </div>
 </section>
@@ -454,6 +471,7 @@ def page_hti():
 <section class="sec" id="specs" aria-labelledby="hsH" style="background:#fff" data-st-block data-st-label="Göstəricilər">
   <div class="wrap">
     <div class="sec-h rv"><div class="kicker" data-i18n="hsK">[[hsK]]</div><h2 id="hsH" data-i18n="hsT">[[hsT]]</h2></div>
+    <div class="dimimg rv"><img src="{HTI}HT-i-prop-web.jpg?v=v2" alt="Skywell HT-i" loading="lazy" width="1920" height="960"></div>
     <div class="spec2">
       <div class="tbl light rv"><table><tbody>{trs}</tbody></table></div>
       <div class="eqbox rv"><h3 data-i18n="heqT">[[heqT]]</h3><ul data-i18n-list="heq"></ul></div>
