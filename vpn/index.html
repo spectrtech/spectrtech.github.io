@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpectrTech VPN — Personal VPN Link from Our Telegram Bot</title>
+<link rel="canonical" href="https://spectrtech.si/vpn/">
+<meta name="description" content="Get a personal VPN subscription link from the SpectrTech Telegram bot. Add it to Happ, v2rayNG or sing-box and the server list updates by itself.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SpectrTech VPN — one personal link, delivered in Telegram">
+<meta property="og:description" content="Open the bot, choose a plan, add your link to Happ, v2rayNG or sing-box. Servers update by themselves.">
+<meta property="og:image" content="https://spectrtech.si/vpn/img/og.jpg">
+<meta property="og:url" content="https://spectrtech.si/vpn/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0E1124">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"SpectrTech VPN","serviceType":"VPN subscription","url":"https://spectrtech.si/vpn/","image":"https://spectrtech.si/vpn/img/og.jpg","description":"Personal VPN subscription link delivered by the SpectrTech Telegram bot. Works in Happ, v2rayNG, INCY, sing-box and other apps that support subscription links.","availableChannel":{"@type":"ServiceChannel","serviceUrl":"https://t.me/Spectrtechvpnbot"},"provider":{"@type":"Organization","name":"SpectrTech","url":"https://spectrtech.si/"}}
+</script>
+<style>
+/* Layout: site header, full-bleed night hero with an app mock-up, then white sections on the site's 1120px grid */
+:root{
+  --ink:#111111; --muted:#5A5F63; --line:#E2E5E7; --soft:#F4F6F7; --teal:#00A4A6; --teal-deep:#09757A;
+  --night:#0E1124; --night-2:#171C3A; --mint:#5FF2D9; --sky:#7CC4FF; --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+img{max-width:100%;height:auto;display:block}
+header{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding-block:18px}
+header nav{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:6px 20px;font-size:14px}
+header nav a{color:var(--ink);text-decoration:none;font-weight:600}
+
+/* hero */
+.hero{background:radial-gradient(900px 480px at 82% 18%,#123f4a 0%,transparent 62%),radial-gradient(700px 420px at 10% 110%,#2a1f5c 0%,transparent 60%),linear-gradient(165deg,var(--night-2) 0%,var(--night) 70%);color:#fff;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:44px;align-items:center;padding-block:60px 70px}
+.kicker{margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mint)}
+.kicker.dark{color:var(--teal-deep)}
+.hero h1{font-weight:800;letter-spacing:-.035em;font-size:clamp(44px,7.4vw,84px);line-height:.98;margin:0 0 20px}
+.hero h1 span{display:block;background:linear-gradient(90deg,var(--mint),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(17px,2vw,20px);line-height:1.55;color:#cfd6f2;max-width:36ch;margin:0 0 28px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.v-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;transition:transform .12s,background .12s,border-color .12s}
+.v-btn svg{width:20px;height:20px;flex:none}
+.v-btn-main{background:var(--teal);color:#04161a}
+.v-btn-main:hover{background:var(--mint);transform:translateY(-1px)}
+.v-btn-ghost{color:#fff;border:1.5px solid #ffffff4d}
+.v-btn-ghost:hover{border-color:#fff}
+.v-btn:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.facts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.facts li{font-size:13px;font-weight:600;color:#c8d0ee;background:#ffffff10;border:1px solid #ffffff1f;border-radius:999px;padding:5px 12px}
+
+/* app mock-up (illustration, not a real screenshot) */
+.mock{justify-self:center;width:min(100%,360px);background:linear-gradient(180deg,#1b2147,#12162f);border:1px solid #ffffff1c;border-radius:30px;padding:22px 20px 20px;box-shadow:0 40px 80px -30px #000d,0 0 0 8px #ffffff08}
+.mock-top{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#aeb7dd;margin-bottom:22px}
+.mock-top b{color:#fff;font-size:15px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px #5ff2d933;display:inline-block;margin-right:6px}
+.power{position:relative;width:150px;height:150px;margin:6px auto 18px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#1e5a62,#0d2a33 70%);box-shadow:0 0 0 10px #5ff2d914,0 0 0 22px #5ff2d90a,inset 0 -8px 20px #0007}
+.power::before{content:"";position:absolute;inset:-22px;border-radius:50%;border:2px solid #5ff2d955;animation:pulse 2.6s ease-out infinite}
+.power svg{width:58px;height:58px}
+@keyframes pulse{0%{transform:scale(.86);opacity:1}100%{transform:scale(1.12);opacity:0}}
+.state{text-align:center;margin-bottom:20px}
+.state b{display:block;font-size:20px;letter-spacing:-.02em}
+.state small{color:#aeb7dd;font-size:13px}
+.rowi{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#ffffff0b;border:1px solid #ffffff14;border-radius:14px;padding:11px 14px;font-size:13px;color:#cfd6f2;margin-top:8px}
+.rowi code{font:600 12.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.rowi .ok{color:var(--mint);font-weight:700;white-space:nowrap}
+.mock-note{margin:12px 0 0;text-align:center;font-size:11.5px;color:#7f88b3}
+
+/* sections */
+.sec{padding-block:80px 0}
+.sec-head{max-width:660px;margin-bottom:30px}
+.sec h2{font-size:clamp(30px,4.4vw,44px);line-height:1.08;margin:0;font-weight:800;letter-spacing:-.03em}
+.sec-head p.sub{color:var(--muted);margin:12px 0 0;font-size:17px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:s}
+.steps li{position:relative;background:var(--soft);border-radius:20px;padding:26px 24px 24px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;top:18px;right:22px;font-weight:800;font-size:40px;line-height:1;color:#d5dcdf}
+.ico{width:52px;height:52px;border-radius:14px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;margin-bottom:16px;color:var(--teal-deep)}
+.ico svg{width:26px;height:26px}
+.steps h3,.feat h3{font-size:20px;margin:0 0 6px;letter-spacing:-.02em;font-weight:800}
+.steps p,.feat p{margin:0;color:var(--muted);font-size:15.5px}
+.apps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.app{border:1px solid var(--line);border-radius:16px;padding:20px 18px}
+.app b{display:block;font-size:18px;letter-spacing:-.02em}
+.app span{color:var(--muted);font-size:14px}
+.apps-note{margin:16px 0 0;color:var(--muted);font-size:15px}
+.feats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.feat{border-top:3px solid var(--ink);padding-top:16px}
+.feat:nth-child(3n+1){border-color:var(--teal)}
+.feat:nth-child(3n+2){border-color:#7C8CFF}
+.feat:nth-child(3n){border-color:var(--ink)}
+.vcta{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;align-items:center;background:radial-gradient(600px 300px at 90% 0%,#123f4a,transparent 70%),linear-gradient(150deg,var(--night-2),var(--night));color:#fff;border-radius:26px;padding:42px}
+.vcta h2{color:#fff}
+.vcta p{color:#cfd6f2;margin:12px 0 0;max-width:56ch}
+.cta-act{display:grid;gap:10px;justify-items:start}
+.handle{margin:0;font-size:15px;color:#aeb7dd;font-weight:600;user-select:all}
+.faq{max-width:760px}
+.faq details{border-bottom:1px solid var(--line);padding:16px 2px}
+.faq summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:700;font-size:22px;line-height:1;color:var(--teal-deep)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:10px 0 0;color:var(--muted);max-width:65ch}
+.wrap .social{margin-top:72px}
+footer{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;padding-block:22px;font-size:14px}
+@media (max-width:900px){
+  .hero-in{grid-template-columns:1fr;gap:38px;padding-block:40px 52px}
+  .steps,.feats{grid-template-columns:1fr}
+  .apps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vcta{grid-template-columns:1fr;padding:30px 22px}
+}
+@media (max-width:600px){
+  .hero-cta .v-btn{flex:1 1 auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<link rel="stylesheet" href="/assets/theme.css">
+<script data-goatcounter="https://spectrtech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="site-logo" href="https://spectrtech.si/" aria-label="SpectrTech home"><img src="/assets/spectrtech-logo.svg" alt="SpectrTech Digital Tools" width="147" height="44"></a><nav><a href="/websites/">Websites</a><a href="/tools/">Free tools</a><a href="/blog/">Guides</a><a href="/wedding-planner/">Wedding Planner</a><a href="/moving-planner/">Moving Planner</a><a href="/coin-drop-tycoon/">Games</a><a class="nav-partners" href="/affiliates/">Affiliates</a></nav>
+</header>
+</div>
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="kicker">VPN · by SpectrTech</p>
+      <h1>SpectrTech <span>VPN</span></h1>
+      <p class="lead">One personal link, delivered by our Telegram bot. Add it to your VPN app once and the server list keeps itself up to date.</p>
+      <div class="hero-cta">
+        <a class="v-btn v-btn-main" href="https://t.me/Spectrtechvpnbot" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 13 1.5 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg>Open the bot</a>
+        <a class="v-btn v-btn-ghost" href="#how">How it works</a>
+      </div>
+      <ul class="facts"><li>Delivered in Telegram</li><li>One personal link</li><li>Servers update by themselves</li><li>Same link when you renew</li></ul>
+    </div>
+    <div class="mock" role="img" aria-label="Illustration of a VPN app connected with a SpectrTech subscription link">
+      <div class="mock-top"><b>SpectrTech VPN</b><span><i class="dot"></i>Online</span></div>
+      <div class="power"><svg viewBox="0 0 24 24" fill="none" stroke="#5FF2D9" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.8a8 8 0 1 0 11.4 0"/></svg></div>
+      <div class="state"><b>Connected</b><small>Tap to disconnect</small></div>
+      <div class="rowi"><span>Subscription</span><code>…/sub/••••••••</code></div>
+      <div class="rowi"><span>Server list</span><span class="ok">Up to date</span></div>
+      <p class="mock-note">Illustration. The look depends on the app you use.</p>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="sec" id="how">
+    <div class="sec-head"><p class="kicker dark">How it works</p><h2>Three steps, no setup</h2><p class="sub">You never type server addresses or keys. Everything comes in one link.</p></div>
+    <ol class="steps">
+      <li><div class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 13 1.5 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg></div><h3>Open the bot</h3><p>Start <a href="https://t.me/Spectrtechvpnbot" rel="noopener">@Spectrtechvpnbot</a> in Telegram and choose a plan.</p></li>
+      <li><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></div><h3>Get your link</h3><p>The bot sends you a personal subscription link. It belongs to you only, so keep it private.</p></li>
+      <li><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M12 8v6M9 11h6"/></svg></div><h3>Add it to an app</h3><p>Copy the link, open Happ, tap “+” and import from the clipboard. Then press connect.</p></li>
+    </ol>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><p class="kicker dark">Apps</p><h2>Works with popular VPN apps</h2><p class="sub">Any app that supports subscription links can use your SpectrTech link.</p></div>
+    <div class="apps">
+      <div class="app"><b>Happ</b><span>Import with “+” from the clipboard</span></div>
+      <div class="app"><b>v2rayNG</b><span>Add as a subscription</span></div>
+      <div class="app"><b>INCY</b><span>Add as a subscription</span></div>
+      <div class="app"><b>sing-box</b><span>Add as a remote profile</span></div>
+    </div>
+    <p class="apps-note">The app refreshes the server list from your link by itself, so there is nothing to update by hand.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><p class="kicker dark">Why it is simple</p><h2>Set it up once, then just use it</h2></div>
+    <div class="feats">
+      <div class="feat"><h3>One link for everything</h3><p>Servers and protocols are packed into a single subscription link. You add it once.</p></div>
+      <div class="feat"><h3>Always current</h3><p>When servers change, your app picks up the new list from the same link.</p></div>
+      <div class="feat"><h3>Same link on renewal</h3><p>Renew your plan in the bot and keep using the link you already have.</p></div>
+      <div class="feat"><h3>Plans by device count</h3><p>Choose how many devices you want to connect. The bot shows each plan before you pay.</p></div>
+      <div class="feat"><h3>Everything in Telegram</h3><p>Buying, renewing and reminders happen in the bot. No account on a website.</p></div>
+      <div class="feat"><h3>Made by SpectrTech</h3><p>The team behind Wedding Planner, Moving Planner and Coin Drop Tycoon.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="start">
+    <div class="vcta">
+      <div>
+        <p class="kicker">Get started</p>
+        <h2>Your VPN link is one message away</h2>
+        <p>Open the bot, pick a plan and you will have a link to add to your app. Plans, prices and payment options are shown in the bot before you pay.</p>
+      </div>
+      <div class="cta-act">
+        <a class="v-btn v-btn-main" href="https://t.me/Spectrtechvpnbot" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.3 13 1.5 11.5c-1-.3-1.1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5z"/></svg>Open @Spectrtechvpnbot</a>
+        <p class="handle">t.me/Spectrtechvpnbot</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec faq">
+    <div class="sec-head"><h2>Questions</h2></div>
+    <details><summary>How do I start?</summary><p>Open <a href="https://t.me/Spectrtechvpnbot" rel="noopener">@Spectrtechvpnbot</a> in Telegram, press Start and choose a plan. After that the bot sends your personal subscription link.</p></details>
+    <details><summary>Which apps can I use?</summary><p>Happ, v2rayNG, INCY, sing-box and other apps that support subscription links. In Happ, copy the link, tap “+” and choose import from the clipboard.</p></details>
+    <details><summary>How many devices can I connect?</summary><p>It depends on the plan you choose. The bot shows the number of devices for each plan before you pay.</p></details>
+    <details><summary>What happens when my plan ends?</summary><p>The app stops receiving servers. Renew in the bot and the same link starts working again.</p></details>
+    <details><summary>Who runs the servers?</summary><p>SpectrTech VPN runs on the server infrastructure of a partner provider. SpectrTech runs the bot, the plans and support.</p></details>
+    <details><summary>Are there rules of use?</summary><p>Please use SpectrTech VPN in line with the laws of the country you are in. Do not share your personal link: anyone who has it can connect your plan’s devices.</p></details>
+    <details><summary>How do I contact you?</summary><p>Write to <a href="mailto:to@spectrtech.si">to@spectrtech.si</a> and mention your Telegram username.</p></details>
+  </section>
+
+  <nav class="social" aria-label="SpectrTech on social media"><b>Follow us</b><a class="tg" href="https://t.me/spectrtechdev" target="_blank" rel="noopener me">Telegram</a><a href="https://www.instagram.com/spectr.tech/" target="_blank" rel="noopener me">Instagram</a><a href="https://www.threads.com/@spectr.tech" target="_blank" rel="noopener me">Threads</a><a href="https://www.facebook.com/1265005823369842" target="_blank" rel="noopener me">Facebook</a><a href="https://www.tiktok.com/@spectrtech" target="_blank" rel="noopener me">TikTok</a><a href="https://www.pinterest.com/spectrtech/" target="_blank" rel="noopener me">Pinterest</a><a href="https://medium.com/@spectrtech" target="_blank" rel="noopener me">Medium</a></nav>
+  <footer>
+    <span>© SpectrTech Digital Tools</span>
+    <nav><a href="/">Home</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:to@spectrtech.si">to@spectrtech.si</a></nav>
+  </footer>
+</main>
+</body>
+</html>
