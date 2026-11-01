@@ -104,7 +104,7 @@ DATA = {
     'COLORS': [e('c1', 1400), e('c2', 1400), e('c3', 1400), e('c4', 1400)],
     'GAL_EXT': [e(k, 1600) for k in ['k_34b', 'w_front', 'k_rear', 'w_34', 'b_34', 'w_side', 'b_rear', 'k_lights', 'k_front']],
     'GAL_INT': [e(k, 1600) for k in ['i_dash', 'i_wheel', 'i_seats', 'i_console', 'w_trunk']],
-    'GAL_HTI': [HTI + 'hti2/' + f + '?v=v2' for f in ['HTi2-list4.jpg', 'HTi2-list5.jpg', 'HTi2-list3.jpg', 'HTi2-wlist7.jpg', 'HTi2-list9.jpg', 'HTi2-list6.jpg']],
+    'GAL_HTI': [HTI + 'hti2/' + f + '?v=v2' for f in ['HTi2-list4.jpg', 'HTi2-list5.jpg', 'HTi2-list3.jpg', 'HTi2-wlist7.jpg', 'HTi2-list9.jpg']],
 }
 
 ALT = {'GAL_EXT': 'Skywell ET5', 'GAL_INT': 'Skywell ET5', 'GAL_HTI': 'Skywell HT-i'}
@@ -292,7 +292,7 @@ def page_index():
     out = head('index', 't_index', 'Skywell elektrik avtomobillərinin Azərbaycanda rəsmi idxalçısı Onvolt: Skywell ET5, yeni HT-i, Q və Skyhome modelləri, rəsmi servis, zəmanət və şarj stansiyaları.', 'https://skywell.az/', OG)
     out += '''<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Onvolt — Skywell Azərbaycan","url":"https://skywell.az/","brand":{"@type":"Brand","name":"Skywell"},"telephone":"+994124400007","email":"sales@onvolt.az","address":{"@type":"PostalAddress","streetAddress":"Ceyhun Hacıbəyli küç., 194","addressLocality":"Bakı","addressCountry":"AZ"},"geo":{"@type":"GeoCoordinates","latitude":40.3984375,"longitude":49.8430625},"parentOrganization":{"@type":"Organization","name":"Onvolt MMC","url":"https://onvolt.az"},"sameAs":["https://www.instagram.com/skywell.az/","https://www.facebook.com/profile.php?id=100089702104191","https://www.youtube.com/@SkywellAzerbaijan","https://www.linkedin.com/company/skywellazerbaijan"]}</script>
 '''
-    body = INDEX_BODY.replace('{{HERO}}', e('k_34a', 1920)).replace('{{ET5IMG}}', e('b_34', 1400)).replace('{{CONTACT_CARDS}}', contact_cards())
+    body = INDEX_BODY.replace('{{HERO}}', e('k_34a', 1600)).replace('{{ET5IMG}}', e('b_34', 1400)).replace('{{CONTACT_CARDS}}', contact_cards())
     return out + header('index') + body + footer('index')
 
 # ── ET5 ──
@@ -305,7 +305,7 @@ def page_et5():
 '''
     out += header('et5')
     out += f'''<section class="phero dark" id="top" aria-labelledby="h1" data-st-block data-st-label="Əsas ekran">
-  <div class="phero-bg"><img src="{e('k_34b', 1920)}" alt="Skywell ET5" fetchpriority="high" width="1920" height="1280"></div>
+  <div class="phero-bg"><img src="{e('k_34b', 1600)}" alt="Skywell ET5" fetchpriority="high" width="1920" height="1280"></div>
   <div class="wrap">
     <div class="kicker" data-i18n="xK">[[xK]]</div>
     <h1 id="h1">Skywell ET5</h1>

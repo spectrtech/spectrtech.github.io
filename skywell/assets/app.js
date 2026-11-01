@@ -83,7 +83,7 @@
 
   /* ── галереи + просмотр ── */
   var LB = { list: [], i: 0 };
-  function big(u) { return String(u).replace(/\/-\/resize\/\d+x\//, '/-/resize/2000x/'); }
+  function big(u) { return String(u).replace(/\/-\/resize\/\d+x\//, '/-/resize/1600x/'); }
   function small(u, w) { return String(u).replace(/\/-\/resize\/\d+x\//, '/-/resize/' + w + 'x/'); }
   function renderGals() {
     D.querySelectorAll('[data-gal]').forEach(function (box) {
