@@ -315,7 +315,7 @@ def page_index():
     out = head('index', 't_index', 'Skywell elektrik avtomobillərinin Azərbaycanda rəsmi idxalçısı Onvolt: Skywell ET5, yeni HT-i, Q və Skyhome modelləri, rəsmi servis, zəmanət və şarj stansiyaları.', 'https://skywell.az/', WS(N34, 1200))
     out += '''<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"Onvolt — Skywell Azərbaycan","url":"https://skywell.az/","brand":{"@type":"Brand","name":"Skywell"},"telephone":"+994124400007","email":"sales@onvolt.az","address":{"@type":"PostalAddress","streetAddress":"Ceyhun Hacıbəyli küç., 194","addressLocality":"Bakı","addressCountry":"AZ"},"geo":{"@type":"GeoCoordinates","latitude":40.3984375,"longitude":49.8430625},"parentOrganization":{"@type":"Organization","name":"Onvolt MMC","url":"https://onvolt.az"},"sameAs":["https://www.instagram.com/skywell.az/","https://www.facebook.com/profile.php?id=100089702104191","https://www.youtube.com/@SkywellAzerbaijan","https://www.linkedin.com/company/skywellazerbaijan"]}</script>
 '''
-    body = INDEX_BODY.replace('{{HERO}}', WS(N34, 1600)).replace('{{ET5IMG}}', WS(NSIDE, 1400)).replace('{{CONTACT_CARDS}}', contact_cards())
+    body = INDEX_BODY.replace('{{HERO}}', WS(N34, 1600)).replace('{{ET5IMG}}', 'img/et5-white.jpg').replace('{{CONTACT_CARDS}}', contact_cards())
     return out + header('index') + body + footer('index')
 
 # ── ET5 ──

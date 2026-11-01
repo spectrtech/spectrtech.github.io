@@ -282,3 +282,4 @@ add('hvT', '125 000 km sonra elektromobilin vəziyyəti', 'Состояние э
 add('hvP', '«4 Çarx / 4 Wheels» kanalının videosu: 125 000 km yol getmiş Skywell elektromobilinin vəziyyəti.', 'Видео канала «4 Çarx / 4 Wheels»: в каком состоянии электромобиль Skywell после 125 000 км.', 'A video by the “4 Çarx / 4 Wheels” channel: the condition of a Skywell EV after 125,000 km.')
 add('hvPlay', 'Videonu oynat', 'Воспроизвести видео', 'Play video')
 add('hvYt', 'YouTube-da açın', 'Открыть на YouTube', 'Open on YouTube')
+add('svImgAlt', 'Servis mərkəzi', 'Сервисный центр', 'Service centre')
