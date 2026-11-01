@@ -15,6 +15,7 @@
         { k: 'st', label: { az: 'Status', ru: 'Статус', en: 'Status' }, type: 'select', w: 'md', options: opts(ST) },
         { k: 'body', label: { az: 'Kuzov və mühərrik növü', ru: 'Кузов и тип привода', en: 'Body and powertrain' }, type: 'i18n' },
         { k: 'img', label: { az: 'Foto', ru: 'Фото', en: 'Photo' }, type: 'image', dir: 'img/m/', ext: '.jpg', optional: true },
+        { k: 'page', label: { az: 'Modelin səhifəsi (məs. et5.html)', ru: 'Страница модели (напр. et5.html)', en: 'Model page (e.g. et5.html)' }, type: 'text', w: 'md', optional: true },
         { k: 'specs', label: { az: 'Göstəricilər', ru: 'Характеристики', en: 'Specs' }, type: 'list',
           item: { title: function (s, ctx) { return ((s.l && (s.l[ctx.lang] || s.l.az)) || '…') + ': ' + ((s.v && (s.v[ctx.lang] || s.v.az)) || ''); },
             fields: [
@@ -24,7 +25,7 @@
             add: function () { return { l: { az: '', ru: '', en: '' }, v: { az: '', ru: '', en: '' } }; } } },
         { k: 'note', label: { az: 'Qeyd', ru: 'Примечание', en: 'Note' }, type: 'i18n', optional: true }
       ],
-      add: function () { return { id: uid('m'), name: 'Skywell ', st: 'soon', body: { az: '', ru: '', en: '' }, img: '', specs: [], note: { az: '', ru: '', en: '' } }; } } };
+      add: function () { return { id: uid('m'), name: 'Skywell ', st: 'soon', body: { az: '', ru: '', en: '' }, img: '', page: '', specs: [], note: { az: '', ru: '', en: '' } }; } } };
 
   var TL = { title: { az: 'Brendin tarixi', ru: 'История бренда', en: 'Brand history' },
     item: { title: function (x) { return x.y || '…'; },
@@ -34,12 +35,24 @@
       ],
       add: function () { return { y: String(new Date().getFullYear()), t: { az: '', ru: '', en: '' } }; } } };
 
+  function PHOTOS(title, dir) {
+    return { title: title, item: { title: function (u, ctx, i) { return (ctx.lang === 'ru' ? 'Фото ' : ctx.lang === 'en' ? 'Photo ' : 'Foto ') + (i + 1); },
+      fields: [{ k: '$', label: { az: 'Foto', ru: 'Фото', en: 'Photo' }, type: 'image', dir: dir, ext: '.jpg' }],
+      add: function () { return ''; } } };
+  }
+  var COLORS = PHOTOS({ az: 'Rənglər (Qara, Ağ, Boz, Mavi)', ru: 'Цвета (чёрный, белый, серый, синий)', en: 'Colours (black, white, grey, blue)' }, 'img/et5/');
+  COLORS.fixed = true;
+
   window.ST_EDITOR = {
     site: 'skywell-az',
     brand: 'Skywell',
     langs: L,
     pages: [
-      { id: 'index', file: 'index.html', name: { az: 'Ana səhifə', ru: 'Главная', en: 'Home' }, data: { MODELS: MODELS, TL: TL } }
+      { id: 'index', file: 'index.html', name: { az: 'Ana səhifə', ru: 'Главная', en: 'Home' }, data: { MODELS: MODELS, TL: TL } },
+      { id: 'et5', file: 'et5.html', name: { az: 'Skywell ET5', ru: 'Skywell ET5', en: 'Skywell ET5' },
+        data: { COLORS: COLORS, GAL_EXT: PHOTOS({ az: 'Xarici görünüş — fotolar', ru: 'Экстерьер — фото', en: 'Exterior — photos' }, 'img/et5/'), GAL_INT: PHOTOS({ az: 'Salon — fotolar', ru: 'Салон — фото', en: 'Interior — photos' }, 'img/et5/') } },
+      { id: 'hti', file: 'ht-i.html', name: { az: 'Skywell HT-i', ru: 'Skywell HT-i', en: 'Skywell HT-i' },
+        data: { GAL_HTI: PHOTOS({ az: 'Qalereya', ru: 'Галерея', en: 'Gallery' }, 'img/hti/') } }
     ]
   };
 })();
