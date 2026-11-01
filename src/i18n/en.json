@@ -307,7 +307,7 @@
   "projects": {
     "eyebrow": "Projects",
     "title": "Products we build, launch and <em>sell ourselves</em>.",
-    "lead": "SpectrTech also develops its own digital products: two planners on sale, a VPN service in Telegram and our first game in closed testing.",
+    "lead": "SpectrTech also develops its own digital products: two planners on sale, a VPN service in Telegram and our first game on Google Play.",
     "features": "Features",
     "platforms": "Platforms",
     "status": "Status",
@@ -316,7 +316,7 @@
     "demo": "Try the live demo",
     "demoShort": "Live demo",
     "seeGame": "See the game",
-    "joinTest": "Join the closed test",
+    "getPlay": "Get it on Google Play",
     "openBot": "Open the bot",
     "oneTime": "one-time payment",
     "items": {
@@ -357,7 +357,7 @@
           "No sign-up; plays without internet"
         ],
         "platforms": "Android 7.0 and newer",
-        "status": "Closed test, coming to Google Play"
+        "status": "Available on Google Play"
       },
       "vpn": {
         "name": "SpectrTech VPN",
