@@ -1,0 +1,9 @@
+.git
+.github
+.nojekyll
+.assetsignore
+wrangler.toml
+CNAME
+README.md
+src
+node_modules

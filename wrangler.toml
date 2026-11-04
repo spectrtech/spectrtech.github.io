@@ -1,0 +1,9 @@
+# spectrtech.si — статический сайт на Cloudflare Workers (Static Assets).
+# Деплой: Cloudflare → Workers & Pages → проект из этого репозитория (Workers Builds), ветка main.
+name = "spectrtech-si"
+compatibility_date = "2026-06-01"
+
+[assets]
+directory = "."
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"
