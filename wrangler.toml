@@ -4,6 +4,12 @@ name = "spectrtech-si"
 main = "cf/worker.js"
 compatibility_date = "2026-06-01"
 
+# Домены подключаются при публикации (зона spectrtech.si должна быть в том же аккаунте Cloudflare, что и spectrtech.az).
+routes = [
+  { pattern = "spectrtech.si", custom_domain = true },
+  { pattern = "www.spectrtech.si", custom_domain = true },
+]
+
 [assets]
 directory = "."
 binding = "ASSETS"
