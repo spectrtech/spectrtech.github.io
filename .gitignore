@@ -1,1 +1,4 @@
 .wrangler/
+
+# исходники генератора Skywell — в приватном репозитории (spectrtech-demos, ветка sites/skywell-src)
+skywell/_src/
