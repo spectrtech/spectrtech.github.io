@@ -93,7 +93,7 @@ function head(l, page, { jsonld = [] } = {}) {
   const ogImg = abs(`/assets/studio/og/og-${l}.jpg`);
   const ogAlts = LIVE.filter((x) => x !== l).map((x) => `<meta property="og:locale:alternate" content="${cfg.locales[x].og}">`).join("");
   const verify = l === DEF && page === "home"
-    ? '<meta name="p:domain_verify" content="30a823c3a57715d7f0f37f142a7b5971">\n<meta name="google-site-verification" content="Lp4IV_xpd2NWidDV3CBiDsDTsr1pPp-sfIxkhxxz4iQ">\n' : "";
+    ? '<meta name="p:domain_verify" content="30a823c3a57715d7f0f37f142a7b5971">\n<meta name="google-site-verification" content="Lp4IV_xpd2NWidDV3CBiDsDTsr1pPp-sfIxkhxxz4iQ">\n<meta name="yandex-verification" content="463f743a765aa8fa">\n' : "";
   return `<!DOCTYPE html>
 <html lang="${l}" dir="${L.dir}" class="no-js">
 <head>
