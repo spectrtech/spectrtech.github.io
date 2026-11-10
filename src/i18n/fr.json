@@ -14,11 +14,11 @@
     },
     "contact": {
       "title": "Lancer un projet — contacter SpectrTech",
-      "desc": "Parlez-nous de votre entreprise et du site dont vous avez besoin. Demandez un devis par formulaire, e-mail ou Telegram."
+      "desc": "Parlez-nous de votre entreprise et du site dont vous avez besoin. Demandez un devis par formulaire, e-mail ou Telegram, sans engagement."
     },
     "privacy": {
       "title": "Avis de confidentialité — SpectrTech",
-      "desc": "Ce que deviennent les informations envoyées via le site SpectrTech et quel outil de statistiques ce site utilise."
+      "desc": "Ce que deviennent les informations envoyées via le site SpectrTech, quel outil de statistiques ce site utilise et comment demander leur suppression."
     }
   },
   "ui": {
