@@ -59,7 +59,7 @@
     {
       "id": "coin",
       "page": "/coin-drop-tycoon/",
-      "join": "mailto:to@spectrtech.si?subject=Coin%20Drop%20Tycoon%20closed%20test",
+      "play": "https://play.google.com/store/apps/details?id=com.spectrtech.coindrop",
       "price": null,
       "category": "GameApplication",
       "os": "Android 7.0+",
@@ -81,7 +81,7 @@
         ]
       ],
       "media": "phones",
-      "status": "test"
+      "status": "ok"
     },
     {
       "id": "vpn",
