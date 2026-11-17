@@ -73,8 +73,8 @@ const fontSrc = path.join(SRC, "assets/fonts");
 for (const f of fs.readdirSync(fontSrc)) fs.copyFileSync(path.join(fontSrc, f), path.join(ASSET_DIR, "fonts", f));
 const V = { css: hash(path.join(ASSET_DIR, "studio.css")), js: hash(path.join(ASSET_DIR, "studio.js")), ccss: hash(path.join(ASSET_DIR, "chrome.css")), cjs: hash(path.join(ASSET_DIR, "chrome.js")) };
 const PRELOAD = {
-  latin: ["onest-latin-400-normal.woff2", "unbounded-latin-500-normal.woff2"],
-  cyrillic: ["onest-cyrillic-400-normal.woff2", "unbounded-cyrillic-500-normal.woff2"],
+  latin: ["commissioner-latin-flar-normal.woff2"],
+  cyrillic: ["commissioner-cyrillic-flar-normal.woff2"],
   arabic: ["ibm-plex-sans-arabic-arabic-400-normal.woff2", "noto-kufi-arabic-arabic-700-normal.woff2"],
 };
 const preloadFor = (l) => (l === "ru" ? PRELOAD.cyrillic : l === "ar" ? PRELOAD.arabic : PRELOAD.latin);
@@ -433,7 +433,7 @@ for (const l of LOCS) for (const page of cfg.pages) {
 }
 
 /* ---------- product, guide and tool pages (English only): same header and footer ---------- */
-const LEGACY_HEAD = `<!--st:head--><link rel="preload" href="/assets/studio/fonts/onest-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/studio/chrome.css?v=${V.ccss}"><script defer src="/assets/studio/chrome.js?v=${V.cjs}"></script><!--/st:head-->`;
+const LEGACY_HEAD = `<!--st:head--><link rel="preload" href="/assets/studio/fonts/commissioner-latin-flar-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/studio/chrome.css?v=${V.ccss}"><script defer src="/assets/studio/chrome.js?v=${V.cjs}"></script><!--/st:head-->`;
 const OLD_HEADER = [/<header>\s*<a class="site-logo"[\s\S]*?<\/header>/, /<nav>\s*<div class="brand">[\s\S]*?<\/nav>/];
 let legacyDone = 0;
 for (const rel of cfg.chromePages) {

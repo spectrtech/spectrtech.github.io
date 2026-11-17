@@ -1,7 +1,7 @@
 /* SpectrTech site theme — shared overrides, loaded after each page's own <style> */
 :root{--bg:#FFFFFF;--ink:#111111;--muted:#5A5F63;--card:#FFFFFF;--line:#E2E5E7;--accent:#09757A;--accent2:#00A4A6;--gold:#00A4A6;--soft:#F3F5F6;--teal:#00A4A6;--teal-deep:#09757A}
 html{color-scheme:light}
-body{background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:"Commissioner",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--teal-deep)}
 h1,h2,h3,h4{font-weight:800;letter-spacing:-.025em;text-wrap:balance}
 h1{line-height:1.08}

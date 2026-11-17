@@ -18,18 +18,15 @@ def page(lang, d, direction):
     title = re.sub(r"</?em>", "", d["home"]["title"])
     tag = d["og"]["tagline"]
     eyebrow = d["home"]["eyebrow"]
-    disp = "'Kufi Arabic','Plex Arabic'" if lang == "ar" else "'Unbounded'"
-    text = "'Plex Arabic'" if lang == "ar" else "'Onest'"
+    disp = "'Kufi Arabic','Plex Arabic'" if lang == "ar" else "'Commissioner'"
+    text = "'Plex Arabic'" if lang == "ar" else "'Commissioner'"
     fans = "".join(
         f'<path d="M1100 560 Q{1100-300+i*9} {300-i*6} {700+i*26} {40+i*3}" stroke="{c}" />'
         for i, c in enumerate(["#F23C5A","#F23C86","#F23CBF","#E33CF2","#AA3CF2","#703CF2","#3C42F2","#3C7CF2","#3CB5F2"]*2))
     return f"""<!doctype html><html lang="{lang}" dir="{direction}"><meta charset="utf-8"><style>
-@font-face{{font-family:Unbounded;font-weight:500;src:url({FONTS}/unbounded-latin-500-normal.woff2)}}
-@font-face{{font-family:Unbounded;font-weight:500;src:url({FONTS}/unbounded-latin-ext-500-normal.woff2);unicode-range:U+0100-024F,U+1E00-1EFF}}
-@font-face{{font-family:Unbounded;font-weight:500;src:url({FONTS}/unbounded-cyrillic-500-normal.woff2);unicode-range:U+0400-045F}}
-@font-face{{font-family:Onest;font-weight:400;src:url({FONTS}/onest-latin-400-normal.woff2)}}
-@font-face{{font-family:Onest;font-weight:400;src:url({FONTS}/onest-latin-ext-400-normal.woff2);unicode-range:U+0100-024F,U+1E00-1EFF}}
-@font-face{{font-family:Onest;font-weight:400;src:url({FONTS}/onest-cyrillic-400-normal.woff2);unicode-range:U+0400-045F}}
+@font-face{{font-family:Commissioner;font-weight:100 900;src:url({FONTS}/commissioner-latin-flar-normal.woff2)}}
+@font-face{{font-family:Commissioner;font-weight:100 900;src:url({FONTS}/commissioner-latin-ext-flar-normal.woff2);unicode-range:U+0100-024F,U+1E00-1EFF}}
+@font-face{{font-family:Commissioner;font-weight:100 900;src:url({FONTS}/commissioner-cyrillic-flar-normal.woff2);unicode-range:U+0400-045F}}
 @font-face{{font-family:'Plex Arabic';font-weight:400;src:url({FONTS}/ibm-plex-sans-arabic-arabic-400-normal.woff2)}}
 @font-face{{font-family:'Kufi Arabic';font-weight:700;src:url({FONTS}/noto-kufi-arabic-arabic-700-normal.woff2)}}
 *{{margin:0;box-sizing:border-box}}
@@ -42,7 +39,7 @@ svg.f{{position:absolute;inset:0;opacity:.5}} svg.f path{{fill:none;stroke-width
 .logo svg{{height:52px;width:auto;display:block}}
 .e{{margin-top:auto;font-size:22px;letter-spacing:.14em;text-transform:uppercase;color:#A9AECB}}
 [lang=ar] .e{{letter-spacing:0}}
-h1{{font-family:{disp},sans-serif;font-weight:{700 if lang=='ar' else 500};font-size:{54 if lang!='ar' else 56}px;line-height:{1.15 if lang!='ar' else 1.45};letter-spacing:-.02em;margin:18px 0 22px;max-width:980px}}
+h1{{font-family:{disp},sans-serif;font-weight:{700 if lang=='ar' else 600};font-variation-settings:'FLAR' 100;font-size:{54 if lang!='ar' else 56}px;line-height:{1.15 if lang!='ar' else 1.45};letter-spacing:-.02em;margin:18px 0 22px;max-width:980px}}
 .t{{font-size:26px;color:#ECEEFA}}
 .bar{{position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,#F23C5A,#E33CF2 30%,#703CF2 55%,#3C7CF2 78%,#3CB5F2)}}
 </style><body><div class="g"></div><svg class="f" viewBox="0 0 1200 630">{fans}</svg>

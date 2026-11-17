@@ -13,9 +13,6 @@
 <meta property="og:url" content="https://spectrtech.si/vpn/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0E1124">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"SpectrTech VPN","serviceType":"VPN subscription","url":"https://spectrtech.si/vpn/","image":"https://spectrtech.si/vpn/img/og.jpg","description":"Personal VPN subscription link delivered by the SpectrTech Telegram bot. Works in Happ, v2rayNG, INCY, sing-box and other apps that support subscription links.","availableChannel":{"@type":"ServiceChannel","serviceUrl":"https://t.me/Spectrtechvpnbot"},"provider":{"@type":"Organization","name":"SpectrTech","url":"https://spectrtech.si/"}}
 </script>
@@ -23,7 +20,7 @@
 /* Layout: site header, full-bleed night hero with an app mock-up, then white sections on the site's 1120px grid */
 :root{
   --ink:#111111; --muted:#5A5F63; --line:#E2E5E7; --soft:#F4F6F7; --teal:#00A4A6; --teal-deep:#09757A;
-  --night:#0E1124; --night-2:#171C3A; --mint:#5FF2D9; --sky:#7CC4FF; --body:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --night:#0E1124; --night-2:#171C3A; --mint:#5FF2D9; --sky:#7CC4FF; --body:"Commissioner",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
 }
 *{box-sizing:border-box}
 body{margin:0;background:#fff;color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
@@ -56,11 +53,8 @@ header nav a{color:var(--ink);text-decoration:none;font-weight:600}
 .mock{justify-self:center;width:min(100%,360px);background:linear-gradient(180deg,#1b2147,#12162f);border:1px solid #ffffff1c;border-radius:30px;padding:22px 20px 20px;box-shadow:0 40px 80px -30px #000d,0 0 0 8px #ffffff08}
 .mock-top{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#aeb7dd;margin-bottom:22px}
 .mock-top b{color:#fff;font-size:15px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px #5ff2d933;display:inline-block;margin-right:6px}
 .power{position:relative;width:150px;height:150px;margin:6px auto 18px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 50% 40%,#1e5a62,#0d2a33 70%);box-shadow:0 0 0 10px #5ff2d914,0 0 0 22px #5ff2d90a,inset 0 -8px 20px #0007}
-.power::before{content:"";position:absolute;inset:-22px;border-radius:50%;border:2px solid #5ff2d955;animation:pulse 2.6s ease-out infinite}
 .power svg{width:58px;height:58px}
-@keyframes pulse{0%{transform:scale(.86);opacity:1}100%{transform:scale(1.12);opacity:0}}
 .state{text-align:center;margin-bottom:20px}
 .state b{display:block;font-size:20px;letter-spacing:-.02em}
 .state small{color:#aeb7dd;font-size:13px}
@@ -118,7 +112,7 @@ footer{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;pa
 </style>
 <link rel="stylesheet" href="/assets/theme.css">
 <script data-goatcounter="https://spectrtech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<!--st:head--><link rel="preload" href="/assets/studio/fonts/onest-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/studio/chrome.css?v=b91e7598"><script defer src="/assets/studio/chrome.js?v=1b605831"></script><!--/st:head-->
+<!--st:head--><link rel="preload" href="/assets/studio/fonts/commissioner-latin-flar-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/studio/chrome.css?v=ed24ae2c"><script defer src="/assets/studio/chrome.js?v=1b605831"></script><!--/st:head-->
 </head>
 <body>
 <!--st:header--><a class="st-skip" href="#st-content">Skip to content</a>
@@ -149,7 +143,7 @@ footer{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;pa
       <ul class="facts"><li>Delivered in Telegram</li><li>One personal link</li><li>Servers update by themselves</li><li>Same link when you renew</li></ul>
     </div>
     <div class="mock" role="img" aria-label="Illustration of a VPN app connected with a SpectrTech subscription link">
-      <div class="mock-top"><b>SpectrTech VPN</b><span><i class="dot"></i>Online</span></div>
+      <div class="mock-top"><b>SpectrTech VPN</b><span>Online</span></div>
       <div class="power"><svg viewBox="0 0 24 24" fill="none" stroke="#5FF2D9" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.8a8 8 0 1 0 11.4 0"/></svg></div>
       <div class="state"><b>Connected</b><small>Tap to disconnect</small></div>
       <div class="rowi"><span>Subscription</span><code>…/sub/••••••••</code></div>
